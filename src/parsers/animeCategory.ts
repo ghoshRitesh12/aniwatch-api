@@ -9,7 +9,7 @@ import {
   extractTop10Animes,
 } from "../utils";
 
-import createHttpError, { HttpError, isHttpError } from "http-errors";
+import createHttpError, { HttpError } from "http-errors";
 import { ScrapedAnimeCategory, AnimeCategories } from "../models";
 
 // /anime/:category?page=${page}
