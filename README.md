@@ -1,6 +1,13 @@
 <p align="center">
   <a href="https://github.com/ghoshRitesh12/zoro.to-api">
-    <img src="img/img1.gif" alt="Logo" width="85" height="85">
+    <img 
+      src="https://github.com/ghoshRitesh12/zoro.to-api/blob/main/img/img1.gif?raw=true" 
+      alt="Logo" 
+      width="120" 
+      height="120"
+      decoding="async"
+      fetchpriority="high"
+    />
   </a>
 
   <h3 align="center">Zoro.to API</h3>
