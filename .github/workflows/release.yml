@@ -22,6 +22,7 @@ jobs:
         if: ${{ steps.changelog.outputs.skipped == 'false' }}
         uses: ncipollo/release-action@v1
         with:
+          generateReleaseNotes: true
           token: ${{ secrets.CHANGELOG_SECRET }}
           tag: ${{ steps.changelog.outputs.tag }}
           name: ${{ steps.changelog.outputs.tag }}
