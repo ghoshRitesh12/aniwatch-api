@@ -1,3 +1,16 @@
+# [1.2.0](https://github.com/ghoshRitesh12/zoro.to-api/compare/v1.1.2...v1.2.0) (2023-08-02)
+
+
+### Features
+
+* **homeController:** added home route controller ([efdf837](https://github.com/ghoshRitesh12/zoro.to-api/commit/efdf83716301ccb8896c59aff98ff97de2d15545))
+* **homeRoute:** added home route ([02ece02](https://github.com/ghoshRitesh12/zoro.to-api/commit/02ece0298402a84b3b97f1320ad5d1a0afb67bba))
+* **new types:** added several new types & made types D.R.Y ([bbea6fb](https://github.com/ghoshRitesh12/zoro.to-api/commit/bbea6fb626a0c04ee5d53064f50c5007b5cb898c))
+* **parser types:** added `homePage` & `searchResult` types ([43ca79d](https://github.com/ghoshRitesh12/zoro.to-api/commit/43ca79d812a4a9fc6de28dc1cac4063eae36942e))
+* **parser:** added home page parser ([55d024f](https://github.com/ghoshRitesh12/zoro.to-api/commit/55d024ff2d43c17942b47c0e86f215747fbdeebf))
+
+
+
 ## [1.1.2](https://github.com/ghoshRitesh12/zoro.to-api/compare/v1.1.1...v1.1.2) (2023-08-02)
 
 
