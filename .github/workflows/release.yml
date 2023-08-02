@@ -1,0 +1,29 @@
+name: Releases
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  changelog:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkouts repo
+        uses: actions/checkout@v2
+
+      # create release info and push it upstream
+      - name: Conventional changelog action
+        id: changelog
+        uses: TriPSs/conventional-changelog-action@v3
+        with:
+          github-token: ${{ secrets.CHANGELOG_SECRET }}
+
+      - name: Create release
+        uses: actions/create-release@v1
+        if: ${{ steps.changelog.outputs.skipped == 'false' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.CHANGELOG_SECRET }}
+        with:
+          tag_name: ${{ steps.changelog.outputs.tag }}
+          release_name: ${{ steps.changelog.outputs.tag }}
+          body: ${{ steps.changelog.outputs.clean_changelog }}
