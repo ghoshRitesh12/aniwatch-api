@@ -15,17 +15,19 @@
   <p align="center">
     A free restful API serving anime information from <a href="https://zoro.to">zoro.to</a>
     <br/><br/>
-    <a 
-      href="https://github.com/ghoshRitesh12/zoro.to-api/issues/new?assignees=ghoshRitesh12&labels=bug&template=bug-report.yml"
-    >
-      Bug report
-    </a>
-    ·
-    <a 
-      href="https://github.com/ghoshRitesh12/zoro.to-api/issues/new?assignees=ghoshRitesh12&labels=enhancement&template=feature-request.md"
-    >
-      Feature request
-    </a>
+    <strong>
+      <a 
+        href="https://github.com/ghoshRitesh12/zoro.to-api/issues/new?assignees=ghoshRitesh12&labels=bug&template=bug-report.yml"
+      >
+        Bug report
+      </a>
+      ·
+      <a 
+        href="https://github.com/ghoshRitesh12/zoro.to-api/issues/new?assignees=ghoshRitesh12&labels=enhancement&template=feature-request.md"
+      >
+        Feature request
+      </a>
+    </strong>
   </p>
   <p align="center">
     <a 
