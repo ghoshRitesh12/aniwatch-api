@@ -1,3 +1,4 @@
 import scrapeAnimeCategory from "./animeCategory";
+import scrapeAnimeSearch from "./animeSearch";
 
-export { scrapeAnimeCategory };
+export { scrapeAnimeCategory, scrapeAnimeSearch };
