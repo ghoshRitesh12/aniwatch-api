@@ -108,7 +108,7 @@ export function extractTop10Animes(
             .find(".film-poster .film-poster-img")
             ?.attr("data-src")
             ?.trim() || null,
-        eps: {
+        episodes: {
           sub:
             Number(
               $(el)
