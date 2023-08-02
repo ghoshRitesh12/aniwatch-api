@@ -1,7 +1,12 @@
 import { config } from "dotenv";
 import createHttpError, { HttpError } from "http-errors";
 import { CheerioAPI, SelectorType } from "cheerio";
-import { Anime, Top10Anime, Top10AnimeTimePeriod } from "../models";
+import {
+  Anime,
+  Top10Anime,
+  Top10AnimeTimePeriod,
+  MostPopularAnime,
+} from "../models";
 
 config();
 
@@ -49,13 +54,26 @@ export function extractAnimes(
           ?.text()
           ?.trim(),
         rating: $(el).find(".film-poster .tick-rate")?.text()?.trim() || null,
-        episodes:
-          $(el)
-            .find(".film-poster .tick-eps")
-            ?.text()
-            ?.trim()
-            .split(" ")
-            .pop() || null,
+        episodes: {
+          sub:
+            Number(
+              $(el)
+                .find(".film-poster .tick-sub")
+                ?.text()
+                ?.trim()
+                .split(" ")
+                .pop()
+            ) || null,
+          dub:
+            Number(
+              $(el)
+                .find(".film-poster .tick-dub")
+                ?.text()
+                ?.trim()
+                .split(" ")
+                .pop()
+            ) || null,
+        },
       });
     });
 
@@ -106,6 +124,56 @@ export function extractTop10Animes(
                 ?.trim()
             ) || null,
         },
+      });
+    });
+
+    return animes;
+  } catch (err: any) {
+    throw createHttpError.InternalServerError(
+      err?.message || "Something went wrong"
+    );
+  }
+}
+
+export function extractMostPopularAnimes(
+  $: CheerioAPI,
+  selector: SelectorType
+): Array<MostPopularAnime> | HttpError {
+  try {
+    const animes: Array<MostPopularAnime> = [];
+
+    $(selector).each((i, el) => {
+      const otherInfoSrc = $(el)
+        ?.find(".fd-infor .tick")
+        ?.text()
+        ?.trim()
+        ?.replace(/\n/g, "")
+        .split(" ");
+
+      let otherInfos: string[] = [
+        otherInfoSrc[0] || "",
+        otherInfoSrc?.pop() || "",
+      ];
+
+      animes.push({
+        id:
+          $(el)
+            .find(".film-detail .dynamic-name")
+            ?.attr("href")
+            ?.slice(1)
+            .trim() || null,
+        name: $(el).find(".film-detail .dynamic-name")?.text()?.trim() || null,
+        poster:
+          $(el)
+            .find(".film-poster .film-poster-img")
+            ?.attr("data-src")
+            ?.trim() || null,
+        jname:
+          $(el)
+            .find(".film-detail .film-name .dynamic-name")
+            .attr("data-jname")
+            ?.trim() || null,
+        otherInfo: otherInfos.filter((i) => i !== ""),
       });
     });
 
