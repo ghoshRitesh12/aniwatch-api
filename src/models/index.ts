@@ -2,21 +2,35 @@ import {
   Anime,
   Servers,
   Top10Anime,
+  TrendingAnime,
+  TopAiringAnime,
+  SpotlightAnime,
   AnimeCategories,
   MostPopularAnime,
-  AnimeSearchResult,
+  TopUpcomingAnime,
+  LatestEpisodeAnime,
   Top10AnimeTimePeriod,
 } from "./anime";
 
-import { ScrapedAnimeCategory } from "./parser";
+import {
+  ScrapedHomePage,
+  ScrapedAnimeCategory,
+  ScrapedAnimeSearchResult,
+} from "./parser";
 
 export {
   Anime,
   Servers,
   Top10Anime,
+  TrendingAnime,
+  SpotlightAnime,
+  TopAiringAnime,
   AnimeCategories,
+  ScrapedHomePage,
   MostPopularAnime,
-  AnimeSearchResult,
+  TopUpcomingAnime,
+  LatestEpisodeAnime,
   Top10AnimeTimePeriod,
   ScrapedAnimeCategory,
+  ScrapedAnimeSearchResult,
 };
