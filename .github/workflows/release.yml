@@ -15,7 +15,7 @@ jobs:
         id: changelog
         uses: TriPSs/conventional-changelog-action@v3
         with:
-          github-token: ${{ secrets.CHANGELOG_SECRET }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Create release
         if: ${{ steps.changelog.outputs.skipped == 'false' }}
