@@ -6,19 +6,18 @@ import {
   USER_AGENT_HEADER,
   ACCEPT_ENCODING_HEADER,
   extractMostPopularAnimes,
-  extractTop10Animes,
   extractAnimes,
 } from "../utils";
 
 import createHttpError, { HttpError } from "http-errors";
-import { AnimeSearchResult } from "../models";
+import { ScrapedAnimeSearchResult } from "../models";
 
 // /anime/search?q=${query}&page=${page}
 async function scrapeAnimeSearch(
   q: string,
   page: number = 1
-): Promise<AnimeSearchResult | HttpError> {
-  const res: AnimeSearchResult = {
+): Promise<ScrapedAnimeSearchResult | HttpError> {
+  const res: ScrapedAnimeSearchResult = {
     animes: [],
     mostPopularAnimes: [],
     currentPage: Number(page),
