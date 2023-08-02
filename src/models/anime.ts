@@ -1,3 +1,5 @@
+import { HttpError } from "http-errors";
+
 export interface Anime {
   id: string | null;
   name: string | null;
@@ -5,7 +7,10 @@ export interface Anime {
   duration: string | null;
   type: string | null;
   rating: string | null;
-  episodes: string | null;
+  episodes: {
+    sub: number | null;
+    dub: number | null;
+  };
 }
 
 type CommonAnimeProps = "id" | "name" | "poster";
@@ -19,6 +24,19 @@ export interface Top10Anime extends Pick<Anime, CommonAnimeProps> {
 }
 
 export type Top10AnimeTimePeriod = "day" | "week" | "month";
+
+export interface AnimeSearchResult {
+  animes: Array<Anime> | HttpError;
+  mostPopularAnimes: Array<MostPopularAnime> | HttpError;
+  totalPages: number;
+  currentPage: number;
+  hasNextPage: boolean;
+}
+
+export interface MostPopularAnime extends Pick<Anime, CommonAnimeProps> {
+  jname: string | null;
+  otherInfo: string[] | [];
+}
 
 export type AnimeCategories =
   | "most-favorite"
