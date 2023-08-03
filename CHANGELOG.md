@@ -1,3 +1,25 @@
+# [1.3.0](https://github.com/ghoshRitesh12/zoro.to-api/compare/v1.2.0...v1.3.0) (2023-08-03)
+
+
+### Bug Fixes
+
+* **otherInfoBug:** `otherInfo` wouldn't show all stats ([8f1eabe](https://github.com/ghoshRitesh12/zoro.to-api/commit/8f1eabe2d9162ade3adcd604417f4f2b8ce95265))
+
+
+### Features
+
+* **newAnimeTypes:** added several types related to `ScrapedAnimeAboutInfo` parser type ([af70a9d](https://github.com/ghoshRitesh12/zoro.to-api/commit/af70a9de1146b2c3bfdacd51f790f34f35b49877))
+* **newController:** added `animeAboutInfo` controller ([d503bb6](https://github.com/ghoshRitesh12/zoro.to-api/commit/d503bb6c5c6c412deac29f55a0c734c68df29842))
+* **newController:** added `animeGenre` controller ([b86a370](https://github.com/ghoshRitesh12/zoro.to-api/commit/b86a3703818f495c03bd714504c1056456c1e405))
+* **newParser:** added  `ScrapedGenreAnime` parser type ([914382e](https://github.com/ghoshRitesh12/zoro.to-api/commit/914382ee516dc9c0d611b0dd280963229779df2c))
+* **newParser:** added `animeAboutInfo` parser ([c2c01f8](https://github.com/ghoshRitesh12/zoro.to-api/commit/c2c01f88afa51e30bad465854bf773e7f98924cd))
+* **newParser:** added `animeGenre` parser ([65f863b](https://github.com/ghoshRitesh12/zoro.to-api/commit/65f863b3c11c98b9f34bfdc57ba8e896110dcf22))
+* **newParserType:** added `ScrapedAnimeAboutInfo` parser type ([904f87a](https://github.com/ghoshRitesh12/zoro.to-api/commit/904f87aa0fd81d18cb5835b1c0e2cea8ada2b19e))
+* **newRoute:** added  `/genre/:name` route ([e849c87](https://github.com/ghoshRitesh12/zoro.to-api/commit/e849c870a0ad018f7fd10ba9835c0d98d7546fd2))
+* **newRoutes:** added `/` & `/home` routes ([4a1a924](https://github.com/ghoshRitesh12/zoro.to-api/commit/4a1a9249b9aee0cc3446c9a1532eb74786220115))
+
+
+
 # [1.2.0](https://github.com/ghoshRitesh12/zoro.to-api/compare/v1.1.2...v1.2.0) (2023-08-02)
 
 
@@ -36,26 +58,6 @@
 * **routes:** added  route ([dd3df97](https://github.com/ghoshRitesh12/zoro.to-api/commit/dd3df97493e4a530e065819bf3f998faad6fb5ee))
 * updated `extractAnimes` & added `extractMostPopularAnimes` ([22ef7a5](https://github.com/ghoshRitesh12/zoro.to-api/commit/22ef7a54f6b3b01366cbad15ab2ca62574d30ecb))
 * updated types export ([45f510f](https://github.com/ghoshRitesh12/zoro.to-api/commit/45f510f9c042dc8bd9950d277cf8d5d5fbdf0b3c))
-
-
-
-## [0.0.1](https://github.com/ghoshRitesh12/zoro.to-api/compare/62efb7b8666d27476a816416f127db7b2162b073...v0.0.1) (2023-08-02)
-
-
-### Features
-
-* added all controllers export ([92dfaad](https://github.com/ghoshRitesh12/zoro.to-api/commit/92dfaad3c624da881800832b5ad3b95ce801bd0a))
-* added all parsers export ([b1357de](https://github.com/ghoshRitesh12/zoro.to-api/commit/b1357dea6eb1d1f845ec793d3954281e622da734))
-* added all types export ([6004273](https://github.com/ghoshRitesh12/zoro.to-api/commit/60042738d67645d0d5a5d7ccf67488ee4c5c135a))
-* added anime category controller ([59c7c23](https://github.com/ghoshRitesh12/zoro.to-api/commit/59c7c23f09ea3303999385f95f2bd488bfb07ca8))
-* added anime category parser ([a3a7414](https://github.com/ghoshRitesh12/zoro.to-api/commit/a3a74145c4ac949646d3dd8ce4248aaa10ffb257))
-* added anime route ([bad7933](https://github.com/ghoshRitesh12/zoro.to-api/commit/bad7933de7f61ea7ed62495c3b26e7b007bd133f))
-* added anime router ([e758c74](https://github.com/ghoshRitesh12/zoro.to-api/commit/e758c74d15a5158003b8fb6d3729c2224503fe68))
-* added anime types ([d4e3012](https://github.com/ghoshRitesh12/zoro.to-api/commit/d4e3012320367f4c8c1bc15f955da07c4d7e2989))
-* added build dir ([e05b90c](https://github.com/ghoshRitesh12/zoro.to-api/commit/e05b90c7a37cdcff35452ce246ca2d94600ee11e))
-* added parser types ([4efe9c9](https://github.com/ghoshRitesh12/zoro.to-api/commit/4efe9c9b094d59809b91244f70b052d30a21db40))
-* added utility props & methods ([38ae13d](https://github.com/ghoshRitesh12/zoro.to-api/commit/38ae13dcdce8b49970d8f51d314856767be40ab1))
-* **husky:** added husky commit-msg check ([62efb7b](https://github.com/ghoshRitesh12/zoro.to-api/commit/62efb7b8666d27476a816416f127db7b2162b073))
 
 
 
