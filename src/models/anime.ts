@@ -19,9 +19,9 @@ export interface Top10Anime extends Pick<Anime, CommonAnimeProps | "episodes"> {
 
 export type Top10AnimeTimePeriod = "day" | "week" | "month";
 
-export interface MostPopularAnime extends Pick<Anime, CommonAnimeProps> {
+export interface MostPopularAnime
+  extends Pick<Anime, CommonAnimeProps | "episodes" | "type"> {
   jname: string | null;
-  otherInfo: string[];
 }
 
 export interface SpotlightAnime
