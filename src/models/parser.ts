@@ -1,14 +1,18 @@
 import { HttpError } from "http-errors";
 import {
   Anime,
+  Season,
   Top10Anime,
+  RelatedAnime,
   TrendingAnime,
   SpotlightAnime,
   TopAiringAnime,
   AnimeCategories,
   MostPopularAnime,
   TopUpcomingAnime,
+  RecommendedAnime,
   LatestEpisodeAnime,
+  AnimeGeneralAboutInfo,
 } from "./anime";
 
 export interface ScrapedAnimeCategory {
@@ -43,4 +47,15 @@ export interface ScrapedHomePage
   latestEpisodeAnimes: Array<LatestEpisodeAnime> | HttpError;
   topUpcomingAnimes: Array<TopUpcomingAnime> | HttpError;
   topAiringAnimes: Array<TopAiringAnime> | HttpError;
+}
+
+export interface ScrapedAnimeAboutInfo
+  extends Pick<ScrapedAnimeSearchResult, "mostPopularAnimes"> {
+  anime: {
+    info: AnimeGeneralAboutInfo;
+    moreInfo: Record<string, string | string[]>;
+  };
+  seasons: Array<Season>;
+  relatedAnimes: Array<RelatedAnime> | HttpError;
+  recommendedAnimes: Array<RecommendedAnime> | HttpError;
 }
