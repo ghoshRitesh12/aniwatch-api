@@ -143,18 +143,6 @@ export function extractMostPopularAnimes(
     const animes: Array<MostPopularAnime> = [];
 
     $(selector).each((i, el) => {
-      const otherInfoSrc = $(el)
-        ?.find(".fd-infor .tick")
-        ?.text()
-        ?.trim()
-        ?.replace(/\n/g, "")
-        .split(" ");
-
-      let otherInfos: string[] = [
-        otherInfoSrc[0] || "",
-        otherInfoSrc?.pop() || "",
-      ];
-
       animes.push({
         id:
           $(el)
@@ -173,7 +161,23 @@ export function extractMostPopularAnimes(
             .find(".film-detail .film-name .dynamic-name")
             .attr("data-jname")
             ?.trim() || null,
-        otherInfo: otherInfos.filter((i) => i !== ""),
+
+        episodes: {
+          sub:
+            Number($(el)?.find(".fd-infor .tick .tick-sub")?.text()?.trim()) ||
+            null,
+          dub:
+            Number($(el)?.find(".fd-infor .tick .tick-dub")?.text()?.trim()) ||
+            null,
+        },
+        type:
+          $(el)
+            ?.find(".fd-infor .tick")
+            ?.text()
+            ?.trim()
+            ?.replace(/[\s\n]+/g, " ")
+            ?.split(" ")
+            ?.pop() || null,
       });
     });
 
