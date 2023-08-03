@@ -59,3 +59,9 @@ export interface ScrapedAnimeAboutInfo
   relatedAnimes: Array<RelatedAnime> | HttpError;
   recommendedAnimes: Array<RecommendedAnime> | HttpError;
 }
+
+export interface ScrapedGenreAnime
+  extends Pick<ScrapedAnimeCategory, CommonAnimeScrapeTypes | "genres">,
+    Pick<ScrapedHomePage, "topAiringAnimes"> {
+  genreName: string;
+}
