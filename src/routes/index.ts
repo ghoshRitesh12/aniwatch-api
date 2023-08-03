@@ -1,6 +1,7 @@
 import { Router, IRouter } from "express";
 import {
   getHomePage,
+  getGenreAnime,
   getAnimeSearch,
   getAnimeCategory,
   getAnimeAboutInfo,
@@ -16,6 +17,9 @@ router.get("/home", getHomePage);
 
 // /anime/info?id=${anime-id}
 router.get("/info", getAnimeAboutInfo);
+
+// /anime/genre?name=${genreName}&page=${page}
+router.get("/genre/:name", getGenreAnime);
 
 // /anime/search?q=${query}&page=${page}
 router.get("/search", getAnimeSearch);
