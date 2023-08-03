@@ -40,6 +40,23 @@ export interface TopUpcomingAnime extends Anime {}
 
 export interface TopAiringAnime extends MostPopularAnime {}
 
+export interface AnimeGeneralAboutInfo
+  extends Pick<Anime, CommonAnimeProps>,
+    Pick<SpotlightAnime, "description"> {
+  stats: {
+    quality: string | null;
+  } & Pick<Anime, "duration" | "episodes" | "rating" | "type">;
+}
+
+export interface RecommendedAnime extends Anime {}
+
+export interface RelatedAnime extends MostPopularAnime {}
+
+export interface Season extends Pick<Anime, CommonAnimeProps> {
+  isCurrent: boolean;
+  title: string | null;
+}
+
 export type AnimeCategories =
   | "most-favorite"
   | "most-popular"
