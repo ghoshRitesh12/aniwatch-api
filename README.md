@@ -64,6 +64,11 @@
 - Installation
   - Local Installation
 - Documentation
+  - [GET Anime Home Page](#get-anime-home-page)
+  - [GET Anime About Info](#get-anime-about-info)
+  - [GET Search Results](#get-search-results)
+  - [GET Genre Animes](#get-genre-animes)
+  - [GET Category Anime](#get-category-anime)
 - Development
 - Support
 - License
@@ -315,7 +320,7 @@ console.log(data);
 
 | Parameter |  Type  |                            Description                            | Required? | Default |
 | :-------: | :----: | :---------------------------------------------------------------: | :-------: | :-----: |
-|   query   | string | The search query, i.e. the title of the item you are looking for. |    Yes    |   --    |
+|     q     | string | The search query, i.e. the title of the item you are looking for. |    Yes    |   --    |
 |   page    | number |                  The page number of the result.                   |    No     |   `1`   |
 
 #### Request sample
@@ -504,7 +509,7 @@ console.log(data);
 
 ## <span id="development">👨‍💻 Development</span>
 
-Stars and pull requests are almost always welcome. If you encounter any bug or want to add a new feature to this api, consider creating a new [issue](https://github.com/ghoshRitesh12/zoro.to-api/issues). If you wish to contribute to this project, read the [CONTRIBUTING.md](https://github.com/ghoshRitesh12/zoro.to-api/blob/main/CONTRIBUTING.md) file.
+Pull requests and stars are always welcome. If you encounter any bug or want to add a new feature to this api, consider creating a new [issue](https://github.com/ghoshRitesh12/zoro.to-api/issues). If you wish to contribute to this project, read the [CONTRIBUTING.md](https://github.com/ghoshRitesh12/zoro.to-api/blob/main/CONTRIBUTING.md) file.
 
 ## <span id="support">🙌 Support</span>
 
