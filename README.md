@@ -77,11 +77,7 @@
 
 ### Local Installation
 
-1. Rename the `.env.example` file to `.env`
-
-2. Fill out all the environment variables.
-
-3. Run the following command to clone the repository and install the dependencies.
+1. Run the following command to clone the repository and install the dependencies.
 
 ```bash
 git clone https://github.com/ghoshRitesh12/zoro.to-api.git
@@ -91,7 +87,9 @@ cd zoro.to-api
 npm ci #or yarn install
 ```
 
-4. Start the server!
+2. Rename the `.env.example` file to `.env` and update any details required
+
+3. Start the server!
 
 ```bash
 npm start #or yarn start
