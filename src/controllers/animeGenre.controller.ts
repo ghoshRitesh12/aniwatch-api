@@ -2,7 +2,7 @@ import { scrapeGenreAnime } from "../parsers";
 import createHttpError from "http-errors";
 import { Request, Response, NextFunction, Handler } from "express";
 
-// /anime/genre/:${genreName}?page=${page}
+// /anime/genre/${name}?page=${page}
 const getGenreAnime: Handler = async (
   req: Request,
   res: Response,
