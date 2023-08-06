@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/server.js",
   "scripts": {
-    "start": "node dist/server.js",
+    "start": "ts-node src/server.ts",
     "dev": "nodemon src/server.ts",
     "build": "tsc -p tsconfig.json",
     "prepare": "husky install",
