@@ -12,7 +12,7 @@ import {
 import createHttpError, { HttpError } from "http-errors";
 import { ScrapedGenreAnime } from "../models";
 
-// /anime/genre?name=${genreName}&page=${page}
+// /anime/genre/${name}?page=${page}
 async function scrapeGenreAnime(
   genreName: string,
   page: number = 1
@@ -22,7 +22,7 @@ async function scrapeGenreAnime(
     animes: [],
     genres: [],
     topAiringAnimes: [],
-    totalPages: 0,
+    totalPages: 1,
     hasNextPage: false,
     currentPage: Number(page),
   };
@@ -63,7 +63,7 @@ async function scrapeGenreAnime(
         : false;
 
     res.totalPages =
-      parseInt(
+      Number(
         $('.pagination > .page-item a[title="Last"]')
           ?.attr("href")
           ?.split("=")
@@ -73,17 +73,12 @@ async function scrapeGenreAnime(
             ?.split("=")
             .pop() ??
           $(".pagination > .page-item.active a")?.text()?.trim()
-      ) || 0;
-
-    if (res.totalPages === 0 && !res.hasNextPage) {
-      res.totalPages = 0;
-    }
+      ) || 1;
 
     res.animes = extractAnimes($, selector);
 
-    if (res.animes.length === 0) {
+    if (res.animes.length === 0 && !res.hasNextPage) {
       res.totalPages = 0;
-      res.hasNextPage = false;
     }
 
     const genreSelector: SelectorType =

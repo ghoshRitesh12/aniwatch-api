@@ -28,7 +28,7 @@ async function scrapeAnimeCategory(
     category,
     currentPage: Number(page),
     hasNextPage: false,
-    totalPages: 0,
+    totalPages: 1,
   };
 
   try {
@@ -56,7 +56,7 @@ async function scrapeAnimeCategory(
         : false;
 
     res.totalPages =
-      parseInt(
+      Number(
         $('.pagination > .page-item a[title="Last"]')
           ?.attr("href")
           ?.split("=")
@@ -66,17 +66,12 @@ async function scrapeAnimeCategory(
             ?.split("=")
             .pop() ??
           $(".pagination > .page-item.active a")?.text()?.trim()
-      ) || 0;
-
-    if (res.totalPages === 0 && !res.hasNextPage) {
-      res.totalPages = 0;
-    }
+      ) || 1;
 
     res.animes = extractAnimes($, selector);
 
-    if (res.animes.length === 0) {
+    if (res.animes.length === 0 && !res.hasNextPage) {
       res.totalPages = 0;
-      res.hasNextPage = false;
     }
 
     const genreSelector: SelectorType =
