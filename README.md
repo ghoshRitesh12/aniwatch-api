@@ -61,17 +61,17 @@
 
 ## Table of Contents
 
-- Installation
-  - Local Installation
-- Documentation
+- [Installation](#installation)
+  - [Local Installation](#local-installation)
+- [Documentation](#documentation)
   - [GET Anime Home Page](#get-anime-home-page)
   - [GET Anime About Info](#get-anime-about-info)
   - [GET Search Results](#get-search-results)
   - [GET Genre Animes](#get-genre-animes)
   - [GET Category Anime](#get-category-anime)
-- Development
-- Support
-- License
+- [Development](#development)
+- [Support](#support)
+- [License](#license)
 
 ## <span id="installation">💻 Installation</span>
 

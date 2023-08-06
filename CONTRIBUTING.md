@@ -4,11 +4,13 @@ Thank you for your interest in contributing to zoro.to-api. We appreciate whatev
 
 ## Table of Contents
 
-- Types of contributions we are looking for
-- Ground Rules & Expectations
-- How To Contribute
-- Prerequisites
-- Commit Messages
+- [Types of contributions we are looking for](#types-of-contributions-we-are-looking-for)
+- [Ground Rules & Expectations](#ground-rules--expectations)
+- [How To Contribute](#how-to-contribute)
+- [Prerequisites](#prerequisites)
+  - [Clone the repository](#clone-the-repository)
+  - [Project Structure](#project-structure)
+- [Commit Messages](#commit-messages)
 
 ## Types of contributions we are looking for
 
