@@ -18,7 +18,7 @@ router.get("/home", getHomePage);
 // /anime/info?id=${anime-id}
 router.get("/info", getAnimeAboutInfo);
 
-// /anime/genre?name=${genreName}&page=${page}
+// /anime/genre/${name}?page=${page}
 router.get("/genre/:name", getGenreAnime);
 
 // /anime/search?q=${query}&page=${page}
