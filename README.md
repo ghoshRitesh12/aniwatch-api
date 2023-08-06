@@ -117,83 +117,83 @@ console.log(data);
 
 #### Response Schema
 
-```javascript
+```json
 {
-  genres: ["Action", "Cars", "Adventure", ...],
-  latestEpisodeAnimes: [
+  "genres": ["Action", "Cars", "Adventure", ...],
+  "latestEpisodeAnimes": [
     {
-      id: string,
-      name: string,
-      poster: string,
-      duration: string,
-      type: string,
-      rating: string,
-      episodes: {
-        sub: number,
-        dub: number,
+      "id": "string",
+      "name": "string",
+      "poster": "string",
+      "duration": "string",
+      "type": "string",
+      "rating": "string",
+      "episodes": {
+        "sub": "number",
+        "dub": "number",
       }
     },
     {...},
   ],
-  spotlightAnimes: [
+  "spotlightAnimes": [
     {
-      id: string,
-      name: string,
-      jname: string,
-      poster: string,
-      description: string,
-      rank: number,
+      "id": "string",
+      "name": "string",
+      "jname": "string",
+      "poster": "string",
+      "description": "string",
+      "rank": "number",
     },
     {...},
   ],
-  top10Animes: {
-    today: [
+  "top10Animes": {
+    "today": [
       {
-        episodes: {
-          sub: number,
-          dub: number,
+        "episodes": {
+          "sub": "number",
+          "dub": "number",
         },
-        id: string,
-        name: string,
-        poster: string,
-        rank: number
+        "id": "string",
+        "name": "string",
+        "poster": "string",
+        "rank": "number"
       },
       {...},
     ],
-    month: [...],
-    week: [...]
+    "month": [...],
+    "week": [...]
   },
-  topAiringAnimes: [
+  "topAiringAnimes": [
     {
-      id: string,
-      name: string,
-      jname: string,
-      poster: string,
+      "id": "string",
+      "name": "string",
+      "jname": "string",
+      "poster": "string",
     },
     {...},
   ],
-  topUpcomingAnimes: [
+  "topUpcomingAnimes": [
     {
-      id: string,
-      name: string,
-      poster: string,
-      duration: string,
-      type: string,
-      rating: string,
-      episodes: {
-        sub: number,
-        dub: number,
+      "id": "string",
+      "name": "string",
+      "poster": "string",
+      "duration": "string",
+      "type": "string",
+      "rating": "string",
+      "episodes": {
+        "sub": "number",
+        "dub": "number",
       }
     },
     {...},
   ],
-  trendingAnimes: [
+  "trendingAnimes": [
     {
-      id: string,
-      name: string,
-      poster: string,
-      rank: number,
-    },
+      "id": "string",
+      "name": "string",
+      "poster": "string",
+      "rank": "number",
+    "},"
     {...},
   ],
 }
@@ -207,9 +207,9 @@ console.log(data);
 
 #### Query Parameters
 
-| Parameter |  Type  |     Description      | Required? | Default |
-| :-------: | :----: | :------------------: | :-------: | :-----: |
-|    id     | string | The unique anime id. |    Yes    |   --    |
+| Parameter |   Type   |     Description      | Required? | Default |
+| :-------: | :------: | :------------------: | :-------: | :-----: |
+|   `id`    | "string" | The unique anime id. |    Yes    |   --    |
 
 #### Request sample
 
@@ -223,85 +223,85 @@ console.log(data);
 
 #### Response Schema
 
-```javascript
+```json
 {
-  anime: [
-    info: {
-      id: string,
-      name: string,
-      poster: string,
-      description: string,
-      stats: {
-        rating: string,
-        quality: string,
-        episodes: {
-          sub: number,
-          dub: number
+  "anime": [
+    "info": {
+      "id": "string",
+      "name": "string"","
+      "poster": "string",
+      "description": "string",
+      "stats": {
+        "rating": "string",
+        "quality": "string",
+        "episodes": {
+          "sub": "number",
+          "dub": "number"
         },
-        type: string,
-        duration: string
+        "type": "string",
+        "duration": "string"
       }
     }
-    moreInfo: {
-      aired: string,
-      genres: ["Action", "Mystery", ...],
-      status: string,
-      studios: string,
-      duration: string
+    "moreInfo": {
+      "aired": "string",
+      "genres": ["Action", "Mystery", ...],
+      "status": "string",
+      "studios": "string",
+      "duration": "string"
       ...
     }
   ],
-  mostPopularAnimes: [
+  "mostPopularAnimes": [
     {
-      episodes: {
-        sub: number,
-        dub: number,
+      "episodes": {
+        "sub": "number",
+        "dub": "number",
       },
-      id: string,
-      jname: string,
-      name: string,
-      poster: string,
-      type: string
+      "id": "string",
+      "jname": "string",
+      "name": "string",
+      "poster": "string",
+      "type": "string"
     },
     {...},
   ],
-  recommendedAnimes: [
+  "recommendedAnimes": [
     {
-      id: string,
-      name: string,
-      poster: string,
-      duration: string,
-      type: string,
-      rating: string,
-      episodes: {
-        sub: number,
-        dub: number,
+      "id": "string",
+      "name": "string",
+      "poster": "string",
+      "duration": "string",
+      "type": "string",
+      "rating": "string",
+      "episodes": {
+        "sub": "number",
+        "dub": "number",
       }
     },
     {...},
   ],
-  relatedAnimes: [
+  "relatedAnimes": [
     {
-      id: string,
-      name: string,
-      poster: string,
-      duration: string,
-      type: string,
-      rating: string,
-      episodes: {
-        sub: number,
-        dub: number,
+      "id": "string",
+      "name": "string",
+      "poster": "string",
+      "duration": "string",
+      "type": "string",
+      "rating": "string",
+      "episodes": {
+        "sub": "number",
+        "dub": "number",
       }
     },
     {...},
   ],
-  seasons: [
+  "seasons": [
     {
-      id: string,
-      name: string,
-      title: string,
-      poster: string,
-      isCurrent: boolean
+      "id": "string",
+      "name": "string",
+      "title": "string",
+      "poster": "string",
+      "isCurrent": "boolean"
     },
     {...}
   ]
@@ -316,10 +316,10 @@ console.log(data);
 
 #### Query Parameters
 
-| Parameter |  Type  |                            Description                            | Required? | Default |
-| :-------: | :----: | :---------------------------------------------------------------: | :-------: | :-----: |
-|     q     | string | The search query, i.e. the title of the item you are looking for. |    Yes    |   --    |
-|   page    | number |                  The page number of the result.                   |    No     |   `1`   |
+| Parameter |   Type   |                            Description                            | Required? | Default |
+| :-------: | :------: | :---------------------------------------------------------------: | :-------: | :-----: |
+|    `q`    | "string" | The search query, i.e. the title of the item you are looking for. |    Yes    |   --    |
+|  `page`   |  number  |                  The page number of the result.                   |    No     |   `1`   |
 
 #### Request sample
 
@@ -331,40 +331,40 @@ console.log(data);
 
 #### Response Schema
 
-```javascript
+```json
 {
-  animes: [
+  "animes": [
     {
-      id: string,
-      name: string,
-      poster: string,
-      duration: string,
-      type: string,
-      rating: string,
-      episodes: {
-        sub: number,
-        dub: number,
+      "id": "string",
+      "name": "string",
+      "poster": "string",
+      "duration": "string",
+      "type": "string",
+      "rating": "string",
+      "episodes": {
+        "sub": "number",
+        "dub": "number",
       }
     },
     {...},
   ],
-  mostPopularAnimes: [
+  "mostPopularAnimes": [
     {
-      episodes: {
-        sub: number,
-        dub: number,
+      "episodes": {
+        "sub": "number",
+        "dub": "number",
       },
-      id: string,
-      jname: string,
-      name: string,
-      poster: string,
-      type: string
+      "id": "string",
+      "jname": "string",
+      "name": "string",
+      "poster": "string",
+      "type": "string"
     },
     {...},
   ],
-  totalPages: 1,
-  currentPage: 1,
-  hasNextPage: false
+  "totalPages": 1,
+  "currentPage": 1,
+  "hasNextPage": false
 }
 ```
 
@@ -376,15 +376,15 @@ console.log(data);
 
 #### Path Parameters
 
-| Parameter |  Type  |       Description        | Required? | Default |
-| :-------: | :----: | :----------------------: | :-------: | :-----: |
-|   name    | string | The name of anime genre. |    Yes    |   --    |
+| Parameter |   Type   |       Description        | Required? | Default |
+| :-------: | :------: | :----------------------: | :-------: | :-----: |
+|  `name`   | "string" | The name of anime genre. |    Yes    |   --    |
 
 #### Query Parameters
 
 | Parameter |  Type  |          Description           | Required? | Default |
 | :-------: | :----: | :----------------------------: | :-------: | :-----: |
-|   page    | number | The page number of the result. |    No     |   `1`   |
+|  `page`   | number | The page number of the result. |    No     |   `1`   |
 
 #### Request sample
 
@@ -396,42 +396,42 @@ console.log(data);
 
 #### Response Schema
 
-```javascript
+```json
 {
-  animes: [
+  "animes": [
     {
-      id: string,
-      name: string,
-      poster: string,
-      duration: string,
-      type: string,
-      rating: string,
-      episodes: {
-        sub: number,
-        dub: number,
+      "id": "string",
+      "name": "string",
+      "poster": "string",
+      "duration": "string",
+      "type": "string",
+      "rating": "string",
+      "episodes": {
+        "sub": "number",
+        "dub": "number",
       }
     },
     {...},
   ],
-  genreName: string,
-  genres: ["Action", "Cars", "Adventure", ...]
-  topAiringAnimes: [
+  "genreName": "string",
+  "genres": ["Action", "Cars", "Adventure", ...]
+  "topAiringAnimes": [
     {
-      episodes: {
-        sub: number,
-        dub: number,
+      "episodes": {
+        "sub": "number",
+        "dub": "number",
       },
-      id: string,
-      jname: string,
-      name: string,
-      poster: string,
-      type: string
+      "id": "string",
+      "jname": "string",
+      "name": "string",
+      "poster": "string",
+      "type": "string"
     },
     {...},
   ],
-  totalPages: 38,
-  currentPage: 2,
-  hasNextPage: true
+  "totalPages": 38,
+  "currentPage": 2,
+  "hasNextPage": true
 }
 ```
 
@@ -443,15 +443,15 @@ console.log(data);
 
 #### Path Parameters
 
-| Parameter |  Type  |      Description       | Required? | Default |
-| :-------: | :----: | :--------------------: | :-------: | :-----: |
-| category  | string | The category of anime. |    Yes    |   --    |
+| Parameter  |   Type   |      Description       | Required? | Default |
+| :--------: | :------: | :--------------------: | :-------: | :-----: |
+| `category` | "string" | The category of anime. |    Yes    |   --    |
 
 #### Query Parameters
 
 | Parameter |  Type  |          Description           | Required? | Default |
 | :-------: | :----: | :----------------------------: | :-------: | :-----: |
-|   page    | number | The page number of the result. |    No     |   `1`   |
+|  `page`   | number | The page number of the result. |    No     |   `1`   |
 
 #### Request sample
 
@@ -463,45 +463,45 @@ console.log(data);
 
 #### Response Schema
 
-```javascript
+```json
 {
-  animes: [
+  "animes": [
     {
-      id: string,
-      name: string,
-      poster: string,
-      duration: string,
-      type: string,
-      rating: string,
-      episodes: {
-        sub: number,
-        dub: number,
+      "id": "string",
+      "name": "string",
+      "poster": "string",
+      "duration": "string",
+      "type": "string",
+      "rating": "string",
+      "episodes": {
+        "sub": "number",
+        "dub": "number",
       }
     },
     {...},
   ],
-  category: string,
-  genres: ["Action", "Cars", "Adventure", ...]
-  top10Animes: {
-    today: [
+  "category": "string",
+  "genres": ["Action", "Cars", "Adventure", ...]
+  "top10Animes": {
+    "today": [
       {
-        episodes: {
-          sub: number,
-          dub: number,
+        "episodes": {
+          "sub": "number",
+          "dub": "number",
         },
-        id: string,
-        name: string,
-        poster: string,
-        rank: number
+        "id": "string",
+        "name": "string",
+        "poster": "string",
+        "rank": "number"
       },
       {...},
     ],
-    month: [...],
-    week: [...]
+    "month": [...],
+    "week": [...]
   },
-  totalPages: 100,
-  currentPage: 2,
-  hasNextPage: true
+  "totalPages": 100,
+  "currentPage": 2,
+  "hasNextPage": true
 }
 ```
 
