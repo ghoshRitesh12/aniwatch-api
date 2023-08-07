@@ -18,7 +18,7 @@
     <strong>
       <a 
         href="https://github.com/ghoshRitesh12/aniwatch-api/issues/new?assignees=ghoshRitesh12&labels=bug&template=bug-report.yml"
-      >
+      > 
         Bug report
       </a>
       ·
