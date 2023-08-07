@@ -1,7 +1,7 @@
 {
-  "name": "zoro.to-api",
+  "name": "aniwatch-api",
   "version": "1.5.0",
-  "description": "Node Express API for obtaining anime information from zoro.to",
+  "description": "Node Express API for obtaining anime information from aniwatch",
   "main": "ts-node src/server.ts",
   "scripts": {
     "start": "ts-node src/server.ts",
@@ -12,15 +12,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ghoshRitesh12/zoro.to-api.git"
+    "url": "git+https://github.com/ghoshRitesh12/aniwatch-api.git"
   },
   "bugs": {
-    "url": "https://github.com/ghoshRitesh12/zoro.to-api/issues"
+    "url": "https://github.com/ghoshRitesh12/aniwatch-api/issues"
   },
-  "homepage": "https://github.com/ghoshRitesh12/zoro.to-api#readme",
+  "homepage": "https://github.com/ghoshRitesh12/aniwatch-api#readme",
   "keywords": [
     "anime",
-    "zoro"
+    "aniwatch"
   ],
   "author": "https://github.com/ghoshRitesh12",
   "license": "MIT",
