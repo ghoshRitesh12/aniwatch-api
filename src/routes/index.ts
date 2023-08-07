@@ -1,8 +1,8 @@
 import { Router, IRouter } from "express";
 import {
-  getHomePage,
   getGenreAnime,
   getAnimeSearch,
+  getHomePageInfo,
   getAnimeCategory,
   getAnimeAboutInfo,
 } from "../controllers";
@@ -13,7 +13,7 @@ const router: IRouter = Router();
 router.get("/", (_, res) => res.redirect("/"));
 
 // /anime/home
-router.get("/home", getHomePage);
+router.get("/home", getHomePageInfo);
 
 // /anime/info?id=${anime-id}
 router.get("/info", getAnimeAboutInfo);
