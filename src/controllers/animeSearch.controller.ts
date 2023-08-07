@@ -1,31 +1,32 @@
-import { scrapeAnimeSearch } from "../parsers";
 import createHttpError from "http-errors";
-import { AnimeCategories } from "../models";
-import { Request, Response, NextFunction, Handler } from "express";
+import { RequestHandler } from "express";
+import { scrapeAnimeSearch } from "../parsers";
+import { AnimeSearchQueryParams } from "../models/controllers";
 
 // /anime/search?q=${query}&page=${page}
-const getAnimeSearch: Handler = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
+const getAnimeSearch: RequestHandler<
+  unknown,
+  Awaited<ReturnType<typeof scrapeAnimeSearch>>,
+  unknown,
+  AnimeSearchQueryParams
+> = async (req, res, next) => {
   try {
-    const q: string | null = req.query.q
+    const query: string | null = req.query.q
       ? decodeURIComponent(req.query.q as string)
       : null;
     const page: number = req.query.page
       ? Number(decodeURIComponent(req.query?.page as string))
       : 1;
 
-    if (q === null) {
+    if (query === null) {
       throw createHttpError.BadGateway("Search keyword required");
     }
 
-    const data = await scrapeAnimeSearch(q, page);
+    const data = await scrapeAnimeSearch(query, page);
 
     res.status(200).json(data);
   } catch (err: any) {
-    // console.error(err);
+    console.error(err);
     next(err);
   }
 };

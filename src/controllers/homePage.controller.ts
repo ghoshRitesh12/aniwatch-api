@@ -1,12 +1,11 @@
+import { RequestHandler } from "express";
 import { scrapeHomePage } from "../parsers";
-import { Request, Response, NextFunction, Handler } from "express";
 
 // /anime/home
-const getHomePage: Handler = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
+const getHomePageInfo: RequestHandler<
+  unknown,
+  Awaited<ReturnType<typeof scrapeHomePage>>
+> = async (req, res, next) => {
   try {
     const data = await scrapeHomePage();
     res.status(200).json(data);
@@ -16,4 +15,4 @@ const getHomePage: Handler = async (
   }
 };
 
-export default getHomePage;
+export default getHomePageInfo;

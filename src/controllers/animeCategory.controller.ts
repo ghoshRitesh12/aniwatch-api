@@ -1,30 +1,37 @@
-import { scrapeAnimeCategory } from "../parsers";
 import createHttpError from "http-errors";
-import { AnimeCategories } from "../models";
-import { Request, Response, NextFunction, Handler } from "express";
+import { RequestHandler } from "express";
+import { AnimeCategories } from "../models/anime";
+import { scrapeAnimeCategory } from "../parsers";
+import {
+  CategoryAnimePathParams,
+  CategoryAnimeQueryParams,
+} from "../models/controllers";
 
 // /anime/:category?page=${page}
-const getAnimeCategory: Handler = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
+const getAnimeCategory: RequestHandler<
+  CategoryAnimePathParams,
+  Awaited<ReturnType<typeof scrapeAnimeCategory>>,
+  unknown,
+  CategoryAnimeQueryParams
+> = async (req, res, next) => {
   try {
-    const category: AnimeCategories = decodeURIComponent(
-      req.params.category
-    ) as AnimeCategories;
+    const category = req.params.category
+      ? decodeURIComponent(req.params.category)
+      : null;
 
     const page: number = req.query.page
       ? Number(decodeURIComponent(req.query?.page as string))
       : 1;
 
-    if (!category) throw createHttpError.BadRequest("category required");
+    if (category === null) {
+      throw createHttpError.BadRequest("category required");
+    }
 
-    const data = await scrapeAnimeCategory(category, page);
+    const data = await scrapeAnimeCategory(category as AnimeCategories, page);
 
     res.status(200).json(data);
   } catch (err: any) {
-    // console.error(err);
+    console.error(err);
     next(err);
   }
 };

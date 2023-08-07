@@ -1,19 +1,25 @@
-import { scrapeAnimeAboutInfo } from "../parsers";
 import createHttpError from "http-errors";
-import { Request, Response, NextFunction, Handler } from "express";
+import { RequestHandler } from "express";
+import { scrapeAnimeAboutInfo } from "../parsers";
+import { AnimeAboutInfoQueryParams } from "../models/controllers";
 
 // /anime/info?id=${anime-id}
-const getAnimeAboutInfo: Handler = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
+const getAnimeAboutInfo: RequestHandler<
+  unknown,
+  Awaited<ReturnType<typeof scrapeAnimeAboutInfo>>,
+  unknown,
+  AnimeAboutInfoQueryParams
+> = async (req, res, next) => {
   try {
-    const id = req.query.id ? decodeURIComponent(req.query.id as string) : null;
-    if (id === null)
-      throw createHttpError.BadRequest("Anime unique id required");
+    const animeId = req.query.id
+      ? decodeURIComponent(req.query.id as string)
+      : null;
 
-    const data = await scrapeAnimeAboutInfo(id);
+    if (animeId === null) {
+      throw createHttpError.BadRequest("Anime unique id required");
+    }
+
+    const data = await scrapeAnimeAboutInfo(animeId);
 
     res.status(200).json(data);
   } catch (err: any) {

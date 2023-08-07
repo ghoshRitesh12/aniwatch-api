@@ -1,13 +1,18 @@
-import { scrapeGenreAnime } from "../parsers";
 import createHttpError from "http-errors";
-import { Request, Response, NextFunction, Handler } from "express";
+import { RequestHandler } from "express";
+import { scrapeGenreAnime } from "../parsers";
+import {
+  GenreAnimePathParams,
+  GenreAnimeQueryParams,
+} from "../models/controllers";
 
 // /anime/genre/${name}?page=${page}
-const getGenreAnime: Handler = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
+const getGenreAnime: RequestHandler<
+  GenreAnimePathParams,
+  Awaited<ReturnType<typeof scrapeGenreAnime>>,
+  unknown,
+  GenreAnimeQueryParams
+> = async (req, res, next) => {
   try {
     const name: string | null = req.params.name
       ? decodeURIComponent(req.params.name as string)
