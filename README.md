@@ -1,7 +1,7 @@
 <p align="center">
-  <a href="https://github.com/ghoshRitesh12/zoro.to-api">
+  <a href="https://github.com/ghoshRitesh12/aniwatch-api">
     <img 
-      src="https://github.com/ghoshRitesh12/zoro.to-api/blob/main/public/img/img1.gif?raw=true" 
+      src="https://github.com/ghoshRitesh12/aniwatch-api/blob/main/public/img/img1.gif?raw=true" 
       alt="Logo" 
       width="120" 
       height="120"
@@ -13,17 +13,17 @@
 # <p align="center">Aniwatch API</p>
 
   <p align="center">
-    A free restful API serving anime information from <a href="https://aniwatch.to">aniwatch.to</a>
+    A free restful API serving anime information from <a href="https://aniwatch.to" target="_blank">aniwatch.to</a>
     <br/><br/>
     <strong>
       <a 
-        href="https://github.com/ghoshRitesh12/zoro.to-api/issues/new?assignees=ghoshRitesh12&labels=bug&template=bug-report.yml"
+        href="https://github.com/ghoshRitesh12/aniwatch-api/issues/new?assignees=ghoshRitesh12&labels=bug&template=bug-report.yml"
       >
         Bug report
       </a>
       ·
       <a 
-        href="https://github.com/ghoshRitesh12/zoro.to-api/issues/new?assignees=ghoshRitesh12&labels=enhancement&template=feature-request.md"
+        href="https://github.com/ghoshRitesh12/aniwatch-api/issues/new?assignees=ghoshRitesh12&labels=enhancement&template=feature-request.md"
       >
         Feature request
       </a>
@@ -31,25 +31,25 @@
   </p>
   <p align="center">
     <a 
-      href="https://github.com/ghoshRitesh12/zoro.to-api/actions/workflows/codeql-analysis.yml"
+      href="https://github.com/ghoshRitesh12/aniwatch-api/actions/workflows/codeql-analysis.yml"
     >
       <img 
-        src="https://github.com/ghoshRitesh12/zoro.to-api/actions/workflows/codeql-analysis.yml/badge.svg" 
+        src="https://github.com/ghoshRitesh12/aniwatch-api/actions/workflows/codeql-analysis.yml/badge.svg" 
         alt="codeql"
       />
     </a>
     <a 
-      href="https://github.com/ghoshRitesh12/zoro.to-api"
+      href="https://github.com/ghoshRitesh12/aniwatch-api"
     >
       <img 
-        src="https://img.shields.io/github/stars/ghoshRitesh12/zoro.to-api" alt="stars"
+        src="https://img.shields.io/github/stars/ghoshRitesh12/aniwatch-api" alt="stars"
       >
     </a>
     <a 
       href="https://github.com/consumet/extensions/blob/master/LICENSE"
     >
       <img 
-        src="https://img.shields.io/github/license/ghoshRitesh12/zoro.to-api" alt="GitHub"
+        src="https://img.shields.io/github/license/ghoshRitesh12/aniwatch-api" alt="GitHub"
       />
     </a>
   </p>
@@ -510,7 +510,7 @@ console.log(data);
 
 ## <span id="development">👨‍💻 Development</span>
 
-Pull requests and stars are always welcome. If you encounter any bug or want to add a new feature to this api, consider creating a new [issue](https://github.com/ghoshRitesh12/zoro.to-api/issues). If you wish to contribute to this project, read the [CONTRIBUTING.md](https://github.com/ghoshRitesh12/zoro.to-api/blob/main/CONTRIBUTING.md) file.
+Pull requests and stars are always welcome. If you encounter any bug or want to add a new feature to this api, consider creating a new [issue](https://github.com/ghoshRitesh12/aniwatch-api/issues). If you wish to contribute to this project, read the [CONTRIBUTING.md](https://github.com/ghoshRitesh12/aniwatch-api/blob/main/CONTRIBUTING.md) file.
 
 ## <span id="support">🙌 Support</span>
 
@@ -518,4 +518,4 @@ Don't forget to leave a star 🌟
 
 ## <span id="license">📜 License</span>
 
-[MIT License](https://github.com/ghoshRitesh12/zoro.to-api/blob/main/LICENSE)
+[MIT License](https://github.com/ghoshRitesh12/aniwatch-api/blob/main/LICENSE)
