@@ -1,3 +1,13 @@
+# [1.5.0](https://github.com/ghoshRitesh12/zoro.to-api/compare/v1.4.0...v1.5.0) (2023-08-07)
+
+
+### Features
+
+* added rate limit config ([3014ab8](https://github.com/ghoshRitesh12/zoro.to-api/commit/3014ab8ce41d0b11b56ab7c6c32bd0f5c75fee3c))
+* rate limited endpoints ([5a82179](https://github.com/ghoshRitesh12/zoro.to-api/commit/5a82179174c63c67ce8371aa9628529dafd115b6))
+
+
+
 # [1.4.0](https://github.com/ghoshRitesh12/zoro.to-api/compare/v1.3.6...v1.4.0) (2023-08-07)
 
 
@@ -24,15 +34,6 @@
 
 
 ## [1.3.4](https://github.com/ghoshRitesh12/zoro.to-api/compare/v1.3.3...v1.3.4) (2023-08-06)
-
-
-
-## [1.3.3](https://github.com/ghoshRitesh12/zoro.to-api/compare/v1.3.2...v1.3.3) (2023-08-06)
-
-
-### Bug Fixes
-
-* **totalPages:** fixed bug showing wrong `totalPages` ([96085a3](https://github.com/ghoshRitesh12/zoro.to-api/commit/96085a32b1aa8f882464da2a47218997b26b8145))
 
 
 
