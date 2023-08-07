@@ -1,3 +1,20 @@
+# [1.4.0](https://github.com/ghoshRitesh12/zoro.to-api/compare/v1.3.6...v1.4.0) (2023-08-07)
+
+
+### Features
+
+* added controller request handler types ([10e46b1](https://github.com/ghoshRitesh12/zoro.to-api/commit/10e46b1002dcbbed5202936f1028fae550d9f765))
+* added home page controller ([3d81a6c](https://github.com/ghoshRitesh12/zoro.to-api/commit/3d81a6c422ac4efd957961d190d7638ab0695062))
+* added index page ([e1b37a5](https://github.com/ghoshRitesh12/zoro.to-api/commit/e1b37a5b5ee16632e6b32e72e65f6420492e27bc))
+* **controllerTypes:** added request handler types ([84a7981](https://github.com/ghoshRitesh12/zoro.to-api/commit/84a79810c358dece1b3bd2b013a2d788ec100f44))
+
+
+### Reverts
+
+* **parserTypes:** refactored parser types ([8a5884b](https://github.com/ghoshRitesh12/zoro.to-api/commit/8a5884b75288ca6fa5870bc026b23d23e1625ebe))
+
+
+
 ## [1.3.6](https://github.com/ghoshRitesh12/zoro.to-api/compare/v1.3.5...v1.3.6) (2023-08-06)
 
 
@@ -16,10 +33,6 @@
 ### Bug Fixes
 
 * **totalPages:** fixed bug showing wrong `totalPages` ([96085a3](https://github.com/ghoshRitesh12/zoro.to-api/commit/96085a32b1aa8f882464da2a47218997b26b8145))
-
-
-
-## [1.3.2](https://github.com/ghoshRitesh12/zoro.to-api/compare/v1.3.1...v1.3.2) (2023-08-06)
 
 
 
