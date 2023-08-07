@@ -9,8 +9,9 @@ import {
   extractTop10Animes,
 } from "../utils";
 
+import { AnimeCategories } from "../models/anime";
 import createHttpError, { HttpError } from "http-errors";
-import { ScrapedAnimeCategory, AnimeCategories } from "../models";
+import { ScrapedAnimeCategory } from "../models/parsers";
 
 // /anime/:category?page=${page}
 async function scrapeAnimeCategory(

@@ -10,7 +10,7 @@ import {
 } from "../utils";
 
 import createHttpError, { HttpError } from "http-errors";
-import { ScrapedHomePage } from "../models";
+import { ScrapedHomePage } from "../models/parsers";
 
 // /anime/home
 async function scrapeHomePage(): Promise<ScrapedHomePage | HttpError> {

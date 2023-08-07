@@ -1,5 +1,7 @@
 import axios, { AxiosError } from "axios";
+import createHttpError, { HttpError } from "http-errors";
 import { load, CheerioAPI, SelectorType } from "cheerio";
+
 import {
   SRC_BASE_URL,
   ACCEPT_HEADER,
@@ -8,9 +10,7 @@ import {
   extractMostPopularAnimes,
   extractAnimes,
 } from "../utils";
-
-import createHttpError, { HttpError } from "http-errors";
-import { ScrapedGenreAnime } from "../models";
+import { ScrapedGenreAnime } from "../models/parsers";
 
 // /anime/genre/${name}?page=${page}
 async function scrapeGenreAnime(

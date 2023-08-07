@@ -10,7 +10,7 @@ import {
 } from "../utils";
 
 import createHttpError, { HttpError } from "http-errors";
-import { ScrapedAnimeSearchResult } from "../models";
+import { ScrapedAnimeSearchResult } from "../models/parsers";
 
 // /anime/search?q=${query}&page=${page}
 async function scrapeAnimeSearch(
