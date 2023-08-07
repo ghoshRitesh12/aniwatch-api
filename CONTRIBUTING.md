@@ -1,6 +1,6 @@
-# Contributing to zoro.to-api
+# Contributing to aniwatch-api
 
-Thank you for your interest in contributing to zoro.to-api. We appreciate whatever form of contribution you are willing to make. Every contribution counts ✨
+Thank you for your interest in contributing to aniwatch-api. We appreciate whatever form of contribution you are willing to make. Every contribution counts ✨
 
 ## Table of Contents
 
@@ -18,7 +18,7 @@ In short, we welcome any sort of contribution you are willing to make as each an
 
 - Documentation improvements: from minor typos to major document overhauls
 - Helping others by answering questions in pull requests.
-- Fixing known [bugs](https://github.com/ghoshRitesh12/zoro.to-api/issues?q=is%3Aopen).
+- Fixing known [bugs](https://github.com/ghoshRitesh12/aniwatch-api/issues?q=is%3Aopen).
 
 ## Ground Rules & Expectations
 
@@ -28,7 +28,7 @@ Before we begin, here are a few things we anticipate from you and that you shoul
 
 ## How To Contribute
 
-If you'd like to contribute, start by searching through the [issues](https://github.com/ghoshRitesh12/zoro.to-api/issues) and [pull requests](https://github.com/ghoshRitesh12/zoro.to-api/pulls) to see whether someone else has raised a similar idea or question.
+If you'd like to contribute, start by searching through the [issues](https://github.com/ghoshRitesh12/aniwatch-api/issues) and [pull requests](https://github.com/ghoshRitesh12/aniwatch-api/pulls) to see whether someone else has raised a similar idea or question.
 
 If you don't see your idea listed, and you think it fits into the goals of this guide, you may do one of the following:
 
@@ -49,11 +49,11 @@ To contribute to this project, you must know the following:
 
 ### Clone the repository
 
-1. [Fork the repository](https://github.com/ghoshRitesh12/zoro.to-api/fork)
+1. [Fork the repository](https://github.com/ghoshRitesh12/aniwatch-api/fork)
 2. Clone your fork to your local machine using the following command (replace <your_username> with your actual GitHub username)
 
 ```bash
-git clone https://github.com/<your_username>/zoro.to-api
+git clone https://github.com/<your_username>/aniwatch-api
 ```
 
 3. Creating a new branch <br/>
