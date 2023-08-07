@@ -1,3 +1,7 @@
+## [1.5.1](https://github.com/ghoshRitesh12/zoro.to-api/compare/v1.5.0...v1.5.1) (2023-08-07)
+
+
+
 # [1.5.0](https://github.com/ghoshRitesh12/zoro.to-api/compare/v1.4.0...v1.5.0) (2023-08-07)
 
 
@@ -30,10 +34,6 @@
 
 
 ## [1.3.5](https://github.com/ghoshRitesh12/zoro.to-api/compare/v1.3.4...v1.3.5) (2023-08-06)
-
-
-
-## [1.3.4](https://github.com/ghoshRitesh12/zoro.to-api/compare/v1.3.3...v1.3.4) (2023-08-06)
 
 
 
