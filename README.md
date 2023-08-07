@@ -10,10 +10,10 @@
     />
   </a>
 
-# <p align="center">Zoro.to API</p>
+# <p align="center">Aniwatch API</p>
 
   <p align="center">
-    A free restful API serving anime information from <a href="https://aniwatch.to">zoro.to</a>
+    A free restful API serving anime information from <a href="https://aniwatch.to">aniwatch.to</a>
     <br/><br/>
     <strong>
       <a 
@@ -80,8 +80,8 @@
 1. Clone the repository and move into the directory.
 
 ```bash
-git clone https://github.com/ghoshRitesh12/zoro.to-api.git
-cd zoro.to-api
+git clone https://github.com/ghoshRitesh12/aniwatch-api.git
+cd aniwatch-api
 ```
 
 2. Install all the dependencies.
