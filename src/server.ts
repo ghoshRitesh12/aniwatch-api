@@ -4,6 +4,7 @@ import express, { Application } from "express";
 
 import animeRouter from "./routes";
 import { homePage } from "./controllers";
+import { ratelimit } from "./config/ratelimit";
 import errorHandler from "./config/errorHandler";
 import notFoundHandler from "./config/notFoundHandler";
 
@@ -12,6 +13,7 @@ const PORT: number = env.PORT || 4000;
 
 app.use(morgan("dev"));
 
+app.use(ratelimit);
 app.get("/", homePage);
 app.use("/anime", animeRouter);
 
