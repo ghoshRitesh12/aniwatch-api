@@ -39,6 +39,13 @@
       />
     </a>
     <a 
+      href="https://github.com/ghoshRitesh12/aniwatch-api/actions/workflows/test.yml"
+    >
+      <img 
+        src="https://github.com/ghoshRitesh12/aniwatch-api/actions/workflows/test.yml/badge.svg" alt="test coverage"
+      >
+    </a>
+    <a 
       href="https://github.com/ghoshRitesh12/aniwatch-api"
     >
       <img 
