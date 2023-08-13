@@ -1,3 +1,7 @@
+## [1.6.1](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.6.0...v1.6.1) (2023-08-13)
+
+
+
 # [1.6.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.5.1...v1.6.0) (2023-08-13)
 
 
@@ -50,10 +54,6 @@
 ### Reverts
 
 * **parserTypes:** refactored parser types ([8a5884b](https://github.com/ghoshRitesh12/aniwatch-api/commit/8a5884b75288ca6fa5870bc026b23d23e1625ebe))
-
-
-
-## [1.3.6](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.3.5...v1.3.6) (2023-08-06)
 
 
 
