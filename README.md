@@ -67,6 +67,8 @@
   - [GET Anime Home Page](#get-anime-home-page)
   - [GET Anime About Info](#get-anime-about-info)
   - [GET Search Results](#get-search-results)
+  - [GET Search Suggestions](#get-search-suggestions)
+  - [GET Producer Animes](#get-producer-animes)
   - [GET Genre Animes](#get-genre-animes)
   - [GET Category Anime](#get-category-anime)
 - [Development](#development)
@@ -79,26 +81,24 @@
 
 1. Clone the repository and move into the directory.
 
-```bash
-git clone https://github.com/ghoshRitesh12/aniwatch-api.git
-cd aniwatch-api
-```
+   ```bash
+   git clone https://github.com/ghoshRitesh12/aniwatch-api.git
+   cd aniwatch-api
+   ```
 
 2. Install all the dependencies.
 
-```bash
-npm ci #or yarn install
-```
+   ```bash
+   npm ci #or yarn install
+   ```
 
-3. Rename the `.env.example` file to `.env` and update any details required.
+3. Start the server!
 
-4. Start the server!
+   ```bash
+   npm start #or yarn start
+   ```
 
-```bash
-npm start #or yarn start
-```
-
-Now the server should be running on [http://localhost:4000](http://localhost:4000)
+   Now the server should be running on [http://localhost:4000](http://localhost:4000)
 
 ## <span id="documentation">📚 Documentation</span>
 
@@ -108,7 +108,9 @@ Below are the endpoints exposed by the api:
 
 #### Endpoint
 
-`http://localhost:4000/anime/home`
+```bash
+http://localhost:4000/anime/home
+```
 
 #### Request sample
 
@@ -206,13 +208,15 @@ console.log(data);
 
 #### Endpoint
 
-`http://localhost:4000/anime/info?id={anime-id}`
+```sh
+http://localhost:4000/anime/info?id={anime-id}
+```
 
 #### Query Parameters
 
-| Parameter |   Type   |     Description      | Required? | Default |
-| :-------: | :------: | :------------------: | :-------: | :-----: |
-|   `id`    | "string" | The unique anime id. |    Yes    |   --    |
+| Parameter |  Type  |             Description              | Required? | Default |
+| :-------: | :----: | :----------------------------------: | :-------: | :-----: |
+|   `id`    | string | The unique anime id (in kebab case). |    Yes    |   --    |
 
 #### Request sample
 
@@ -315,7 +319,9 @@ console.log(data);
 
 #### Endpoint
 
-`http://localhost:4000/anime/search?q={query}&page={page}`
+```sh
+http://localhost:4000/anime/search?q={query}&page={page}
+```
 
 #### Query Parameters
 
@@ -365,9 +371,137 @@ console.log(data);
     },
     {...},
   ],
-  totalPages: 1,
   currentPage: 1,
+  totalPages: 1,
   hasNextPage: false
+}
+```
+
+### `GET` Search Suggestions
+
+#### Endpoint
+
+```sh
+http://localhost:4000/anime/search/suggest?q={query}
+```
+
+#### Query Parameters
+
+| Parameter |  Type  |         Description          | Required? | Default |
+| :-------: | :----: | :--------------------------: | :-------: | :-----: |
+|    `q`    | string | The search suggestion query. |    Yes    |   --    |
+
+#### Request sample
+
+```javascript
+const resp = await fetch(
+  "http://localhost:4000/anime/search/suggest?q=monster"
+);
+const data = await resp.json();
+console.log(data);
+```
+
+#### Response Schema
+
+```javascript
+{
+  suggestions: [
+    {
+      id: string,
+      name: string,
+      poster: string,
+      jname: string,
+      moreInfo: ["Jan 21, 2022", "Movie", "17m"]
+    },
+    {...},
+  ],
+}
+```
+
+### `GET` Producer Animes
+
+#### Endpoint
+
+```sh
+http://localhost:4000/anime/producer/{name}?page={page}
+```
+
+#### Path Parameters
+
+| Parameter |  Type  |                 Description                 | Required? | Default |
+| :-------: | :----: | :-----------------------------------------: | :-------: | :-----: |
+|  `name`   | string | The name of anime producer (in kebab case). |    Yes    |   --    |
+
+#### Query Parameters
+
+| Parameter |  Type  |          Description           | Required? | Default |
+| :-------: | :----: | :----------------------------: | :-------: | :-----: |
+|  `page`   | number | The page number of the result. |    No     |   `1`   |
+
+#### Request sample
+
+```javascript
+const resp = await fetch(
+  "http://localhost:4000/anime/producer/toei-animation?page=2"
+);
+const data = await resp.json();
+console.log(data);
+```
+
+#### Response Schema
+
+```javascript
+{
+  producerName: "Toei Animation Anime",
+  animes: [
+    {
+      id: string,
+      name: string,
+      poster: string,
+      duration: string,
+      type: string,
+      rating: string,
+      episodes: {
+        sub: number,
+        dub: number,
+      }
+    },
+    {...},
+  ],
+  top10Animes: {
+    today: [
+      {
+        episodes: {
+          sub: number,
+          dub: number,
+        },
+        id: string,
+        name: string,
+        poster: string,
+        rank: number
+      },
+      {...},
+    ],
+    month: [...],
+    week: [...]
+  },
+  topAiringAnimes: [
+    {
+      episodes: {
+        sub: number,
+        dub: number,
+      },
+      id: string,
+      jname: string,
+      name: string,
+      poster: string,
+      type: string
+    },
+    {...},
+  ],
+  currentPage: 2,
+  totalPages: 11,
+  hasNextPage: true,
 }
 ```
 
@@ -375,13 +509,15 @@ console.log(data);
 
 #### Endpoint
 
-`http://localhost:4000/anime/genre/{name}?page={page}`
+```sh
+http://localhost:4000/anime/genre/{name}?page={page}
+```
 
 #### Path Parameters
 
-| Parameter |  Type  |       Description        | Required? | Default |
-| :-------: | :----: | :----------------------: | :-------: | :-----: |
-|  `name`   | string | The name of anime genre. |    Yes    |   --    |
+| Parameter |  Type  |               Description                | Required? | Default |
+| :-------: | :----: | :--------------------------------------: | :-------: | :-----: |
+|  `name`   | string | The name of anime genre (in kebab case). |    Yes    |   --    |
 
 #### Query Parameters
 
@@ -401,6 +537,7 @@ console.log(data);
 
 ```javascript
 {
+  genreName: "Shounen Anime",
   animes: [
     {
       id: string,
@@ -416,8 +553,7 @@ console.log(data);
     },
     {...},
   ],
-  genreName: string,
-  genres: ["Action", "Cars", "Adventure", ...]
+  genres: ["Action", "Cars", "Adventure", ...],
   topAiringAnimes: [
     {
       episodes: {
@@ -432,8 +568,8 @@ console.log(data);
     },
     {...},
   ],
-  totalPages: 38,
   currentPage: 2,
+  totalPages: 38,
   hasNextPage: true
 }
 ```
@@ -442,7 +578,9 @@ console.log(data);
 
 #### Endpoint
 
-`http://localhost:4000/anime/{category}?page={page}`
+```sh
+http://localhost:4000/anime/{category}?page={page}
+```
 
 #### Path Parameters
 
@@ -468,6 +606,7 @@ console.log(data);
 
 ```javascript
 {
+  category: "TV Series Anime",
   animes: [
     {
       id: string,
@@ -483,8 +622,7 @@ console.log(data);
     },
     {...},
   ],
-  category: string,
-  genres: ["Action", "Cars", "Adventure", ...]
+  genres: ["Action", "Cars", "Adventure", ...],
   top10Animes: {
     today: [
       {
@@ -502,8 +640,8 @@ console.log(data);
     month: [...],
     week: [...]
   },
-  totalPages: 100,
   currentPage: 2,
+  totalPages: 100,
   hasNextPage: true
 }
 ```
@@ -518,4 +656,4 @@ Don't forget to leave a star 🌟
 
 ## <span id="license">📜 License</span>
 
-[MIT License](https://github.com/ghoshRitesh12/aniwatch-api/blob/main/LICENSE)
+This project is licensed under the [MIT License](https://opensource.org/license/mit/) - see the [LICENSE](https://github.com/ghoshRitesh12/aniwatch-api/blob/main/LICENSE) file for more details.
