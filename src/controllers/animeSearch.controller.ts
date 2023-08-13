@@ -19,7 +19,7 @@ const getAnimeSearch: RequestHandler<
       : 1;
 
     if (query === null) {
-      throw createHttpError.BadGateway("Search keyword required");
+      throw createHttpError.BadRequest("Search keyword required");
     }
 
     const data = await scrapeAnimeSearch(query, page);
