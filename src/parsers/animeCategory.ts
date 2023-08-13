@@ -47,6 +47,10 @@ async function scrapeAnimeCategory(
     const selector: SelectorType =
       "#main-content .tab-content .film_list-wrap .flw-item";
 
+    const categoryNameSelector: SelectorType =
+      "#main-content .block_area .block_area-header .cat-heading";
+    res.category = $(categoryNameSelector)?.text()?.trim() ?? category;
+
     res.hasNextPage =
       $(".pagination > li").length > 0
         ? $(".pagination li.active").length > 0
