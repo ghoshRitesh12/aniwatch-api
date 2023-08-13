@@ -4,7 +4,9 @@ import {
   getAnimeSearch,
   getHomePageInfo,
   getAnimeCategory,
+  getProducerAnimes,
   getAnimeAboutInfo,
+  getAnimeSearchSuggestion,
 } from "../controllers";
 
 const router: IRouter = Router();
@@ -23,6 +25,12 @@ router.get("/genre/:name", getGenreAnime);
 
 // /anime/search?q=${query}&page=${page}
 router.get("/search", getAnimeSearch);
+
+// /anime/search/suggest?q=${query}
+router.get("/search/suggest", getAnimeSearchSuggestion);
+
+// /anime/producer/${name}?page=${page}
+router.get("/producer/:name", getProducerAnimes);
 
 // /anime/:category?page=${page}
 router.get("/:category", getAnimeCategory);
