@@ -57,6 +57,11 @@ export interface Season extends Pick<Anime, CommonAnimeProps> {
   title: string | null;
 }
 
+export interface AnimeSearchSuggestion
+  extends Omit<MostPopularAnime, "episodes" | "type"> {
+  moreInfo: Array<string>;
+}
+
 export type AnimeCategories =
   | "most-favorite"
   | "most-popular"
