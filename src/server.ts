@@ -1,20 +1,22 @@
 import morgan from "morgan";
-import env from "./config/env";
-import express, { Application } from "express";
+import express from "express";
+import { config } from "dotenv";
 
-import animeRouter from "./routes";
-import { homePage } from "./controllers";
+import { resolve } from "path";
 import { ratelimit } from "./config/ratelimit";
 import errorHandler from "./config/errorHandler";
 import notFoundHandler from "./config/notFoundHandler";
 
-const app: Application = express();
-const PORT: number = env.PORT || 4000;
+import animeRouter from "./routes";
+
+config();
+const app: express.Application = express();
+const PORT: number = Number(process.env.PORT) || 4000;
 
 app.use(morgan("dev"));
-
 app.use(ratelimit);
-app.get("/", homePage);
+
+app.use(express.static(resolve(__dirname, "..", "public")));
 app.use("/anime", animeRouter);
 
 app.use(notFoundHandler);
