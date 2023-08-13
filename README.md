@@ -89,7 +89,7 @@
 2. Install all the dependencies.
 
    ```bash
-   npm ci #or yarn install
+   npm i #or yarn install
    ```
 
 3. Start the server!
