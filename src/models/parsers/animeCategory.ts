@@ -1,5 +1,5 @@
 import { HttpError } from "http-errors";
-import { Anime, Top10Anime, AnimeCategories } from "../anime";
+import { Anime, Top10Anime } from "../anime";
 
 export interface ScrapedAnimeCategory {
   animes: Array<Anime> | HttpError;
@@ -9,7 +9,7 @@ export interface ScrapedAnimeCategory {
     week: Array<Top10Anime> | HttpError;
     month: Array<Top10Anime> | HttpError;
   };
-  category: AnimeCategories;
+  category: string;
   totalPages: number;
   currentPage: number;
   hasNextPage: boolean;
