@@ -10,6 +10,9 @@ import {
 
 import {
   extractAnimes,
+  substringAfter,
+  substringBefore,
+  retrieveServerId,
   extractTop10Animes,
   extractMostPopularAnimes,
 } from "./methods";
@@ -23,6 +26,9 @@ export {
   USER_AGENT_HEADER,
   ACCEPT_ENCODING_HEADER,
   extractAnimes,
+  substringAfter,
+  substringBefore,
+  retrieveServerId,
   extractTop10Animes,
   extractMostPopularAnimes,
 };
