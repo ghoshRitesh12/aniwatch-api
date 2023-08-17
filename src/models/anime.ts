@@ -62,6 +62,12 @@ export interface AnimeSearchSuggestion
   moreInfo: Array<string>;
 }
 
+export interface AnimeEpisode extends Pick<Season, "title"> {
+  episodeId: string | null;
+  number: number;
+  isFiller: boolean;
+}
+
 export type AnimeCategories =
   | "most-favorite"
   | "most-popular"
@@ -78,16 +84,24 @@ export type AnimeCategories =
   | "tv"
   | "completed";
 
+export type AnimeServers =
+  | "vidstreaming"
+  | "megacloud"
+  | "streamsb"
+  | "streamtape"
+  | "vidcloud";
+
 export enum Servers {
+  VidStreaming = "vidstreaming",
+  MegaCloud = "megacloud",
+  StreamSB = "streamsb",
+  StreamTape = "streamtape",
+  VidCloud = "vidcloud",
   AsianLoad = "asianload",
   GogoCDN = "gogocdn",
-  StreamSB = "streamsb",
   MixDrop = "mixdrop",
   UpCloud = "upcloud",
-  VidCloud = "vidcloud",
-  StreamTape = "streamtape",
   VizCloud = "vizcloud",
   MyCloud = "mycloud",
   Filemoon = "filemoon",
-  VidStreaming = "vidstreaming",
 }
