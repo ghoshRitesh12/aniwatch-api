@@ -4,8 +4,10 @@ import {
   getAnimeSearch,
   getHomePageInfo,
   getAnimeCategory,
+  getAnimeEpisodes,
   getProducerAnimes,
   getAnimeAboutInfo,
+  getAnimeEpisodeSources,
   getAnimeSearchSuggestion,
 } from "../controllers";
 
@@ -28,6 +30,13 @@ router.get("/search", getAnimeSearch);
 
 // /anime/search/suggest?q=${query}
 router.get("/search/suggest", getAnimeSearchSuggestion);
+
+// /anime/episodes/${anime-id}
+router.get("/episodes/:animeId", getAnimeEpisodes);
+
+// episodeId=steinsgate-3?ep=230
+// /anime/episode-src?id=${episodeId}?server=${server}&category=${category (dub or sub)}
+router.get("/episode-srcs", getAnimeEpisodeSources);
 
 // /anime/producer/${name}?page=${page}
 router.get("/producer/:name", getProducerAnimes);
