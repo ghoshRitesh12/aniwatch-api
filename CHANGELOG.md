@@ -1,3 +1,25 @@
+# [1.7.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.6.2...v1.7.0) (2023-08-17)
+
+
+### Features
+
+* added `animeEpisodes` & `animeEpisodeSrcs` routes ([277902a](https://github.com/ghoshRitesh12/aniwatch-api/commit/277902a835a83847e252d57bef87cba32d63b90a))
+* added `CryptoJS` pkg ([5d1bf2f](https://github.com/ghoshRitesh12/aniwatch-api/commit/5d1bf2fcc91cad695a054bf838eff668a316a7b4))
+* added anime extraction util methods ([1c74ecf](https://github.com/ghoshRitesh12/aniwatch-api/commit/1c74ecf27ee1144e7bbd441e3eee542074b5b409))
+* **anime:** added `AnimeEpisode` & `AnimeServers` type ([098b09d](https://github.com/ghoshRitesh12/aniwatch-api/commit/098b09d43666293f103f75d5e336ef5c014e6a5b))
+* **animeEpisodes:** added `animeEpisodes` controller path params type ([6d9d859](https://github.com/ghoshRitesh12/aniwatch-api/commit/6d9d859e532f520ba2a330625dd1fd380f4f0e46))
+* **animeEpisodes:** added `animeEpisodes` parser ([6e8d849](https://github.com/ghoshRitesh12/aniwatch-api/commit/6e8d84970e19ac43186fa3837dff0e18b168e213))
+* **animeEpisodes:** added `animeEpisodes` parser controller ([a67070e](https://github.com/ghoshRitesh12/aniwatch-api/commit/a67070ec5f4c2e295f286fcf53e1bd1672664d84))
+* **animeEpisodes:** added `animeEpisodes` parser return type ([bd113f8](https://github.com/ghoshRitesh12/aniwatch-api/commit/bd113f84e5dc73b49a443b51254639ea8fa216ed))
+* **animeEpisodeSrcs:** added `animeEpisodeSrcs` parser ([e152221](https://github.com/ghoshRitesh12/aniwatch-api/commit/e152221f8fa85550b8a834bf86a743661e542d07))
+* **animeEpisodeSrcs:** added `animeEpisodeSrcs` parser controller ([a8e4351](https://github.com/ghoshRitesh12/aniwatch-api/commit/a8e4351d12568066f758d725cd42e1267f2bfe52))
+* **animeEpisodeSrcs:** added `animeEpisodeSrcs` parser controller query params ([3715fdd](https://github.com/ghoshRitesh12/aniwatch-api/commit/3715fdd81a5e8041e472b1e584136d8369d1d86d))
+* **animeEpisodeSrcs:** added `animeEpisodeSrcs` parser return type ([c0ce89a](https://github.com/ghoshRitesh12/aniwatch-api/commit/c0ce89a828e838a32769efeac78eebe3207d2027))
+* **extractor:** added types related to anime extractors ([34efd85](https://github.com/ghoshRitesh12/aniwatch-api/commit/34efd85bc74a2be845d11afa26f4e5c13e293ab7))
+* **extractors:** added anime extractors ([e335910](https://github.com/ghoshRitesh12/aniwatch-api/commit/e335910e7a06bb48eaab2817e22d528c353242a9))
+
+
+
 ## [1.6.2](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.6.1...v1.6.2) (2023-08-13)
 
 
@@ -31,16 +53,6 @@
 
 
 ## [1.5.1](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.5.0...v1.5.1) (2023-08-07)
-
-
-
-# [1.5.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.4.0...v1.5.0) (2023-08-07)
-
-
-### Features
-
-* added rate limit config ([3014ab8](https://github.com/ghoshRitesh12/aniwatch-api/commit/3014ab8ce41d0b11b56ab7c6c32bd0f5c75fee3c))
-* rate limited endpoints ([5a82179](https://github.com/ghoshRitesh12/aniwatch-api/commit/5a82179174c63c67ce8371aa9628529dafd115b6))
 
 
 
