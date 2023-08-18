@@ -78,6 +78,8 @@
   - [GET Producer Animes](#get-producer-animes)
   - [GET Genre Animes](#get-genre-animes)
   - [GET Category Anime](#get-category-anime)
+  - [GET Anime Episodes](#get-anime-episodes)
+  - [GET Anime Episode Streaming Links](#get-get-anime-episode-streaming-links)
 - [Development](#development)
 - [Support](#support)
 - [License](#license)
@@ -650,6 +652,98 @@ console.log(data);
   currentPage: 2,
   totalPages: 100,
   hasNextPage: true
+}
+```
+
+### `GET` Anime Episodes
+
+#### Endpoint
+
+```sh
+http://localhost:4000/anime/episodes/{animeId}
+```
+
+#### Path Parameters
+
+| Parameter |  Type  |     Description      | Required? | Default |
+| :-------: | :----: | :------------------: | :-------: | :-----: |
+| `animeId` | string | The unique anime id. |    Yes    |   --    |
+
+#### Request sample
+
+```javascript
+const resp = await fetch("http://localhost:4000/anime/episodes/steinsgate-3");
+const data = await resp.json();
+console.log(data);
+```
+
+#### Response Schema
+
+```javascript
+{
+  totalEpisodes: 24,
+  episodes: [
+    {
+      number: 1,
+      title: "Turning Point",
+      episodeId: "steinsgate-3?ep=213"
+      isFiller: false,
+    },
+    {...}
+  ]
+}
+```
+
+### `GET` GET Anime Episode Streaming Links
+
+#### Endpoint
+
+```sh
+http://localhost:4000/anime/episode-srcs?id={episodeId}&server={server}&category={category}
+```
+
+#### Query Parameters
+
+|  Parameter  |  Type  |                  Description                  | Required? |    Default     |
+| :---------: | :----: | :-------------------------------------------: | :-------: | :------------: |
+| `episodeId` | string |            The id of the episode.             |    Yes    |       --       |
+|  `server`   | string |            The name of the server.            |    No     | "vidstreaming" |
+| `category`  | string | The category of the episode ('sub' or 'dub'). |    No     |     "sub"      |
+
+#### Request sample
+
+```javascript
+const resp = await fetch(
+  "http://localhost:4000/anime/episode-srcs?id=steinsgate-3?ep=230&server=vidstreaming&category=dub"
+);
+const data = await resp.json();
+console.log(data);
+```
+
+#### Response Schema
+
+```javascript
+{
+  headers: {
+    Referer: string,
+    "User-Agent": string,
+    ...
+  },
+  sources: [
+    {
+      url: string, // .m3u8 hls streaming file
+      isM3U8: boolean,
+      quality?: string,
+    },
+    {...}
+  ],
+  subtitles: [
+    {
+      lang: "English",
+      url: string, // .vtt subtitle file
+    },
+    {...}
+  ],
 }
 ```
 
