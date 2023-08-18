@@ -1,3 +1,12 @@
+# [1.8.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.7.0...v1.8.0) (2023-08-18)
+
+
+### Features
+
+* updated rapidcloud ajax url ([326e13a](https://github.com/ghoshRitesh12/aniwatch-api/commit/326e13ad20f60f478c2e4c98bd30653ca9cad460))
+
+
+
 # [1.7.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.6.2...v1.7.0) (2023-08-17)
 
 
@@ -49,10 +58,6 @@
 * **animeSearchSuggestion:** added `AnimeSearchSuggestion` type ([39f496a](https://github.com/ghoshRitesh12/aniwatch-api/commit/39f496aa1851b58bba4c9256015c218ded3d823f))
 * **animeSearchSuggestion:** added `ScrapedAnimeSearchSuggestion` type ([bec33e6](https://github.com/ghoshRitesh12/aniwatch-api/commit/bec33e60f71bd819c668e79825069678be4921aa))
 * **routes:** added `search/suggest` & `/producer` routes ([9714f7f](https://github.com/ghoshRitesh12/aniwatch-api/commit/9714f7f59b15621f0a36aef16e481ee155e9e4c1))
-
-
-
-## [1.5.1](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.5.0...v1.5.1) (2023-08-07)
 
 
 
