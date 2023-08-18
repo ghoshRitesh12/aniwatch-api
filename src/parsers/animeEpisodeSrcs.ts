@@ -17,12 +17,11 @@ import { RapidCloud, StreamSB, StreamTape } from "../extractors";
 // streamsb -> 5
 // streamtape -> 3
 
-// /anime/episode-src?id=${episodeId}?server=${server}&category=${category (dub or sub)}
+// /anime/episode-srcs?id=${episodeId}?server=${server}&category=${category (dub or sub)}
 async function scrapeAnimeEpisodeSources(
   episodeId: string,
   server: AnimeServers = Servers.VidStreaming,
   category: "sub" | "dub" = "sub"
-  // server:
 ): Promise<ScrapedAnimeEpisodesSources | HttpError> {
   if (episodeId.startsWith("http")) {
     const serverUrl = new URL(episodeId);
@@ -68,14 +67,13 @@ async function scrapeAnimeEpisodeSources(
         },
       }
     );
-    // console.log(resp, "\n\n");
 
     const $: CheerioAPI = load(resp.data.html);
 
     let serverId: string | null = null;
 
     try {
-      console.log("THIS IS THE SERVER: ", server);
+      console.log("THE SERVER: ", server);
 
       switch (server) {
         case Servers.VidCloud: {

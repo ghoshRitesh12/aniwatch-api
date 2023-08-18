@@ -4,7 +4,7 @@ import { scrapeAnimeEpisodeSources } from "../parsers";
 import { AnimeServers, Servers } from "../models/anime";
 import { AnimeEpisodeSrcsQueryParams } from "../models/controllers";
 
-// /anime/episode-src?id=${episodeId}?server=${server}&category=${category (dub or sub)}
+// /anime/episode-srcs?id=${episodeId}?server=${server}&category=${category (dub or sub)}
 const getAnimeEpisodeSources: RequestHandler<
   unknown,
   Awaited<ReturnType<typeof scrapeAnimeEpisodeSources>>,

@@ -35,7 +35,7 @@ router.get("/search/suggest", getAnimeSearchSuggestion);
 router.get("/episodes/:animeId", getAnimeEpisodes);
 
 // episodeId=steinsgate-3?ep=230
-// /anime/episode-src?id=${episodeId}?server=${server}&category=${category (dub or sub)}
+// /anime/episode-srcs?id=${episodeId}?server=${server}&category=${category (dub or sub)}
 router.get("/episode-srcs", getAnimeEpisodeSources);
 
 // /anime/producer/${name}?page=${page}
