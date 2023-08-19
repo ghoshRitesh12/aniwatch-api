@@ -2,7 +2,7 @@ import morgan from "morgan";
 import express from "express";
 import { config } from "dotenv";
 
-import http from "http";
+import https from "https";
 import { resolve } from "path";
 import { ratelimit } from "./config/ratelimit";
 import errorHandler from "./config/errorHandler";
@@ -31,5 +31,5 @@ app.listen(PORT, () => {
 // don't sleep
 setInterval(() => {
   console.log("HEALTHCHECK ;)", new Date().toLocaleString());
-  http.get("https://api-aniwatch.onrender.com/health");
+  https.get("https://api-aniwatch.onrender.com/health");
 }, 540000);
