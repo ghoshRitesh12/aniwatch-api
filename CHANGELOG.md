@@ -1,3 +1,12 @@
+## [1.10.1](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.10.0...v1.10.1) (2023-08-19)
+
+
+### Bug Fixes
+
+* added `healthcheck` awake ([2b22cc6](https://github.com/ghoshRitesh12/aniwatch-api/commit/2b22cc641e30633908cddd625b0695047602e68c))
+
+
+
 # [1.10.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.9.2...v1.10.0) (2023-08-19)
 
 
@@ -34,15 +43,6 @@
 * **docker:** added `.dockerignore` file ([ace29d6](https://github.com/ghoshRitesh12/aniwatch-api/commit/ace29d6c2bdbdb756ae2ed674e0e817f0aa0be5e))
 * **docker:** added `Dockerfile` file ([a8da974](https://github.com/ghoshRitesh12/aniwatch-api/commit/a8da9745229c40fb7ca77a719f9da9809228bedf))
 * **healthcheck:** added `/health` route ([3aff3e4](https://github.com/ghoshRitesh12/aniwatch-api/commit/3aff3e4a7d8efdc55fcbcb89d29f45ce48fd2e0d))
-
-
-
-# [1.8.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.7.0...v1.8.0) (2023-08-18)
-
-
-### Features
-
-* updated rapidcloud ajax url ([326e13a](https://github.com/ghoshRitesh12/aniwatch-api/commit/326e13ad20f60f478c2e4c98bd30653ca9cad460))
 
 
 
