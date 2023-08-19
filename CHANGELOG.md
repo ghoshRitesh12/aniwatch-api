@@ -1,3 +1,7 @@
+## [1.9.2](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.9.1...v1.9.2) (2023-08-19)
+
+
+
 ## [1.9.1](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.9.0...v1.9.1) (2023-08-19)
 
 
@@ -52,10 +56,6 @@
 * **animeEpisodeSrcs:** added `animeEpisodeSrcs` parser return type ([c0ce89a](https://github.com/ghoshRitesh12/aniwatch-api/commit/c0ce89a828e838a32769efeac78eebe3207d2027))
 * **extractor:** added types related to anime extractors ([34efd85](https://github.com/ghoshRitesh12/aniwatch-api/commit/34efd85bc74a2be845d11afa26f4e5c13e293ab7))
 * **extractors:** added anime extractors ([e335910](https://github.com/ghoshRitesh12/aniwatch-api/commit/e335910e7a06bb48eaab2817e22d528c353242a9))
-
-
-
-## [1.6.2](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.6.1...v1.6.2) (2023-08-13)
 
 
 
