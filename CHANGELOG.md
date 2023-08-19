@@ -1,3 +1,12 @@
+## [1.9.1](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.9.0...v1.9.1) (2023-08-19)
+
+
+### Bug Fixes
+
+* updated docker build workflow ([ddd77f4](https://github.com/ghoshRitesh12/aniwatch-api/commit/ddd77f42aeae90133caa585051c398bf5b9fb1b0))
+
+
+
 # [1.9.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.8.0...v1.9.0) (2023-08-19)
 
 
@@ -47,10 +56,6 @@
 
 
 ## [1.6.2](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.6.1...v1.6.2) (2023-08-13)
-
-
-
-## [1.6.1](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.6.0...v1.6.1) (2023-08-13)
 
 
 
