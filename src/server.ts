@@ -17,7 +17,7 @@ app.use(morgan("dev"));
 app.use(ratelimit);
 
 app.use(express.static(resolve(__dirname, "..", "public")));
-app.get("/health", (_, res) => res.sendStatus(400));
+app.get("/health", (_, res) => res.sendStatus(200));
 app.use("/anime", animeRouter);
 
 app.use(notFoundHandler);
