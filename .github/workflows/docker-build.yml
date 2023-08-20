@@ -30,3 +30,12 @@ jobs:
           tags: |
             ghcr.io/ghoshritesh12/aniwatch:${{ github.event.release.tag_name }}
             ghcr.io/ghoshritesh12/aniwatch:latest
+
+      - name: Trigger render deploy
+        run: |
+          curl --request POST \
+            --url https://api.render.com/v1/services/${{ secrets.RENDER_API_SERVICE_ID }}/deploys \
+            --header 'accept: application/json' \
+            --header 'authorization: Bearer ${{ secrets.RENDER_API_KEY }}' \
+            --header 'content-type: application/json' \
+            --data '{ "clearCache": "clear" }'
