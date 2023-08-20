@@ -28,6 +28,7 @@
   "dependencies": {
     "axios": "^1.4.0",
     "cheerio": "^1.0.0-rc.12",
+    "cors": "^2.8.5",
     "crypto-js": "^4.1.1",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
@@ -36,6 +37,7 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.13",
     "@types/crypto-js": "^4.1.1",
     "@types/express": "^4.17.17",
     "@types/http-errors": "^2.0.1",
