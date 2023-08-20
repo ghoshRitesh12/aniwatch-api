@@ -75,6 +75,8 @@ git checkout -b <new-branch-name>
   - `parsers` directory contains all the parsing aka scraping logic
   - `routes` directory contains all the routers
   - `utils` directory contains handy utility methods and properties
+  - `config` directory contains api configuration related files
+  - `extractors` directory contains anime streaming url extractor files
     <br/><br/>
 
 - `test` directory contains all the tests that needs to be evaluated
