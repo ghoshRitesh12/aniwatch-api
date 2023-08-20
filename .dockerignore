@@ -5,7 +5,6 @@
 .gitignore
 
 node_modules
-src
 test
 
 .dockerignore
@@ -17,7 +16,6 @@ CONTRIBUTING.md
 CHANGELOG.md
 README.md
 
-tsconfig.json
 jest.config.ts
 package-lock.json
 yarn.lock
