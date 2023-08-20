@@ -70,7 +70,11 @@
   </p>
 </p>
 
-> NOTE: [https://api-aniwatch.onrender.com](https://api-aniwatch.onrender.com/) is only meant to demo the API and has rate-limiting enabled to minimise bandwidth consumption. It is recommended to deploy your own instance for personal use.
+> A couple of notes:
+>
+> 1. [https://api-aniwatch.onrender.com](https://api-aniwatch.onrender.com/) is only meant to demo the API and has rate-limiting enabled to minimise bandwidth consumption. It is recommended to deploy your own instance for personal use.
+> 2. As it's hosted on [render](https://render.com/), the service will spin down if there's no activity, so the initial request may take some time.
+> 3. This API is just an unofficial api for [aniwatch.to](https://aniwatch.to) and is in no way related to the same.
 
 ## Table of Contents
 
@@ -86,7 +90,7 @@
   - [GET Genre Animes](#get-genre-animes)
   - [GET Category Anime](#get-category-anime)
   - [GET Anime Episodes](#get-anime-episodes)
-  - [GET Anime Episode Streaming Links](#get-get-anime-episode-streaming-links)
+  - [GET Anime Episode Streaming Links](#get-anime-episode-streaming-links)
 - [Development](#development)
 - [Support](#support)
 - [License](#license)
@@ -140,13 +144,13 @@ The endpoints exposed by the api are listed below with examples that uses the [F
 #### Endpoint
 
 ```bash
-http://localhost:4000/anime/home
+https://api-aniwatch.onrender.com/anime/home
 ```
 
 #### Request sample
 
 ```javascript
-const resp = await fetch("http://localhost:4000/anime/home");
+const resp = await fetch("https://api-aniwatch.onrender.com/anime/home");
 const data = await resp.json();
 console.log(data);
 ```
@@ -240,7 +244,7 @@ console.log(data);
 #### Endpoint
 
 ```sh
-http://localhost:4000/anime/info?id={anime-id}
+https://api-aniwatch.onrender.com/anime/info?id={anime-id}
 ```
 
 #### Query Parameters
@@ -253,7 +257,7 @@ http://localhost:4000/anime/info?id={anime-id}
 
 ```javascript
 const resp = await fetch(
-  "http://localhost:4000/anime/info?id=attack-on-titan-112"
+  "https://api-aniwatch.onrender.com/anime/info?id=attack-on-titan-112"
 );
 const data = await resp.json();
 console.log(data);
@@ -351,7 +355,7 @@ console.log(data);
 #### Endpoint
 
 ```sh
-http://localhost:4000/anime/search?q={query}&page={page}
+https://api-aniwatch.onrender.com/anime/search?q={query}&page={page}
 ```
 
 #### Query Parameters
@@ -364,7 +368,9 @@ http://localhost:4000/anime/search?q={query}&page={page}
 #### Request sample
 
 ```javascript
-const resp = await fetch("http://localhost:4000/anime/search?q=titan&page=1");
+const resp = await fetch(
+  "https://api-aniwatch.onrender.com/anime/search?q=titan&page=1"
+);
 const data = await resp.json();
 console.log(data);
 ```
@@ -413,7 +419,7 @@ console.log(data);
 #### Endpoint
 
 ```sh
-http://localhost:4000/anime/search/suggest?q={query}
+https://api-aniwatch.onrender.com/anime/search/suggest?q={query}
 ```
 
 #### Query Parameters
@@ -426,7 +432,7 @@ http://localhost:4000/anime/search/suggest?q={query}
 
 ```javascript
 const resp = await fetch(
-  "http://localhost:4000/anime/search/suggest?q=monster"
+  "https://api-aniwatch.onrender.com/anime/search/suggest?q=monster"
 );
 const data = await resp.json();
 console.log(data);
@@ -454,7 +460,7 @@ console.log(data);
 #### Endpoint
 
 ```sh
-http://localhost:4000/anime/producer/{name}?page={page}
+https://api-aniwatch.onrender.com/anime/producer/{name}?page={page}
 ```
 
 #### Path Parameters
@@ -473,7 +479,7 @@ http://localhost:4000/anime/producer/{name}?page={page}
 
 ```javascript
 const resp = await fetch(
-  "http://localhost:4000/anime/producer/toei-animation?page=2"
+  "https://api-aniwatch.onrender.com/anime/producer/toei-animation?page=2"
 );
 const data = await resp.json();
 console.log(data);
@@ -541,7 +547,7 @@ console.log(data);
 #### Endpoint
 
 ```sh
-http://localhost:4000/anime/genre/{name}?page={page}
+https://api-aniwatch.onrender.com/anime/genre/{name}?page={page}
 ```
 
 #### Path Parameters
@@ -559,7 +565,9 @@ http://localhost:4000/anime/genre/{name}?page={page}
 #### Request sample
 
 ```javascript
-const resp = await fetch("http://localhost:4000/anime/genre/shounen?page=2");
+const resp = await fetch(
+  "https://api-aniwatch.onrender.com/anime/genre/shounen?page=2"
+);
 const data = await resp.json();
 console.log(data);
 ```
@@ -610,7 +618,7 @@ console.log(data);
 #### Endpoint
 
 ```sh
-http://localhost:4000/anime/{category}?page={page}
+https://api-aniwatch.onrender.com/anime/{category}?page={page}
 ```
 
 #### Path Parameters
@@ -628,7 +636,7 @@ http://localhost:4000/anime/{category}?page={page}
 #### Request sample
 
 ```javascript
-const resp = await fetch("http://localhost:4000/anime/tv?page=2");
+const resp = await fetch("https://api-aniwatch.onrender.com/anime/tv?page=2");
 const data = await resp.json();
 console.log(data);
 ```
@@ -682,7 +690,7 @@ console.log(data);
 #### Endpoint
 
 ```sh
-http://localhost:4000/anime/episodes/{animeId}
+https://api-aniwatch.onrender.com/anime/episodes/{animeId}
 ```
 
 #### Path Parameters
@@ -694,7 +702,9 @@ http://localhost:4000/anime/episodes/{animeId}
 #### Request sample
 
 ```javascript
-const resp = await fetch("http://localhost:4000/anime/episodes/steinsgate-3");
+const resp = await fetch(
+  "https://api-aniwatch.onrender.com/anime/episodes/steinsgate-3"
+);
 const data = await resp.json();
 console.log(data);
 ```
@@ -716,12 +726,12 @@ console.log(data);
 }
 ```
 
-### `GET` GET Anime Episode Streaming Links
+### `GET` Anime Episode Streaming Links
 
 #### Endpoint
 
 ```sh
-http://localhost:4000/anime/episode-srcs?id={episodeId}&server={server}&category={category}
+https://api-aniwatch.onrender.com/anime/episode-srcs?id={episodeId}&server={server}&category={category}
 ```
 
 #### Query Parameters
@@ -736,7 +746,7 @@ http://localhost:4000/anime/episode-srcs?id={episodeId}&server={server}&category
 
 ```javascript
 const resp = await fetch(
-  "http://localhost:4000/anime/episode-srcs?id=steinsgate-3?ep=230&server=vidstreaming&category=dub"
+  "https://api-aniwatch.onrender.com/anime/episode-srcs?id=steinsgate-3?ep=230&server=vidstreaming&category=dub"
 );
 const data = await resp.json();
 console.log(data);
