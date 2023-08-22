@@ -1,3 +1,7 @@
+## [1.13.1](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.13.0...v1.13.1) (2023-08-22)
+
+
+
 # [1.13.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.12.0...v1.13.0) (2023-08-20)
 
 
@@ -34,15 +38,6 @@
 ### Bug Fixes
 
 * added `healthcheck` awake ([2b22cc6](https://github.com/ghoshRitesh12/aniwatch-api/commit/2b22cc641e30633908cddd625b0695047602e68c))
-
-
-
-# [1.10.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.9.2...v1.10.0) (2023-08-19)
-
-
-### Features
-
-* added `healthcheck` awake ([25115e2](https://github.com/ghoshRitesh12/aniwatch-api/commit/25115e22892d20afa33bf28da347f895a95dd65e))
 
 
 
