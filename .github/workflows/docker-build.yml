@@ -1,4 +1,4 @@
-name: "Docker Build"
+name: "Docker Build & Trigger Deploy"
 
 on:
   release:
@@ -31,6 +31,11 @@ jobs:
             ghcr.io/ghoshritesh12/aniwatch:${{ github.event.release.tag_name }}
             ghcr.io/ghoshritesh12/aniwatch:latest
 
+  trigger_deploy:
+    needs: build_docker_image
+    runs-on: ubuntu-latest
+
+    steps:
       - name: Trigger render deploy
         run: |
           curl --request POST \
