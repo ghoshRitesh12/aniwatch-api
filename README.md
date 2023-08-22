@@ -74,7 +74,7 @@
 >
 > 1. [https://api-aniwatch.onrender.com](https://api-aniwatch.onrender.com/) is only meant to demo the API and has rate-limiting enabled to minimise bandwidth consumption. It is recommended to deploy your own instance for personal use.
 > 2. As it's hosted on [render](https://render.com/), the service will spin down if there's no activity, so the initial request may take some time.
-> 3. This API is just an unofficial api for [aniwatch.to](https://aniwatch.to) and is in no way related to the same.
+> 3. This API is just an unofficial api for [aniwatch.to](https://aniwatch.to) and is in no other way officially related to the same.
 
 ## Table of Contents
 
