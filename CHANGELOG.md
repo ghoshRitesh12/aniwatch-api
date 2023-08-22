@@ -1,3 +1,12 @@
+# [1.14.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.13.1...v1.14.0) (2023-08-22)
+
+
+### Features
+
+* **cd:** decoupled triggering deploy job ([cb1bed4](https://github.com/ghoshRitesh12/aniwatch-api/commit/cb1bed43cef491cd9bd245be8c7abf901d218817))
+
+
+
 ## [1.13.1](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.13.0...v1.13.1) (2023-08-22)
 
 
@@ -29,15 +38,6 @@
 * **cors:** added cors pkg ([9470655](https://github.com/ghoshRitesh12/aniwatch-api/commit/9470655d4b67fcd6f21d31c57575c0681760a724))
 * **cors:** using cors config ([ca60147](https://github.com/ghoshRitesh12/aniwatch-api/commit/ca60147a88f7f616e5371190259ffc9296c52ac2))
 * **docker:** added docker multi stage build ([704c8a3](https://github.com/ghoshRitesh12/aniwatch-api/commit/704c8a3e518f8251f4c343fe6079d57b982c2c8b))
-
-
-
-## [1.10.1](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.10.0...v1.10.1) (2023-08-19)
-
-
-### Bug Fixes
-
-* added `healthcheck` awake ([2b22cc6](https://github.com/ghoshRitesh12/aniwatch-api/commit/2b22cc641e30633908cddd625b0695047602e68c))
 
 
 
