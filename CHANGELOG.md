@@ -1,3 +1,12 @@
+## [1.15.1](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.15.0...v1.15.1) (2023-08-28)
+
+
+### Bug Fixes
+
+* **docs:** updated thanks section id ([252445f](https://github.com/ghoshRitesh12/aniwatch-api/commit/252445f2983cade55837f5736519ebb90f0c6d98))
+
+
+
 # [1.15.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.14.0...v1.15.0) (2023-08-28)
 
 
@@ -31,15 +40,6 @@
 ### Features
 
 * added render deploy step ([f34f915](https://github.com/ghoshRitesh12/aniwatch-api/commit/f34f91561b692a383dd8145f231f8c6bab91013f))
-
-
-
-# [1.12.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.11.0...v1.12.0) (2023-08-20)
-
-
-### Features
-
-* **dockerfile:** updated `Dockerfile` labels ([bc5364f](https://github.com/ghoshRitesh12/aniwatch-api/commit/bc5364fbf1c6f04f1ab214b9ad35ba04dbbc7602))
 
 
 
