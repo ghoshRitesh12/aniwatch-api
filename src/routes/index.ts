@@ -5,6 +5,7 @@ import {
   getHomePageInfo,
   getAnimeCategory,
   getAnimeEpisodes,
+  getEpisodeServers,
   getProducerAnimes,
   getAnimeAboutInfo,
   getAnimeEpisodeSources,
@@ -33,6 +34,9 @@ router.get("/search/suggest", getAnimeSearchSuggestion);
 
 // /anime/episodes/${anime-id}
 router.get("/episodes/:animeId", getAnimeEpisodes);
+
+// /anime/servers?episodeId=${id}
+router.get("/servers", getEpisodeServers);
 
 // episodeId=steinsgate-3?ep=230
 // /anime/episode-srcs?id=${episodeId}?server=${server}&category=${category (dub or sub)}
