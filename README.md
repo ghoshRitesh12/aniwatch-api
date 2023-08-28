@@ -9,6 +9,7 @@
       fetchpriority="high"
     />
   </a>
+</p>
 
 # <p align="center">Aniwatch API</p>
 
@@ -75,6 +76,7 @@
 > 1. [https://api-aniwatch.onrender.com](https://api-aniwatch.onrender.com/) is only meant to demo the API and has rate-limiting enabled to minimise bandwidth consumption. It is recommended to deploy your own instance for personal use.
 > 2. As it's hosted on [render](https://render.com/), the service will spin down if there's no activity, so the initial request may take some time.
 > 3. This API is just an unofficial api for [aniwatch.to](https://aniwatch.to) and is in no other way officially related to the same.
+> 4. The content that this api provides is not mine, not is it hosted by me. These belong to their respective owners. This api just demonstrates how to build an api that scrapes websites and uses their content.
 
 ## Table of Contents
 
@@ -90,9 +92,11 @@
   - [GET Genre Animes](#get-genre-animes)
   - [GET Category Anime](#get-category-anime)
   - [GET Anime Episodes](#get-anime-episodes)
+  - [GET Anime Episode Servers](#get-anime-episode-servers)
   - [GET Anime Episode Streaming Links](#get-anime-episode-streaming-links)
 - [Development](#development)
 - [Support](#support)
+- [Thanks](#thanks)
 - [License](#license)
 
 ## <span id="installation">💻 Installation</span>
@@ -726,6 +730,53 @@ console.log(data);
 }
 ```
 
+### `GET` Anime Episode Servers
+
+#### Endpoint
+
+```sh
+https://api-aniwatch.onrender.com/anime/servers?episodeId={id}
+```
+
+#### Query Parameters
+
+|  Parameter  |  Type  |      Description       | Required? | Default |
+| :---------: | :----: | :--------------------: | :-------: | :-----: |
+| `episodeId` | string | The unique episode id. |    Yes    |   --    |
+
+#### Request sample
+
+```javascript
+const resp = await fetch(
+  "https://api-aniwatch.onrender.com/anime/servers?episodeId=steinsgate-0-92?ep=2055"
+);
+const data = await resp.json();
+console.log(data);
+```
+
+#### Response Schema
+
+```javascript
+{
+  episodeId: "steinsgate-0-92?ep=2055",
+  episodeNo: 5,
+  sub: [
+    {
+      serverId: 4,
+      serverName: "vidstreaming",
+    },
+    {...}
+  ],
+  dub: [
+    {
+      serverId: 1,
+      serverName: "megacloud",
+    },
+    {...}
+  ],
+}
+```
+
 ### `GET` Anime Episode Streaming Links
 
 #### Endpoint
@@ -783,10 +834,22 @@ console.log(data);
 
 Pull requests and stars are always welcome. If you encounter any bug or want to add a new feature to this api, consider creating a new [issue](https://github.com/ghoshRitesh12/aniwatch-api/issues). If you wish to contribute to this project, read the [CONTRIBUTING.md](https://github.com/ghoshRitesh12/aniwatch-api/blob/main/CONTRIBUTING.md) file.
 
+## <span id="development">🤝 Thanks</span>
+
+- [consumet.ts](https://github.com/consumet/consumet.ts)
+- [api.consumet.org](https://github.com/consumet/api.consumet.org)
+
 ## <span id="support">🙌 Support</span>
 
-Don't forget to leave a star 🌟
+Don't forget to leave a star 🌟. You can also follow me on Twitter [@\_riteshghosh](https://twitter.com/_riteshghosh).
 
 ## <span id="license">📜 License</span>
 
 This project is licensed under the [MIT License](https://opensource.org/license/mit/) - see the [LICENSE](https://github.com/ghoshRitesh12/aniwatch-api/blob/main/LICENSE) file for more details.
+
+<p align="center">
+  Made with 💖 by
+  <a href="https://github.com/ghoshRitesh12">
+    Ritesh
+  <a>
+<p>
