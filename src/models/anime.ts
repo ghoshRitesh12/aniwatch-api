@@ -68,6 +68,12 @@ export interface AnimeEpisode extends Pick<Season, "title"> {
   isFiller: boolean;
 }
 
+export interface SubEpisode {
+  serverName: string;
+  serverId: number | null;
+}
+export interface DubEpisode extends SubEpisode {}
+
 export type AnimeCategories =
   | "most-favorite"
   | "most-popular"
