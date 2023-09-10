@@ -1,0 +1,5 @@
+# START aniwatch-api
+Disallow:
+
+User-agent: *
+# END aniwatch-api
