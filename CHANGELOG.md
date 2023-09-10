@@ -1,3 +1,14 @@
+# [1.16.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.15.1...v1.16.0) (2023-09-10)
+
+
+### Features
+
+* add `robots.txt` ([de34e7a](https://github.com/ghoshRitesh12/aniwatch-api/commit/de34e7ae57e0454592be7cce15e49327a9183f00))
+* updated `ratelimit` config ([6ebee63](https://github.com/ghoshRitesh12/aniwatch-api/commit/6ebee632d7e894b31f7e1fc8aece4b9e8456542a))
+* updated home page view ([ed64499](https://github.com/ghoshRitesh12/aniwatch-api/commit/ed6449909433e0a7489a653688eaf8558f7f0962))
+
+
+
 ## [1.15.1](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.15.0...v1.15.1) (2023-08-28)
 
 
@@ -31,15 +42,6 @@
 
 
 ## [1.13.1](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.13.0...v1.13.1) (2023-08-22)
-
-
-
-# [1.13.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.12.0...v1.13.0) (2023-08-20)
-
-
-### Features
-
-* added render deploy step ([f34f915](https://github.com/ghoshRitesh12/aniwatch-api/commit/f34f91561b692a383dd8145f231f8c6bab91013f))
 
 
 
