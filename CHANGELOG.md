@@ -1,3 +1,12 @@
+# [1.17.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.16.0...v1.17.0) (2023-09-10)
+
+
+### Features
+
+* **legacyHeaders:** update `ratelimit` config ([f8f2883](https://github.com/ghoshRitesh12/aniwatch-api/commit/f8f2883f72136ebcb95d84f9c182bd03a7ad80fe))
+
+
+
 # [1.16.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.15.1...v1.16.0) (2023-09-10)
 
 
@@ -38,10 +47,6 @@
 ### Features
 
 * **cd:** decoupled triggering deploy job ([cb1bed4](https://github.com/ghoshRitesh12/aniwatch-api/commit/cb1bed43cef491cd9bd245be8c7abf901d218817))
-
-
-
-## [1.13.1](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.13.0...v1.13.1) (2023-08-22)
 
 
 
