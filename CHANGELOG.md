@@ -1,3 +1,12 @@
+## [1.17.1](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.17.0...v1.17.1) (2023-09-10)
+
+
+### Performance Improvements
+
+* **rateLimit:** increased `windowMs` time ([6e11137](https://github.com/ghoshRitesh12/aniwatch-api/commit/6e11137ce2d5bd3b35beb7b56904abc82b2f6f18))
+
+
+
 # [1.17.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.16.0...v1.17.0) (2023-09-10)
 
 
@@ -38,15 +47,6 @@
 * **episodeServers:** added `ScrapedEpisodeServers` parser type ([deaac54](https://github.com/ghoshRitesh12/aniwatch-api/commit/deaac5475ea5ee193bf5e515ddd95259cc36cbdb))
 * **episodeServers:** added `scrapeEpisodeServers` parser ([64ede20](https://github.com/ghoshRitesh12/aniwatch-api/commit/64ede2033cf9b433503fa9d08c3debce1eecc179))
 * **episodeServers:** added `SubEpisode` & `DubEpisode` types ([921e2bd](https://github.com/ghoshRitesh12/aniwatch-api/commit/921e2bdf3e790b731b17fce991b94ec772b7ffdf))
-
-
-
-# [1.14.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.13.1...v1.14.0) (2023-08-22)
-
-
-### Features
-
-* **cd:** decoupled triggering deploy job ([cb1bed4](https://github.com/ghoshRitesh12/aniwatch-api/commit/cb1bed43cef491cd9bd245be8c7abf901d218817))
 
 
 
