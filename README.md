@@ -71,7 +71,7 @@
   </p>
 </p>
 
-> A couple of notes:
+> [!IMPORTANT]
 >
 > 1. [https://api-aniwatch.onrender.com](https://api-aniwatch.onrender.com/) is only meant to demo the API and has rate-limiting enabled to minimise bandwidth consumption. It is recommended to deploy your own instance for personal use by customizing the api as you need it to be.
 > 2. This API is just an unofficial api for [aniwatch.to](https://aniwatch.to) and is in no other way officially related to the same.
@@ -112,13 +112,13 @@
 2. Install all the dependencies.
 
    ```bash
-   npm i #or yarn install
+   npm i #or yarn install or pnpm i
    ```
 
 3. Start the server!
 
    ```bash
-   npm start #or yarn start
+   npm start #or yarn start or pnpm start
    ```
 
    Now the server should be running on [http://localhost:4000](http://localhost:4000)
