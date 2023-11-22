@@ -1,5 +1,8 @@
-import { ScrapedHomePage } from "./homePage";
-import { ScrapedAnimeCategory, CommonAnimeScrapeTypes } from "./animeCategory";
+import type {
+  ScrapedAnimeCategory,
+  CommonAnimeScrapeTypes,
+} from "./animeCategory.js";
+import { type ScrapedHomePage } from "./homePage.js";
 
 export interface ScrapedGenreAnime
   extends Pick<ScrapedAnimeCategory, CommonAnimeScrapeTypes | "genres">,

@@ -1,11 +1,11 @@
-import { HttpError } from "http-errors";
-import { ScrapedAnimeSearchResult } from "./animeSearch";
-import {
-  AnimeGeneralAboutInfo,
+import type {
   Season,
   RelatedAnime,
   RecommendedAnime,
-} from "../anime";
+  AnimeGeneralAboutInfo,
+} from "../anime.js";
+import { type HttpError } from "http-errors";
+import { type ScrapedAnimeSearchResult } from "./animeSearch.js";
 
 export interface ScrapedAnimeAboutInfo
   extends Pick<ScrapedAnimeSearchResult, "mostPopularAnimes"> {

@@ -1,5 +1,5 @@
-import { HttpError } from "http-errors";
-import { Anime, Top10Anime } from "../anime";
+import type { HttpError } from "http-errors";
+import type { Anime, Top10Anime } from "../anime.js";
 
 export interface ScrapedAnimeCategory {
   animes: Array<Anime> | HttpError;

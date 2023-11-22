@@ -1,4 +1,4 @@
-import { Intro, Subtitle, Video } from "../extractor";
+import type { Intro, Subtitle, Video } from "../extractor.js";
 
 export interface ScrapedAnimeEpisodesSources {
   headers?: {
