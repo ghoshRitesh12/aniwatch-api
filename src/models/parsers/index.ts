@@ -1,15 +1,15 @@
-import { ScrapedHomePage } from "./homePage";
-import { ScrapedGenreAnime } from "./animeGenre";
-import { ScrapedAnimeEpisodes } from "./animeEpisodes";
-import { ScrapedAnimeCategory } from "./animeCategory";
-import { ScrapedProducerAnime } from "./animeProducer";
-import { ScrapedEpisodeServers } from "./episodeServers";
-import { ScrapedAnimeAboutInfo } from "./animeAboutInfo";
-import { ScrapedAnimeSearchResult } from "./animeSearch";
-import { ScrapedAnimeEpisodesSources } from "./animeEpisodeSrcs";
-import { ScrapedAnimeSearchSuggestion } from "./animeSearchSuggestion";
+import type { ScrapedHomePage } from "./homePage.js";
+import type { ScrapedGenreAnime } from "./animeGenre.js";
+import type { ScrapedAnimeEpisodes } from "./animeEpisodes.js";
+import type { ScrapedAnimeCategory } from "./animeCategory.js";
+import type { ScrapedProducerAnime } from "./animeProducer.js";
+import type { ScrapedEpisodeServers } from "./episodeServers.js";
+import type { ScrapedAnimeAboutInfo } from "./animeAboutInfo.js";
+import type { ScrapedAnimeSearchResult } from "./animeSearch.js";
+import type { ScrapedAnimeEpisodesSources } from "./animeEpisodeSrcs.js";
+import type { ScrapedAnimeSearchSuggestion } from "./animeSearchSuggestion.js";
 
-export {
+export type {
   ScrapedHomePage,
   ScrapedGenreAnime,
   ScrapedAnimeEpisodes,
