@@ -1,10 +1,10 @@
 import createHttpError from "http-errors";
-import { RequestHandler } from "express";
-import { scrapeProducerAnimes } from "../parsers";
-import {
+import { type RequestHandler } from "express";
+import { scrapeProducerAnimes } from "../parsers/index.js";
+import type {
   AnimeProducerPathParams,
   AnimeProducerQueryParams,
-} from "../models/controllers";
+} from "../models/controllers/index.js";
 
 // /anime/producer/${name}?page=${page}
 const getProducerAnimes: RequestHandler<

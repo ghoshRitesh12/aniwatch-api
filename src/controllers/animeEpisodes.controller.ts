@@ -1,7 +1,7 @@
 import createHttpError from "http-errors";
-import { RequestHandler } from "express";
-import { scrapeAnimeEpisodes } from "../parsers";
-import { AnimeEpisodePathParams } from "../models/controllers";
+import { type RequestHandler } from "express";
+import { scrapeAnimeEpisodes } from "../parsers/index.js";
+import { type AnimeEpisodePathParams } from "../models/controllers/index.js";
 
 // /anime/episodes/${anime-id}
 const getAnimeEpisodes: RequestHandler<
