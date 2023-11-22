@@ -1,20 +1,23 @@
-import {
+import type {
+  GenreAnimePathParams,
+  GenreAnimeQueryParams,
+} from "./animeGenre.js";
+import type {
   CategoryAnimePathParams,
   CategoryAnimeQueryParams,
-} from "./animeCategory";
-import {
+} from "./animeCategory.js";
+import type {
   AnimeProducerPathParams,
   AnimeProducerQueryParams,
-} from "./animeProducer";
-import { AnimeSearchQueryParams } from "./animeSearch";
-import { AnimeEpisodePathParams } from "./animeEpisodes";
-import { EpisodeServersQueryParams } from "./episodeServers";
-import { AnimeAboutInfoQueryParams } from "./animeAboutInfo";
-import { AnimeEpisodeSrcsQueryParams } from "./animeEpisodeSrcs";
-import { AnimeSearchSuggestQueryParams } from "./animeSearchSuggestion";
-import { GenreAnimePathParams, GenreAnimeQueryParams } from "./animeGenre";
+} from "./animeProducer.js";
+import type { AnimeSearchQueryParams } from "./animeSearch.js";
+import type { AnimeEpisodePathParams } from "./animeEpisodes.js";
+import type { EpisodeServersQueryParams } from "./episodeServers.js";
+import type { AnimeAboutInfoQueryParams } from "./animeAboutInfo.js";
+import type { AnimeEpisodeSrcsQueryParams } from "./animeEpisodeSrcs.js";
+import type { AnimeSearchSuggestQueryParams } from "./animeSearchSuggestion.js";
 
-export {
+export type {
   GenreAnimePathParams,
   GenreAnimeQueryParams,
   AnimeSearchQueryParams,
