@@ -1,16 +1,15 @@
-import axios, { AxiosError } from "axios";
-import { load, CheerioAPI, SelectorType } from "cheerio";
 import {
   SRC_BASE_URL,
+  extractAnimes,
   ACCEPT_HEADER,
   USER_AGENT_HEADER,
   ACCEPT_ENCODING_HEADER,
   extractMostPopularAnimes,
-  extractAnimes,
-} from "../utils";
-
-import createHttpError, { HttpError } from "http-errors";
-import { ScrapedAnimeAboutInfo } from "../models/parsers";
+} from "../utils/index.js";
+import axios, { AxiosError } from "axios";
+import createHttpError, { type HttpError } from "http-errors";
+import { load, type CheerioAPI, type SelectorType } from "cheerio";
+import { type ScrapedAnimeAboutInfo } from "../models/parsers/index.js";
 
 // /anime/info?id=${anime-id}
 async function scrapeAnimeAboutInfo(

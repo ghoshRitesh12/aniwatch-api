@@ -4,11 +4,11 @@ import {
   ACCEPT_HEADER,
   USER_AGENT_HEADER,
   ACCEPT_ENCODING_HEADER,
-} from "../utils";
+} from "../utils/index.js";
 import axios, { AxiosError } from "axios";
-import createHttpError, { HttpError } from "http-errors";
-import { load, CheerioAPI } from "cheerio";
-import { ScrapedAnimeEpisodes } from "../models/parsers";
+import { load, type CheerioAPI } from "cheerio";
+import createHttpError, { type HttpError } from "http-errors";
+import { type ScrapedAnimeEpisodes } from "../models/parsers/index.js";
 
 // /anime/episodes/${anime-id}
 async function scrapeAnimeEpisodes(

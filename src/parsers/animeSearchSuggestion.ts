@@ -1,14 +1,13 @@
-import axios, { AxiosError } from "axios";
-import { load, CheerioAPI, SelectorType } from "cheerio";
 import {
   SRC_HOME_URL,
   SRC_AJAX_URL,
   USER_AGENT_HEADER,
   ACCEPT_ENCODING_HEADER,
-} from "../utils";
-
-import createHttpError, { HttpError } from "http-errors";
-import { ScrapedAnimeSearchSuggestion } from "../models/parsers";
+} from "../utils/index.js";
+import axios, { AxiosError } from "axios";
+import createHttpError, { type HttpError } from "http-errors";
+import { load, type CheerioAPI, type SelectorType } from "cheerio";
+import type { ScrapedAnimeSearchSuggestion } from "../models/parsers/index.js";
 
 // /anime/search/suggest?q=${query}
 async function scrapeAnimeSearchSuggestion(

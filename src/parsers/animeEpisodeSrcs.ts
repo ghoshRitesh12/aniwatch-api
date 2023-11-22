@@ -1,16 +1,15 @@
 import {
-  SRC_BASE_URL,
   SRC_AJAX_URL,
-  USER_AGENT_HEADER,
+  SRC_BASE_URL,
   retrieveServerId,
-} from "../utils";
-
+  USER_AGENT_HEADER,
+} from "../utils/index.js";
 import axios, { AxiosError } from "axios";
-import { load, CheerioAPI } from "cheerio";
-import { AnimeServers, Servers } from "../models/anime";
-import createHttpError, { HttpError } from "http-errors";
-import { ScrapedAnimeEpisodesSources } from "../models/parsers";
-import { RapidCloud, StreamSB, StreamTape } from "../extractors";
+import { load, type CheerioAPI } from "cheerio";
+import createHttpError, { type HttpError } from "http-errors";
+import { type AnimeServers, Servers } from "../models/anime.js";
+import { RapidCloud, StreamSB, StreamTape } from "../extractors/index.js";
+import { type ScrapedAnimeEpisodesSources } from "../models/parsers/index.js";
 
 // vidtreaming -> 4
 // rapidcloud  -> 1

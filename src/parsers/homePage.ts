@@ -1,5 +1,3 @@
-import axios, { AxiosError } from "axios";
-import { load, CheerioAPI, SelectorType } from "cheerio";
 import {
   SRC_HOME_URL,
   ACCEPT_HEADER,
@@ -7,10 +5,11 @@ import {
   ACCEPT_ENCODING_HEADER,
   extractTop10Animes,
   extractAnimes,
-} from "../utils";
-
-import createHttpError, { HttpError } from "http-errors";
-import { ScrapedHomePage } from "../models/parsers";
+} from "../utils/index.js";
+import axios, { AxiosError } from "axios";
+import createHttpError, { type HttpError } from "http-errors";
+import type { ScrapedHomePage } from "../models/parsers/index.js";
+import { load, type CheerioAPI, type SelectorType } from "cheerio";
 
 // /anime/home
 async function scrapeHomePage(): Promise<ScrapedHomePage | HttpError> {

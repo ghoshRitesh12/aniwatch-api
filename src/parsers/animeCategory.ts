@@ -1,17 +1,16 @@
-import axios, { AxiosError } from "axios";
-import { load, CheerioAPI, SelectorType } from "cheerio";
 import {
   SRC_BASE_URL,
+  extractAnimes,
   ACCEPT_HEADER,
   USER_AGENT_HEADER,
-  ACCEPT_ENCODING_HEADER,
-  extractAnimes,
   extractTop10Animes,
-} from "../utils";
-
-import { AnimeCategories } from "../models/anime";
-import createHttpError, { HttpError } from "http-errors";
-import { ScrapedAnimeCategory } from "../models/parsers";
+  ACCEPT_ENCODING_HEADER,
+} from "../utils/index.js";
+import axios, { AxiosError } from "axios";
+import { type AnimeCategories } from "../models/anime.js";
+import createHttpError, { type HttpError } from "http-errors";
+import { load, type CheerioAPI, type SelectorType } from "cheerio";
+import { type ScrapedAnimeCategory } from "../models/parsers/index.js";
 
 // /anime/:category?page=${page}
 async function scrapeAnimeCategory(
