@@ -1,13 +1,13 @@
-import scrapeHomePage from "./homePage";
-import scrapeGenreAnime from "./animeGenre";
-import scrapeAnimeSearch from "./animeSearch";
-import scrapeAnimeEpisodes from "./animeEpisodes";
-import scrapeAnimeCategory from "./animeCategory";
-import scrapeProducerAnimes from "./animeProducer";
-import scrapeEpisodeServers from "./episodeServers";
-import scrapeAnimeAboutInfo from "./animeAboutInfo";
-import scrapeAnimeEpisodeSources from "./animeEpisodeSrcs";
-import scrapeAnimeSearchSuggestion from "./animeSearchSuggestion";
+import scrapeHomePage from "./homePage.js";
+import scrapeGenreAnime from "./animeGenre.js";
+import scrapeAnimeSearch from "./animeSearch.js";
+import scrapeAnimeEpisodes from "./animeEpisodes.js";
+import scrapeAnimeCategory from "./animeCategory.js";
+import scrapeProducerAnimes from "./animeProducer.js";
+import scrapeEpisodeServers from "./episodeServers.js";
+import scrapeAnimeAboutInfo from "./animeAboutInfo.js";
+import scrapeAnimeEpisodeSources from "./animeEpisodeSrcs.js";
+import scrapeAnimeSearchSuggestion from "./animeSearchSuggestion.js";
 
 export {
   scrapeHomePage,
