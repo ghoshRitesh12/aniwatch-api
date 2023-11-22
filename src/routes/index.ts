@@ -1,4 +1,4 @@
-import { Router, IRouter } from "express";
+import { Router, type IRouter } from "express";
 import {
   getGenreAnime,
   getAnimeSearch,
@@ -10,7 +10,7 @@ import {
   getAnimeAboutInfo,
   getAnimeEpisodeSources,
   getAnimeSearchSuggestion,
-} from "../controllers";
+} from "../controllers/index.js";
 
 const router: IRouter = Router();
 
