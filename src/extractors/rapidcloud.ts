@@ -1,7 +1,7 @@
 import axios from "axios";
-import { AES, enc as CryptojsEnc } from "crypto-js";
-import { substringAfter, substringBefore } from "../utils";
-import { Video, Subtitle, Intro } from "../models/extractor";
+import CryptoJS from "crypto-js";
+import { substringAfter, substringBefore } from "../utils/index.js";
+import type { Video, Subtitle, Intro } from "../models/extractor.js";
 
 type extractReturn = { sources: Video[]; subtitles: Subtitle[] };
 
@@ -40,7 +40,9 @@ class RapidCloud {
       } = res;
 
       let decryptKey = await (
-        await axios.get("https://github.com/enimax-anime/key/blob/e6/key.txt")
+        await axios.get(
+          "https://raw.githubusercontent.com/theonlymo/keys/e1/key"
+        )
       ).data;
 
       decryptKey = substringBefore(
@@ -51,7 +53,7 @@ class RapidCloud {
       if (!decryptKey) {
         decryptKey = await (
           await axios.get(
-            "https://raw.githubusercontent.com/enimax-anime/key/e6/key.txt"
+            "https://raw.githubusercontent.com/theonlymo/keys/e1/key"
           )
         ).data;
       }
@@ -62,19 +64,24 @@ class RapidCloud {
         if (encrypted) {
           const sourcesArray = sources.split("");
           let extractedKey = "";
+          let currentIndex = 0;
 
           for (const index of decryptKey) {
-            for (let i = index[0]; i < index[1]; i++) {
-              extractedKey += sources[i];
+            const start = index[0] + currentIndex;
+            const end = start + index[1];
+
+            for (let i = start; i < end; i++) {
+              extractedKey += res.data.sources[i];
               sourcesArray[i] = "";
             }
+            currentIndex += index[1];
           }
 
           decryptKey = extractedKey;
           sources = sourcesArray.join("");
 
-          const decrypt = AES.decrypt(sources, decryptKey);
-          sources = JSON.parse(decrypt.toString(CryptojsEnc.Utf8));
+          const decrypt = CryptoJS.AES.decrypt(sources, decryptKey);
+          sources = JSON.parse(decrypt.toString(CryptoJS.enc.Utf8));
         }
       } catch (err: any) {
         console.log(err.message);
@@ -111,6 +118,7 @@ class RapidCloud {
 
             return [f1, f2];
           });
+
           for (const [f1, f2] of TdArray) {
             this.sources.push({
               url: `${source.file?.split("master.m3u8")[0]}${f2.replace(
@@ -123,7 +131,7 @@ class RapidCloud {
           }
           result.sources.push(...this.sources);
         }
-        if (intro.end > 1) {
+        if (intro?.end > 1) {
           result.intro = {
             start: intro.start,
             end: intro.end,
