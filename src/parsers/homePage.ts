@@ -45,7 +45,8 @@ async function scrapeHomePage(): Promise<ScrapedHomePage | HttpError> {
       const otherInfo = $(el)
         .find(".deslide-item-content .sc-detail .scd-item")
         .map((i, el) => $(el).text().trim())
-        .get();
+        .get()
+        .slice(0, -1);
 
       res.spotlightAnimes.push({
         rank:
@@ -81,6 +82,26 @@ async function scrapeHomePage(): Promise<ScrapedHomePage | HttpError> {
           .find(".deslide-item-content .desi-head-title.dynamic-name")
           ?.attr("data-jname")
           ?.trim(),
+        episodes: {
+          sub:
+            Number(
+              $(el)
+                .find(
+                  ".deslide-item-content .sc-detail .scd-item .tick-item.tick-sub"
+                )
+                ?.text()
+                ?.trim()
+            ) || null,
+          dub:
+            Number(
+              $(el)
+                .find(
+                  ".deslide-item-content .sc-detail .scd-item .tick-item.tick-dub"
+                )
+                ?.text()
+                ?.trim()
+            ) || null,
+        },
         otherInfo,
       });
     });
