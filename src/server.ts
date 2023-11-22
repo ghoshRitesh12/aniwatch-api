@@ -1,15 +1,15 @@
+import https from "https";
 import morgan from "morgan";
 import express from "express";
+import { resolve } from "path";
 import { config } from "dotenv";
 
-import https from "https";
-import { resolve } from "path";
-import corsConfig from "./config/cors";
-import { ratelimit } from "./config/ratelimit";
-import errorHandler from "./config/errorHandler";
-import notFoundHandler from "./config/notFoundHandler";
+import corsConfig from "./config/cors.js";
+import { ratelimit } from "./config/ratelimit.js";
+import errorHandler from "./config/errorHandler.js";
+import notFoundHandler from "./config/notFoundHandler.js";
 
-import animeRouter from "./routes";
+import animeRouter from "./routes/index.js";
 
 config();
 const app: express.Application = express();
@@ -19,7 +19,7 @@ app.use(morgan("dev"));
 app.use(corsConfig);
 app.use(ratelimit);
 
-app.use(express.static(resolve(__dirname, "..", "public")));
+app.use(express.static(resolve("public")));
 app.get("/health", (_, res) => res.sendStatus(200));
 app.use("/anime", animeRouter);
 
