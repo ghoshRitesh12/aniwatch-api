@@ -1,5 +1,5 @@
 # build stage for building .ts files
-FROM node:18-alpine as build
+FROM node:20-alpine as build
 
 RUN mkdir /home/app
 
@@ -14,7 +14,7 @@ COPY . .
 RUN npm run build
 
 # prod stage for including only necessary files
-FROM node:18-alpine as prod
+FROM node:20-alpine as prod
 
 LABEL org.opencontainers.image.source=https://github.com/ghoshRitesh12/aniwatch-api
 LABEL org.opencontainers.image.description="Aniwatch API docker image"
