@@ -1,6 +1,6 @@
 import axios from "axios";
-import { load, CheerioAPI } from "cheerio";
-import { Video } from "../models/extractor";
+import { load, type CheerioAPI } from "cheerio";
+import type { Video } from "../models/extractor.js";
 
 class StreamTape {
   private serverName = "StreamTape";
