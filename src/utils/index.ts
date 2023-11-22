@@ -6,8 +6,7 @@ import {
   SRC_SEARCH_URL,
   USER_AGENT_HEADER,
   ACCEPT_ENCODING_HEADER,
-} from "./constants";
-
+} from "./constants.js";
 import {
   extractAnimes,
   substringAfter,
@@ -15,7 +14,7 @@ import {
   retrieveServerId,
   extractTop10Animes,
   extractMostPopularAnimes,
-} from "./methods";
+} from "./methods.js";
 
 export {
   SRC_AJAX_URL,
