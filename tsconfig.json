@@ -14,7 +14,7 @@
     "moduleResolution": "NodeNext",
     "module": "NodeNext",
     "outDir": "./dist",
-    "rootDir": "./src",
+    "rootDir": "./",
     "sourceMap": true,
     //
     "declaration": true,
@@ -26,7 +26,8 @@
     ]
   },
   "include": [
-    "./src"
+    "./src",
+    "./api"
   ],
   "ts-node": {
     "esm": true
