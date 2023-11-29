@@ -8,6 +8,7 @@
     "start": "tsx src/server.ts",
     "dev": "tsx watch src/server.ts",
     "build": "tsc -p tsconfig.json",
+    "vercel-build": "echo \"Hello\"",
     "prepare": "husky install",
     "test": "jest",
     "healthcheck": "curl -f http://localhost:4000/health"
@@ -49,6 +50,6 @@
     "jest": "^29.6.2",
     "ts-jest": "^29.1.1",
     "tsx": "^4.2.0",
-    "typescript": "^5.1.6"
+    "typescript": "^5.3.2"
   }
 }
