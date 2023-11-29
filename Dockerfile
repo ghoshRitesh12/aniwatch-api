@@ -17,7 +17,8 @@ RUN npm run build
 FROM node:20-alpine as prod
 
 LABEL org.opencontainers.image.source=https://github.com/ghoshRitesh12/aniwatch-api
-LABEL org.opencontainers.image.description="Aniwatch API docker image"
+LABEL org.opencontainers.image.description="Node.js API for obtaining anime information from aniwatch.to (formerly zoro.to) written in TypeScript, made with Cheerio & Axios"
+LABEL org.opencontainers.image.description "Node.js API for obtaining anime information from aniwatch.to (formerly zoro.to) written in TypeScript, made with Cheerio & Axios"
 LABEL org.opencontainers.image.licenses=MIT
 
 # create a non-privileged user
@@ -52,6 +53,6 @@ ENV PORT=4000
 # exposed port
 EXPOSE 4000
 
-CMD [ "node", "dist/server.js" ]
+CMD [ "node", "dist/src/server.js" ]
 
 # exit
