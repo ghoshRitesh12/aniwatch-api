@@ -82,7 +82,7 @@
 - [Installation](#installation)
   - [Local](#local)
   - [Docker](#docker)
-- [Host your instance](#host-your-instance)
+- [Host your instance](#-host-your-instance)
   - [Vercel](#vercel)
 - [Documentation](#documentation)
   - [GET Anime Home Page](#get-anime-home-page)
