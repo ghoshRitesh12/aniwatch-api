@@ -1,3 +1,7 @@
+## [1.18.2](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.18.1...v1.18.2) (2023-11-29)
+
+
+
 ## [1.18.1](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.18.0...v1.18.1) (2023-11-29)
 
 
@@ -41,10 +45,6 @@
 * **ts:** add strict file imports ([f9646c2](https://github.com/ghoshRitesh12/aniwatch-api/commit/f9646c2bf8cea3c03214a7c926de776b9ab8f76d))
 * **ts:** controller file imports ([784a585](https://github.com/ghoshRitesh12/aniwatch-api/commit/784a5850a6f305718c53a19ce1eb9391cf478373))
 * **ts:** file import types & static folder path ([f8e27d7](https://github.com/ghoshRitesh12/aniwatch-api/commit/f8e27d77d20f6c1f727785377bec6839d943abff))
-
-
-
-## [1.17.3](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.17.2...v1.17.3) (2023-09-27)
 
 
 
