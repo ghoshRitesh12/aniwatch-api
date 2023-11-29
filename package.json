@@ -8,6 +8,7 @@
     "start": "tsx src/server.ts",
     "dev": "tsx watch src/server.ts",
     "build": "tsc -p tsconfig.json",
+    "vercel-build": "echo \"Hello\"",
     "prepare": "husky install",
     "test": "jest",
     "healthcheck": "curl -f http://localhost:4000/health"
