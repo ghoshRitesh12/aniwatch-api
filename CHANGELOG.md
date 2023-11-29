@@ -1,3 +1,13 @@
+# [1.18.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.17.5...v1.18.0) (2023-11-29)
+
+
+### Features
+
+* add check for vercel deployment ([c079bf8](https://github.com/ghoshRitesh12/aniwatch-api/commit/c079bf808ab2e6ec7fa58832f842b05e6212111a))
+* add vercel api entry point file ([5da81f1](https://github.com/ghoshRitesh12/aniwatch-api/commit/5da81f18ce271df71a80d63a19d2f6ce7da6d072))
+
+
+
 ## [1.17.5](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.17.4...v1.17.5) (2023-11-22)
 
 
@@ -35,15 +45,6 @@
 
 
 ## [1.17.2](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.17.1...v1.17.2) (2023-09-25)
-
-
-
-## [1.17.1](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.17.0...v1.17.1) (2023-09-10)
-
-
-### Performance Improvements
-
-* **rateLimit:** increased `windowMs` time ([6e11137](https://github.com/ghoshRitesh12/aniwatch-api/commit/6e11137ce2d5bd3b35beb7b56904abc82b2f6f18))
 
 
 
