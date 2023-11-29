@@ -1,6 +1,6 @@
 {
   "name": "aniwatch-api",
-  "version": "1.18.2",
+  "version": "1.18.3",
   "description": "Node Express API for obtaining anime information from aniwatch",
   "main": "ts-node src/server.ts",
   "type": "module",
