@@ -198,6 +198,11 @@ console.log(data);
       poster: string,
       description: string,
       rank: number,
+      otherInfo: string[],
+      episodes: {
+        sub: number,
+        dub: number,
+      },
     },
     {...},
   ],
