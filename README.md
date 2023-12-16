@@ -843,6 +843,7 @@ console.log(data);
     },
     {...}
   ],
+  anilistID: number | null
 }
 ```
 
