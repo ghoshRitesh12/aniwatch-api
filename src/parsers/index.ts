@@ -6,6 +6,7 @@ import scrapeAnimeCategory from "./animeCategory.js";
 import scrapeProducerAnimes from "./animeProducer.js";
 import scrapeEpisodeServers from "./episodeServers.js";
 import scrapeAnimeAboutInfo from "./animeAboutInfo.js";
+import scrapeEstimatedSchedule from "./estimatedSchedule.js";
 import scrapeAnimeEpisodeSources from "./animeEpisodeSrcs.js";
 import scrapeAnimeSearchSuggestion from "./animeSearchSuggestion.js";
 
@@ -18,6 +19,7 @@ export {
   scrapeEpisodeServers,
   scrapeProducerAnimes,
   scrapeAnimeAboutInfo,
+  scrapeEstimatedSchedule,
   scrapeAnimeEpisodeSources,
   scrapeAnimeSearchSuggestion,
 };
