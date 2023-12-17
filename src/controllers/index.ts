@@ -6,6 +6,7 @@ import getAnimeCategory from "./animeCategory.controller.js";
 import getProducerAnimes from "./animeProducer.controller.js";
 import getEpisodeServers from "./episodeServers.controller.js";
 import getAnimeAboutInfo from "./animeAboutInfo.controller.js";
+import getEstimatedSchedule from "./estimatedSchedule.controller.js";
 import getAnimeEpisodeSources from "./animeEpisodeSrcs.controller.js";
 import getAnimeSearchSuggestion from "./animeSearchSuggestion.controller.js";
 
@@ -18,6 +19,7 @@ export {
   getEpisodeServers,
   getProducerAnimes,
   getAnimeAboutInfo,
+  getEstimatedSchedule,
   getAnimeEpisodeSources,
   getAnimeSearchSuggestion,
 };

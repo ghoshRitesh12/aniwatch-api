@@ -15,6 +15,7 @@ import type { AnimeEpisodePathParams } from "./animeEpisodes.js";
 import type { EpisodeServersQueryParams } from "./episodeServers.js";
 import type { AnimeAboutInfoQueryParams } from "./animeAboutInfo.js";
 import type { AnimeEpisodeSrcsQueryParams } from "./animeEpisodeSrcs.js";
+import type { EstimatedScheduleQueryParams } from "./estimatedSchedule.js";
 import type { AnimeSearchSuggestQueryParams } from "./animeSearchSuggestion.js";
 
 export type {
@@ -29,5 +30,6 @@ export type {
   AnimeAboutInfoQueryParams,
   EpisodeServersQueryParams,
   AnimeEpisodeSrcsQueryParams,
+  EstimatedScheduleQueryParams,
   AnimeSearchSuggestQueryParams,
 };
