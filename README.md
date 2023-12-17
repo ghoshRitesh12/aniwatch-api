@@ -258,7 +258,10 @@ console.log(data);
     {...},
   ],
 }
+
 ```
+
+[🔼 Back to Top](#table-of-contents)
 
 ### `GET` Anime About Info
 
@@ -371,6 +374,8 @@ console.log(data);
 }
 ```
 
+[🔼 Back to Top](#table-of-contents)
+
 ### `GET` Search Results
 
 #### Endpoint
@@ -435,6 +440,8 @@ console.log(data);
 }
 ```
 
+[🔼 Back to Top](#table-of-contents)
+
 ### `GET` Search Suggestions
 
 #### Endpoint
@@ -475,6 +482,8 @@ console.log(data);
   ],
 }
 ```
+
+[🔼 Back to Top](#table-of-contents)
 
 ### `GET` Producer Animes
 
@@ -563,6 +572,8 @@ console.log(data);
 }
 ```
 
+[🔼 Back to Top](#table-of-contents)
+
 ### `GET` Genre Animes
 
 #### Endpoint
@@ -633,6 +644,8 @@ console.log(data);
   hasNextPage: true
 }
 ```
+
+[🔼 Back to Top](#table-of-contents)
 
 ### `GET` Category Anime
 
@@ -706,6 +719,8 @@ console.log(data);
 }
 ```
 
+[🔼 Back to Top](#table-of-contents)
+
 ### `GET` Estimated Schedules
 
 #### Endpoint
@@ -745,6 +760,8 @@ console.log(data);
   ]
 }
 ```
+
+[🔼 Back to Top](#table-of-contents)
 
 ### `GET` Anime Episodes
 
@@ -786,6 +803,8 @@ console.log(data);
   ]
 }
 ```
+
+[🔼 Back to Top](#table-of-contents)
 
 ### `GET` Anime Episode Servers
 
@@ -833,6 +852,8 @@ console.log(data);
   ],
 }
 ```
+
+[🔼 Back to Top](#table-of-contents)
 
 ### `GET` Anime Episode Streaming Links
 
@@ -887,6 +908,8 @@ console.log(data);
   anilistID: number | null
 }
 ```
+
+[🔼 Back to Top](#table-of-contents)
 
 ## <span id="development">👨‍💻 Development</span>
 
