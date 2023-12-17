@@ -8,6 +8,7 @@ import {
   getEpisodeServers,
   getProducerAnimes,
   getAnimeAboutInfo,
+  getEstimatedSchedule,
   getAnimeEpisodeSources,
   getAnimeSearchSuggestion,
 } from "../controllers/index.js";
@@ -41,6 +42,9 @@ router.get("/servers", getEpisodeServers);
 // episodeId=steinsgate-3?ep=230
 // /anime/episode-srcs?id=${episodeId}?server=${server}&category=${category (dub or sub)}
 router.get("/episode-srcs", getAnimeEpisodeSources);
+
+// /anime/schedule?date=${date}
+router.get("/schedule", getEstimatedSchedule);
 
 // /anime/producer/${name}?page=${page}
 router.get("/producer/:name", getProducerAnimes);
