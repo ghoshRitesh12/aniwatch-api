@@ -1,3 +1,16 @@
+# [1.20.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.19.0...v1.20.0) (2023-12-17)
+
+
+### Features
+
+* **estimatedSchedule:** add `/schedule` endpoint controller ([caec8b6](https://github.com/ghoshRitesh12/aniwatch-api/commit/caec8b684d0afb5fb97ea6fd5a03e8001e2db648))
+* **estimatedSchedule:** add `/schedule` endpoint controller query params type ([0685c20](https://github.com/ghoshRitesh12/aniwatch-api/commit/0685c200dd0ccd3de9ed88996b1e55f0e7ce4bf7))
+* **estimatedSchedule:** add `/schedule` route ([a19d705](https://github.com/ghoshRitesh12/aniwatch-api/commit/a19d705c909827566d91841360aa472bdfbf6e82))
+* **estimatedSchedule:** add `estimatedSchedule` parser ([8826dd2](https://github.com/ghoshRitesh12/aniwatch-api/commit/8826dd276fe4a5ccab2b074d77191b81b265e528))
+* **estimatedSchedule:** add `EstimatedSchedule` types ([0ca9a82](https://github.com/ghoshRitesh12/aniwatch-api/commit/0ca9a82a2bd5b769e252424a78a08a17a62e9854))
+
+
+
 # [1.19.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.18.3...v1.19.0) (2023-12-16)
 
 
@@ -16,16 +29,6 @@
 
 
 ## [1.18.1](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.18.0...v1.18.1) (2023-11-29)
-
-
-
-# [1.18.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.17.5...v1.18.0) (2023-11-29)
-
-
-### Features
-
-* add check for vercel deployment ([c079bf8](https://github.com/ghoshRitesh12/aniwatch-api/commit/c079bf808ab2e6ec7fa58832f842b05e6212111a))
-* add vercel api entry point file ([5da81f1](https://github.com/ghoshRitesh12/aniwatch-api/commit/5da81f18ce271df71a80d63a19d2f6ce7da6d072))
 
 
 
