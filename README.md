@@ -92,6 +92,7 @@
   - [GET Producer Animes](#get-producer-animes)
   - [GET Genre Animes](#get-genre-animes)
   - [GET Category Anime](#get-category-anime)
+  - [GET Estimated Schedules](#get-estimated-schedules)
   - [GET Anime Episodes](#get-anime-episodes)
   - [GET Anime Episode Servers](#get-anime-episode-servers)
   - [GET Anime Episode Streaming Links](#get-anime-episode-streaming-links)
@@ -702,6 +703,46 @@ console.log(data);
   currentPage: 2,
   totalPages: 100,
   hasNextPage: true
+}
+```
+
+### `GET` Estimated Schedules
+
+#### Endpoint
+
+```sh
+https://api-aniwatch.onrender.com/anime/schedule?date={date}
+```
+
+#### Query Parameters
+
+|      Parameter      |  Type  |                             Description                              | Required? | Default |
+| :-----------------: | :----: | :------------------------------------------------------------------: | :-------: | :-----: |
+| `date (yyyy-mm-dd)` | string | The date of the desired schedule. (months & days must have 2 digits) |    Yes    |   --    |
+
+#### Request sample
+
+```javascript
+const resp = await fetch(
+  "https://api-aniwatch.onrender.com/anime/schedule?date=2023-01-14"
+);
+const data = await resp.json();
+console.log(data);
+```
+
+#### Response Schema
+
+```javascript
+{
+  scheduledAnimes: [
+    {
+      id: string,
+      time: string, // 24 hours format
+      name: string,
+      jname: string,
+    },
+    {...}
+  ]
 }
 ```
 
