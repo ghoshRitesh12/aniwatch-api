@@ -1,3 +1,12 @@
+# [1.21.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.20.2...v1.21.0) (2023-12-29)
+
+
+### Features
+
+* add `malID` to episode srcs ([746e645](https://github.com/ghoshRitesh12/aniwatch-api/commit/746e645c2feb1ee7b7464f36d59522b1a2fe42bb))
+
+
+
 ## [1.20.2](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.20.1...v1.20.2) (2023-12-18)
 
 
@@ -25,10 +34,6 @@
 ### Features
 
 * add `anilistID` in response ([4cf7e46](https://github.com/ghoshRitesh12/aniwatch-api/commit/4cf7e460cfc5449fdeea29634fa24c4709473178))
-
-
-
-## [1.18.3](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.18.2...v1.18.3) (2023-11-29)
 
 
 
