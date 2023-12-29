@@ -8,6 +8,7 @@ import { type AnimeServers, Servers } from "../models/anime.js";
 import { type AnimeEpisodeSrcsQueryParams } from "../models/controllers/index.js";
 
 type AnilistID = number | null;
+type MalID = number | null;
 
 // /anime/episode-srcs?id=${episodeId}?server=${server}&category=${category (dub or sub)}
 const getAnimeEpisodeSources: RequestHandler<
@@ -33,6 +34,7 @@ const getAnimeEpisodeSources: RequestHandler<
       throw createHttpError.BadRequest("Anime episode id required");
     }
 
+    let malID: MalID;
     let anilistID: AnilistID;
     const animeURL = new URL(episodeId?.split("?ep=")[0], SRC_BASE_URL)?.href;
 
@@ -53,13 +55,16 @@ const getAnimeEpisodeSources: RequestHandler<
       anilistID = Number(
         JSON.parse($("body")?.find("#syncData")?.text())?.anilist_id
       );
+      malID = Number(JSON.parse($("body")?.find("#syncData")?.text())?.mal_id);
     } catch (err) {
       anilistID = null;
+      malID = null;
     }
 
     res.status(200).json({
       ...episodeSrcData,
       anilistID,
+      malID,
     });
   } catch (err: any) {
     console.error(err);
