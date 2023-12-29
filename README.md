@@ -907,7 +907,8 @@ console.log(data);
     },
     {...}
   ],
-  anilistID: number | null
+  anilistID: number | null,
+  malID: number | null,
 }
 ```
 
