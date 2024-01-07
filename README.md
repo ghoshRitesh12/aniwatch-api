@@ -55,10 +55,17 @@
       >
     </a>
     <a 
-      href="https://github.com/ghoshRitesh12/aniwatch-api"
+      href="https://github.com/ghoshRitesh12/aniwatch-api/stargazers"
     >
       <img 
         src="https://img.shields.io/github/stars/ghoshRitesh12/aniwatch-api" alt="stars"
+      >
+    </a>
+    <a 
+      href="https://github.com/ghoshRitesh12/aniwatch-api/network/members"
+    >
+      <img 
+        src="https://img.shields.io/github/forks/ghoshRitesh12/aniwatch-api" alt="forks"
       >
     </a>
     <a 
