@@ -1,4 +1,5 @@
-import { scrapeHomePage } from "../src/parsers";
+import { expect, test } from "vitest";
+import { scrapeHomePage } from "../src/parsers/index.js";
 
 test("returns anime information present in homepage", async () => {
   const data = await scrapeHomePage();

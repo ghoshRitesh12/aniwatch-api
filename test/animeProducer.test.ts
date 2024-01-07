@@ -1,4 +1,5 @@
-import { scrapeProducerAnimes } from "../src/parsers";
+import { expect, test } from "vitest";
+import { scrapeProducerAnimes } from "../src/parsers/index.js";
 
 test("returns animes produced by a producer", async () => {
   const data = await scrapeProducerAnimes("toei-animation", 2);

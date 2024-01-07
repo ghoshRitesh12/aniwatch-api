@@ -1,4 +1,5 @@
-import { scrapeGenreAnime } from "../src/parsers";
+import { expect, test } from "vitest";
+import { scrapeGenreAnime } from "../src/parsers/index.js";
 
 test("returns animes belonging to a genre", async () => {
   const data = await scrapeGenreAnime("shounen", 2);

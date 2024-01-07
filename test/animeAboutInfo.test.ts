@@ -1,4 +1,5 @@
-import { scrapeAnimeAboutInfo } from "../src/parsers";
+import { expect, test } from "vitest";
+import { scrapeAnimeAboutInfo } from "../src/parsers/index.js";
 
 test("returns information about an anime", async () => {
   const data = await scrapeAnimeAboutInfo("steinsgate-3");

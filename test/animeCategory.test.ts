@@ -1,4 +1,5 @@
-import { scrapeAnimeCategory } from "../src/parsers";
+import { expect, test } from "vitest";
+import { scrapeAnimeCategory } from "../src/parsers/index.js";
 
 test("returns animes belonging to a category", async () => {
   const data = await scrapeAnimeCategory("subbed-anime");
