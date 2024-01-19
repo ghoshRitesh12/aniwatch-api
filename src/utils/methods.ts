@@ -3,7 +3,7 @@ import type {
   Top10Anime,
   MostPopularAnime,
   Top10AnimeTimePeriod,
-} from "../models/anime.js";
+} from "../types/anime.js";
 import type { CheerioAPI, SelectorType } from "cheerio";
 import createHttpError, { HttpError } from "http-errors";
 
