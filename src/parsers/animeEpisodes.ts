@@ -8,7 +8,7 @@ import {
 import axios, { AxiosError } from "axios";
 import { load, type CheerioAPI } from "cheerio";
 import createHttpError, { type HttpError } from "http-errors";
-import { type ScrapedAnimeEpisodes } from "../models/parsers/index.js";
+import { type ScrapedAnimeEpisodes } from "../types/parsers/index.js";
 
 // /anime/episodes/${anime-id}
 async function scrapeAnimeEpisodes(

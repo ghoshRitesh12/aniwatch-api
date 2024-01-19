@@ -7,7 +7,7 @@ import {
 import axios, { AxiosError } from "axios";
 import createHttpError, { type HttpError } from "http-errors";
 import { load, type CheerioAPI, type SelectorType } from "cheerio";
-import type { ScrapedAnimeSearchSuggestion } from "../models/parsers/index.js";
+import type { ScrapedAnimeSearchSuggestion } from "../types/parsers/index.js";
 
 // /anime/search/suggest?q=${query}
 async function scrapeAnimeSearchSuggestion(

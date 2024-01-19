@@ -8,7 +8,7 @@ import {
 } from "../utils/index.js";
 import axios, { AxiosError } from "axios";
 import createHttpError, { type HttpError } from "http-errors";
-import type { ScrapedHomePage } from "../models/parsers/index.js";
+import type { ScrapedHomePage } from "../types/parsers/index.js";
 import { load, type CheerioAPI, type SelectorType } from "cheerio";
 
 // /anime/home

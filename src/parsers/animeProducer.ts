@@ -10,7 +10,7 @@ import {
 import axios, { AxiosError } from "axios";
 import createHttpError, { type HttpError } from "http-errors";
 import { load, type CheerioAPI, type SelectorType } from "cheerio";
-import type { ScrapedProducerAnime } from "../models/parsers/index.js";
+import type { ScrapedProducerAnime } from "../types/parsers/index.js";
 
 // /anime/producer/${name}?page=${page}
 async function scrapeProducerAnimes(

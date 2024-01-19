@@ -7,7 +7,7 @@ import {
 import axios, { AxiosError } from "axios";
 import createHttpError, { type HttpError } from "http-errors";
 import { load, type CheerioAPI, type SelectorType } from "cheerio";
-import { type ScrapedEstimatedSchedule } from "../models/parsers/index.js";
+import { type ScrapedEstimatedSchedule } from "../types/parsers/index.js";
 
 // /anime/schedule?date=${date}
 async function scrapeEstimatedSchedule(
