@@ -1,7 +1,7 @@
 import createHttpError from "http-errors";
 import { type RequestHandler } from "express";
 import { scrapeEstimatedSchedule } from "../parsers/index.js";
-import { type EstimatedScheduleQueryParams } from "../models/controllers/index.js";
+import { type EstimatedScheduleQueryParams } from "../types/controllers/index.js";
 
 // /anime/schedule?date=${date}
 const getEstimatedSchedule: RequestHandler<

@@ -4,7 +4,7 @@ import { scrapeProducerAnimes } from "../parsers/index.js";
 import type {
   AnimeProducerPathParams,
   AnimeProducerQueryParams,
-} from "../models/controllers/index.js";
+} from "../types/controllers/index.js";
 
 // /anime/producer/${name}?page=${page}
 const getProducerAnimes: RequestHandler<

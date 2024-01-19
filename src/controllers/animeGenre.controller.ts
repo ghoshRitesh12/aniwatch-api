@@ -4,7 +4,7 @@ import { scrapeGenreAnime } from "../parsers/index.js";
 import type {
   GenreAnimePathParams,
   GenreAnimeQueryParams,
-} from "../models/controllers/index.js";
+} from "../types/controllers/index.js";
 
 // /anime/genre/${name}?page=${page}
 const getGenreAnime: RequestHandler<

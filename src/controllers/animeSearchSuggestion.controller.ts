@@ -1,7 +1,7 @@
 import createHttpError from "http-errors";
 import { type RequestHandler } from "express";
 import { scrapeAnimeSearchSuggestion } from "../parsers/index.js";
-import { type AnimeSearchSuggestQueryParams } from "../models/controllers/index.js";
+import { type AnimeSearchSuggestQueryParams } from "../types/controllers/index.js";
 
 // /anime/search/suggest?q=${query}
 const getAnimeSearchSuggestion: RequestHandler<

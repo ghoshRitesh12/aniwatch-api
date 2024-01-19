@@ -4,8 +4,8 @@ import { type RequestHandler } from "express";
 import { type CheerioAPI, load } from "cheerio";
 import { scrapeAnimeEpisodeSources } from "../parsers/index.js";
 import { USER_AGENT_HEADER, SRC_BASE_URL } from "../utils/constants.js";
-import { type AnimeServers, Servers } from "../models/anime.js";
-import { type AnimeEpisodeSrcsQueryParams } from "../models/controllers/index.js";
+import { type AnimeServers, Servers } from "../types/anime.js";
+import { type AnimeEpisodeSrcsQueryParams } from "../types/controllers/index.js";
 
 type AnilistID = number | null;
 type MalID = number | null;
