@@ -71,7 +71,7 @@ git checkout -b <new-branch-name>
 - `src` directory contains all the source code required for this project
 
   - `controllers` directory contains all the controller logic
-  - `models` directory contains all types & interfaces used for this project
+  - `types` directory contains all types & interfaces used for this project
   - `parsers` directory contains all the parsing aka scraping logic
   - `routes` directory contains all the routers
   - `utils` directory contains handy utility methods and properties
