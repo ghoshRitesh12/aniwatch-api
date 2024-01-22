@@ -91,6 +91,7 @@
   - [Docker](#docker)
 - [Host your instance](#-host-your-instance)
   - [Vercel](#vercel)
+  - [Render](#render)
 - [Documentation](#documentation)
   - [GET Anime Home Page](#get-anime-home-page)
   - [GET Anime About Info](#get-anime-about-info)
@@ -152,11 +153,19 @@ You can also add the `-d` flag to run the container in detached mode.
 
 ### Vercel
 
+Deploy your own instance of Aniwatch API on Vercel.
+
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/ghoshRitesh12/aniwatch-api)
 
 > [!NOTE]
 >
 > When deploying to vercel, set an env named `IS_VERCEL_DEPLOYMENT` to `true` or anything, but this env should be present.
+
+### Render
+
+Deploy your own instance of Aniwatch API on Render.
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/ghoshRitesh12/aniwatch-api)
 
 ## <span id="documentation">📚 Documentation</span>
 
