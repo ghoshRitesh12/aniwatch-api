@@ -3,7 +3,10 @@ import CryptoJS from "crypto-js";
 import { substringAfter, substringBefore } from "../utils/index.js";
 import type { Video, Subtitle, Intro } from "../types/extractor.js";
 
-type extractReturn = { sources: Video[]; subtitles: Subtitle[] };
+type extractReturn = {
+  sources: Video[];
+  subtitles: Subtitle[];
+};
 
 // https://megacloud.tv/embed-2/e-1/IxJ7GjGVCyml?k=1
 class RapidCloud {
@@ -15,7 +18,7 @@ class RapidCloud {
   private readonly host = "https://rapid-cloud.co";
 
   async extract(videoUrl: URL): Promise<extractReturn> {
-    const result: extractReturn & { intro?: Intro } = {
+    const result: extractReturn & { intro?: Intro; outro?: Intro } = {
       sources: [],
       subtitles: [],
     };
@@ -36,12 +39,12 @@ class RapidCloud {
       );
 
       let {
-        data: { sources, tracks, intro, encrypted },
+        data: { sources, tracks, intro, outro, encrypted },
       } = res;
 
       let decryptKey = await (
         await axios.get(
-          "https://raw.githubusercontent.com/theonlymo/keys/e1/key"
+          "https://raw.githubusercontent.com/cinemaxhq/keys/e1/key"
         )
       ).data;
 
@@ -53,7 +56,7 @@ class RapidCloud {
       if (!decryptKey) {
         decryptKey = await (
           await axios.get(
-            "https://raw.githubusercontent.com/theonlymo/keys/e1/key"
+            "https://raw.githubusercontent.com/cinemaxhq/keys/e1/key"
           )
         ).data;
       }
@@ -131,13 +134,12 @@ class RapidCloud {
           }
           result.sources.push(...this.sources);
         }
-        if (intro?.end > 1) {
-          result.intro = {
-            start: intro.start,
-            end: intro.end,
-          };
-        }
       }
+
+      result.intro =
+        intro?.end > 1 ? { start: intro.start, end: intro.end } : undefined;
+      result.outro =
+        outro?.end > 1 ? { start: outro.start, end: outro.end } : undefined;
 
       result.sources.push({
         url: sources[0].file,
