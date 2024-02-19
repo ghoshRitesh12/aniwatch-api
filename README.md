@@ -595,14 +595,14 @@ console.log(data);
 #### Endpoint
 
 ```sh
-https://api-aniwatch.onrender.com/anime/genre/{name}?page={page}
+https://api-aniwatch.onrender.com/anime/genre/{genre}?page={page}
 ```
 
 #### Path Parameters
 
-| Parameter |  Type  |               Description                | Required? | Default |
-| :-------: | :----: | :--------------------------------------: | :-------: | :-----: |
-|  `name`   | string | The name of anime genre (in kebab case). |    Yes    |   --    |
+| Parameter |  Type  |               Description         | Required? | Default |
+| :-------: | :----: | :-------------------------------: | :-------: | :-----: |
+|  `genre`  | string | The anime genre (in kebab case).  |    Yes    |   --    |
 
 #### Query Parameters
 
