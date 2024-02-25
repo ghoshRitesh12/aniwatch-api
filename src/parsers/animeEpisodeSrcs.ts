@@ -8,7 +8,12 @@ import axios, { AxiosError } from "axios";
 import { load, type CheerioAPI } from "cheerio";
 import createHttpError, { type HttpError } from "http-errors";
 import { type AnimeServers, Servers } from "../types/anime.js";
-import { RapidCloud, StreamSB, StreamTape } from "../extractors/index.js";
+import {
+  RapidCloud,
+  StreamSB,
+  StreamTape,
+  MegaCloud,
+} from "../extractors/index.js";
 import { type ScrapedAnimeEpisodesSources } from "../types/parsers/index.js";
 
 // vidtreaming -> 4
@@ -28,7 +33,7 @@ async function scrapeAnimeEpisodeSources(
       case Servers.VidStreaming:
       case Servers.VidCloud:
         return {
-          ...(await new RapidCloud().extract(serverUrl)),
+          ...(await new MegaCloud().extract(serverUrl)),
         };
       case Servers.StreamSB:
         return {
