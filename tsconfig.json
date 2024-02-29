@@ -1,38 +1,23 @@
 {
   "compilerOptions": {
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
     "esModuleInterop": true,
-    "skipLibCheck": true,
-    "target": "ES2022",
-    "verbatimModuleSyntax": true,
-    "allowJs": true,
-    "resolveJsonModule": true,
-    "moduleDetection": "force",
-    //
-    "strict": true,
-    // "noUncheckedIndexedAccess": true,
-    //
-    "moduleResolution": "NodeNext",
-    "module": "NodeNext",
+    "target": "es2022",
+    "sourceMap": true,
     "outDir": "./dist",
     "rootDir": "./",
-    "sourceMap": true,
-    //
-    "declaration": true,
-    "removeComments": true,
-    "forceConsistentCasingInFileNames": true,
-    "strictFunctionTypes": true,
-    "lib": [
-      "ES2022"
-    ]
   },
   "include": [
     "./src",
     "./api"
   ],
-  "ts-node": {
-    "esm": true
-  },
   "exclude": [
     "node_modules",
   ],
+  "ts-node": {
+    "esm": true
+  },
 }
