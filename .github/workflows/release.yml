@@ -2,6 +2,7 @@ name: Releases
 on:
   push:
     branches: ["main"]
+on: workflow_dispatch
 
 jobs:
   changelog:
