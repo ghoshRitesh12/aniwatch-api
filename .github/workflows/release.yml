@@ -12,19 +12,25 @@ jobs:
       - name: Checkouts repo
         uses: actions/checkout@v3
 
-      - name: Install dependencies and build
-        run: |
-          npm install
-          npm run build
-          npm install -g pkg
-          pkg -t node14-linux-x64 src/server.js -o dist/app-linux
-
       - name: Conventional changelog action
         id: changelog
         uses: TriPSs/conventional-changelog-action@v3
         with:
           skip-on-empty: false
           github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build app
+        - uses: actions/checkout@v4
+        - uses: actions/setup-node@v4
+          with:
+            node-version: latest
+        - run: npm ci
+        - run: npm i -g typescript webpack-cli
+        - run: npx webpack --config webpack.config.js
+        - run: node --experimental-sea-config sea-config.json
+        - run: cp $(command -v node) server
+        - run: npx postject server NODE_SEA_BLOB sea-prep.blob --sentinel-fuse NODE_SEA_FUSE_fce680ab2cc467b6e072b8b5df1996b2
+        
 
       - name: Create release
         if: ${{ steps.changelog.outputs.skipped == 'false' }}
@@ -35,13 +41,3 @@ jobs:
           tag: ${{ steps.changelog.outputs.tag }}
           name: ${{ steps.changelog.outputs.tag }}
           body: ${{ steps.changelog.outputs.clean_changelog }}
-          
-      - name: Upload Linux Executable as Asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: dist/app-linux
-          asset_name: app-linux
-          asset_content_type: application/octet-stream
