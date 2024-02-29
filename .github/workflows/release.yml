@@ -11,6 +11,13 @@ jobs:
       - name: Checkouts repo
         uses: actions/checkout@v3
 
+      - name: Install dependencies and build
+        run: |
+          npm install
+          npm run build
+          npm install -g pkg
+          pkg -t node14-linux-x64 src/server.js -o dist/app-linux
+
       - name: Conventional changelog action
         id: changelog
         uses: TriPSs/conventional-changelog-action@v3
@@ -27,3 +34,13 @@ jobs:
           tag: ${{ steps.changelog.outputs.tag }}
           name: ${{ steps.changelog.outputs.tag }}
           body: ${{ steps.changelog.outputs.clean_changelog }}
+          
+      - name: Upload Linux Executable as Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: dist/app-linux
+          asset_name: app-linux
+          asset_content_type: application/octet-stream
