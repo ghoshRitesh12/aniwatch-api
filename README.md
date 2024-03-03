@@ -14,7 +14,7 @@
 # <p align="center">Aniwatch API</p>
 
   <p align="center">
-    A free restful API serving anime information from <a href="https://aniwatch.to" target="_blank">aniwatch.to</a>
+    A free restful API serving anime information from <a href="https://hianime.to" target="_blank">hianime.to</a>
     <br/><br/>
     <strong>
       <a 
@@ -81,7 +81,7 @@
 > [!IMPORTANT]
 >
 > 1. [https://api-aniwatch.onrender.com](https://api-aniwatch.onrender.com/) is only meant to demo the API and has rate-limiting enabled to minimise bandwidth consumption. It is recommended to deploy your own instance for personal use by customizing the api as you need it to be.
-> 2. This API is just an unofficial api for [aniwatch.to](https://aniwatch.to) and is in no other way officially related to the same.
+> 2. This API is just an unofficial api for [hianime.to](https://hianime.to) and is in no other way officially related to the same.
 > 3. The content that this api provides is not mine, nor is it hosted by me. These belong to their respective owners. This api just demonstrates how to build an api that scrapes websites and uses their content.
 
 ## Table of Contents
