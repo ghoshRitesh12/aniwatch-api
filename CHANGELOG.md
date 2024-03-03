@@ -1,3 +1,13 @@
+# [1.26.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.25.0...v1.26.0) (2024-03-03)
+
+
+### Features
+
+* add axios config for future code reusability ([4782a8d](https://github.com/ghoshRitesh12/aniwatch-api/commit/4782a8dd708ec1f68bf469907024c082d606dc79))
+* update rebranded domain name ([a6f99bf](https://github.com/ghoshRitesh12/aniwatch-api/commit/a6f99bf681d27483d6f214c48673b875d3cbf6ab))
+
+
+
 # [1.25.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.24.1...v1.25.0) (2024-03-03)
 
 
@@ -28,15 +38,6 @@
 
 * update aniwatch domain name ([699b630](https://github.com/ghoshRitesh12/aniwatch-api/commit/699b630c4b66415222b0bb76e570ccfbedba0c75))
 * update decrypt key src ([3617c50](https://github.com/ghoshRitesh12/aniwatch-api/commit/3617c500d6780353b660e4e50040c9c80c9dbc45))
-
-
-
-# [1.22.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.21.4...v1.22.0) (2024-01-22)
-
-
-### Features
-
-* add render deployment config file ([a0cdb59](https://github.com/ghoshRitesh12/aniwatch-api/commit/a0cdb59f74d6f1994ba84faa6430933edb505182))
 
 
 
