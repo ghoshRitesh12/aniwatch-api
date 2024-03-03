@@ -33,10 +33,11 @@ if (!Boolean(process?.env?.IS_VERCEL_DEPLOYMENT)) {
 
   // don't sleep
   // remove the setInterval below for personal deployments
+  const intervalTime = 9 * 60 * 1000; // 9mins
   setInterval(() => {
     console.log("HEALTHCHECK ;)", new Date().toLocaleString());
     https.get("https://api-aniwatch.onrender.com/health");
-  }, 540000);
+  }, intervalTime);
 }
 
 export default app;
