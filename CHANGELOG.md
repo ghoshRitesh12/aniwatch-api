@@ -1,3 +1,7 @@
+## [1.27.1](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.27.0...v1.27.1) (2024-03-03)
+
+
+
 # [1.27.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.26.0...v1.27.0) (2024-03-03)
 
 
@@ -27,16 +31,6 @@
 
 
 ## [1.24.1](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.24.0...v1.24.1) (2024-02-28)
-
-
-
-# [1.24.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.23.0...v1.24.0) (2024-02-25)
-
-
-### Features
-
-* add MegaCloud extractor ([c634f6e](https://github.com/ghoshRitesh12/aniwatch-api/commit/c634f6e560bdb3b8dec2333439a3e285813e6532))
-* replace RapidCloud extractor for MegaCloud ([74e9455](https://github.com/ghoshRitesh12/aniwatch-api/commit/74e9455890c176e51f89e59a9bc909cd959dc09f))
 
 
 
