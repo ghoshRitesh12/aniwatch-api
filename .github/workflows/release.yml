@@ -1,4 +1,4 @@
-name: Releases
+name: "Create Release"
 on:
   push:
     branches: ["main"]
@@ -9,11 +9,11 @@ jobs:
 
     steps:
       - name: Checkouts repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Conventional changelog action
         id: changelog
-        uses: TriPSs/conventional-changelog-action@v3
+        uses: TriPSs/conventional-changelog-action@v5
         with:
           skip-on-empty: false
           github-token: ${{ secrets.GITHUB_TOKEN }}
