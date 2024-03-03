@@ -1,6 +1,6 @@
 {
   "name": "aniwatch-api",
-  "version": "1.26.0",
+  "version": "1.27.0",
   "description": "Node.js API for obtaining anime information from hianime.to (formerly aniwatch.to) written in TypeScript, made with Cheerio & Axios",
   "main": "src/server.ts",
   "type": "module",
