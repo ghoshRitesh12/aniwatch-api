@@ -151,6 +151,10 @@ You can also add the `-d` flag to run the container in detached mode.
 
 ## <span id="host-your-instance">⛅ Host your instance</span>
 
+> [!CAUTION]
+>
+> For personal deployments, **refrain from having an env** named `ANIWATCH_API_HOSTNAME`. You may face rate limitting and other issues if you do.
+
 ### Vercel
 
 Deploy your own instance of Aniwatch API on Vercel.
