@@ -401,21 +401,47 @@ console.log(data);
 #### Endpoint
 
 ```sh
+# basic example
 https://api-aniwatch.onrender.com/anime/search?q={query}&page={page}
+
+# advanced example
+https://api-aniwatch.onrender.com/anime/search?q={query}&genres={genres}&type={type}&sort={sort}&season={season}&language={sub_or_dub}&status={status}&rated={rating}&start_date={yyyy-mm-dd}&end_date={yyyy-mm-dd}&score={score}
 ```
 
 #### Query Parameters
 
-| Parameter |  Type  |                            Description                            | Required? | Default |
-| :-------: | :----: | :---------------------------------------------------------------: | :-------: | :-----: |
-|    `q`    | string | The search query, i.e. the title of the item you are looking for. |    Yes    |   --    |
-|  `page`   | number |                  The page number of the result.                   |    No     |   `1`   |
+|  Parameter   |  Type  |                            Description                            | Required? | Default |
+| :----------: | :----: | :---------------------------------------------------------------: | :-------: | :-----: |
+|     `q`      | string | The search query, i.e. the title of the item you are looking for. |    Yes    |   --    |
+|    `page`    | number |                  The page number of the result.                   |    No     |   `1`   |
+|    `type`    | string |                  Type of the anime. eg: `movie`                   |    No     |   --    |
+|   `status`   | string |            Status of the anime. eg: `finished-airing`             |    No     |   --    |
+|   `rated`    | string |             Rating of the anime. eg: `r+` or `pg-13`              |    No     |   --    |
+|   `score`    | string |           Score of the anime. eg: `good` or `very-good`           |    No     |   --    |
+|   `season`   | string |              Season of the aired anime. eg: `spring`              |    No     |   --    |
+|  `language`  | string |     Language category of the anime. eg: `sub` or `sub-&-dub`      |    No     |   --    |
+| `start_date` | string |       Start date of the anime(yyyy-mm-dd). eg: `2014-10-2`        |    No     |   --    |
+|  `end_date`  | string |        End date of the anime(yyyy-mm-dd). eg: `2010-12-4`         |    No     |   --    |
+|    `sort`    | string |      Order of sorting the anime result. eg: `recently-added`      |    No     |   --    |
+|   `genres`   | string |   Genre of the anime, separated by commas. eg: `isekai,shounen`   |    No     |   --    |
+
+> [!TIP]
+> For both `start_date` and `end_date`, year must be mentioned. If you wanna omit date or month specify `0` instead.
+> Eg: omitting date -> 2014-10-0, omitting month -> 2014-0-12, omitting both -> 2014-0-0
 
 #### Request sample
 
 ```javascript
+// basic example
 const resp = await fetch(
   "https://api-aniwatch.onrender.com/anime/search?q=titan&page=1"
+);
+const data = await resp.json();
+console.log(data);
+
+// advanced example
+const resp = await fetch(
+  "https://api-aniwatch.onrender.com/anime/search?q=girls&genres=action,adventure&type=movie&sort=score&season=spring&language=dub&status=finished-airing&rated=pg-13&start_date=2014-0-0&score=good"
 );
 const data = await resp.json();
 console.log(data);
@@ -456,7 +482,12 @@ console.log(data);
   ],
   currentPage: 1,
   totalPages: 1,
-  hasNextPage: false
+  hasNextPage: false,
+  searchQuery: string,
+  searchFilters: {
+    [filter_name]: [filter_value]
+    ...
+  }
 }
 ```
 
