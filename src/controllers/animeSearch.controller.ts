@@ -1,7 +1,24 @@
 import createHttpError from "http-errors";
 import { type RequestHandler } from "express";
 import { scrapeAnimeSearch } from "../parsers/index.js";
-import { type AnimeSearchQueryParams } from "../types/controllers/index.js";
+import type {
+  SearchFilters,
+  AnimeSearchQueryParams,
+} from "../types/controllers/index.js";
+
+const searchFilters: Record<string, boolean> = {
+  filter: true,
+  type: true,
+  status: true,
+  rated: true,
+  score: true,
+  season: true,
+  language: true,
+  start_date: true,
+  end_date: true,
+  sort: true,
+  genres: true,
+} as const;
 
 // /anime/search?q=${query}&page=${page}
 const getAnimeSearch: RequestHandler<
@@ -11,18 +28,24 @@ const getAnimeSearch: RequestHandler<
   AnimeSearchQueryParams
 > = async (req, res, next) => {
   try {
-    const query: string | null = req.query.q
-      ? decodeURIComponent(req.query.q as string)
-      : null;
-    const page: number = req.query.page
-      ? Number(decodeURIComponent(req.query?.page as string))
-      : 1;
+    let { q: query, page, ...filters } = req.query;
 
-    if (query === null) {
+    query = query ? decodeURIComponent(query) : undefined;
+    const pageNo = page ? Number(decodeURIComponent(page as string)) : 1;
+
+    if (query === undefined) {
       throw createHttpError.BadRequest("Search keyword required");
     }
 
-    const data = await scrapeAnimeSearch(query, page);
+    const parsedFilters: SearchFilters = {};
+    for (const key in filters) {
+      if (searchFilters[key]) {
+        parsedFilters[key as keyof SearchFilters] =
+          filters[key as keyof SearchFilters];
+      }
+    }
+
+    const data = await scrapeAnimeSearch(query, pageNo, parsedFilters);
 
     res.status(200).json(data);
   } catch (err: any) {
