@@ -5,6 +5,17 @@ import type {
   Top10AnimeTimePeriod,
 } from "../types/anime.js";
 import type { CheerioAPI, SelectorType } from "cheerio";
+import {
+  genresIdMap,
+  languageIdMap,
+  ratedIdMap,
+  scoreIdMap,
+  seasonIdMap,
+  sortIdMap,
+  statusIdMap,
+  typeIdMap,
+} from "./constants.js";
+import { type FilterKeys } from "../types/controllers/animeSearch.js";
 import createHttpError, { HttpError } from "http-errors";
 
 export const extractAnimes = (
@@ -190,6 +201,80 @@ export function retrieveServerId(
       ?.get()[0]
       ?.attr("data-id") || null
   );
+}
+
+function getGenresFilterVal(genreNames: string[]): string | undefined {
+  if (genreNames.length < 1) {
+    return undefined;
+  }
+  return genreNames.map((name) => genresIdMap[name]).join(",");
+}
+
+export function getSearchFilterValue(
+  key: FilterKeys,
+  rawValue: string
+): string | undefined {
+  rawValue = rawValue.trim();
+  if (!rawValue) return undefined;
+
+  switch (key) {
+    case "genres": {
+      return getGenresFilterVal(rawValue.split(","));
+    }
+    case "type": {
+      const val = typeIdMap[rawValue] ?? 0;
+      return val === 0 ? undefined : `${val}`;
+    }
+    case "status": {
+      const val = statusIdMap[rawValue] ?? 0;
+      return val === 0 ? undefined : `${val}`;
+    }
+    case "rated": {
+      const val = ratedIdMap[rawValue] ?? 0;
+      return val === 0 ? undefined : `${val}`;
+    }
+    case "score": {
+      const val = scoreIdMap[rawValue] ?? 0;
+      return val === 0 ? undefined : `${val}`;
+    }
+    case "season": {
+      const val = seasonIdMap[rawValue] ?? 0;
+      return val === 0 ? undefined : `${val}`;
+    }
+    case "language": {
+      const val = languageIdMap[rawValue] ?? 0;
+      return val === 0 ? undefined : `${val}`;
+    }
+    case "sort": {
+      return sortIdMap[rawValue] ?? undefined;
+    }
+    default:
+      return undefined;
+  }
+}
+
+// this fn tackles both start_date and end_date
+export function getSearchDateFilterValue(
+  isStartDate: boolean,
+  rawValue: string
+): string[] | undefined {
+  rawValue = rawValue.trim();
+  if (!rawValue) return undefined;
+
+  const dateRegex = /^\d{4}-([0-9]|1[0-2])-([0-9]|[12][0-9]|3[01])$/;
+  const dateCategory = isStartDate ? "s" : "e";
+  const [year, month, date] = rawValue.split("-");
+
+  if (!dateRegex.test(rawValue)) {
+    return undefined;
+  }
+
+  // sample return -> [sy=2023, sm=10, sd=11]
+  return [
+    Number(year) > 0 ? `${dateCategory}y=${year}` : "",
+    Number(month) > 0 ? `${dateCategory}m=${month}` : "",
+    Number(date) > 0 ? `${dateCategory}d=${date}` : "",
+  ].filter((d) => Boolean(d));
 }
 
 export function substringAfter(str: string, toFind: string) {
