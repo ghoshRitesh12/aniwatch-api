@@ -3,18 +3,22 @@ import {
   ACCEPT_HEADER,
   USER_AGENT_HEADER,
   ACCEPT_ENCODING_HEADER,
-  extractMostPopularAnimes,
   extractAnimes,
+  getSearchFilterValue,
+  extractMostPopularAnimes,
+  getSearchDateFilterValue,
 } from "../utils/index.js";
 import axios, { AxiosError } from "axios";
 import createHttpError, { type HttpError } from "http-errors";
 import { load, type CheerioAPI, type SelectorType } from "cheerio";
 import type { ScrapedAnimeSearchResult } from "../types/parsers/index.js";
+import type { SearchFilters, FilterKeys } from "../types/controllers/index.js";
 
 // /anime/search?q=${query}&page=${page}
 async function scrapeAnimeSearch(
   q: string,
-  page: number = 1
+  page: number = 1,
+  filters: SearchFilters
 ): Promise<ScrapedAnimeSearchResult | HttpError> {
   const res: ScrapedAnimeSearchResult = {
     animes: [],
@@ -22,19 +26,45 @@ async function scrapeAnimeSearch(
     currentPage: Number(page),
     hasNextPage: false,
     totalPages: 1,
+    searchQuery: q,
+    searchFilters: filters,
   };
 
   try {
-    const mainPage = await axios.get(
-      `${SRC_SEARCH_URL}?keyword=${q}&page=${page}`,
-      {
-        headers: {
-          "User-Agent": USER_AGENT_HEADER,
-          "Accept-Encoding": ACCEPT_ENCODING_HEADER,
-          Accept: ACCEPT_HEADER,
-        },
+    const url = new URL(SRC_SEARCH_URL);
+    url.searchParams.set("keyword", q);
+    url.searchParams.set("page", `${page}`);
+    url.searchParams.set("sort", "default");
+
+    for (const key in filters) {
+      if (key.includes("_date")) {
+        const dates = getSearchDateFilterValue(
+          key === "start_date",
+          filters[key as keyof SearchFilters] || ""
+        );
+        if (!dates) continue;
+
+        dates.map((dateParam) => {
+          const [key, val] = dateParam.split("=");
+          url.searchParams.set(key, val);
+        });
+        continue;
       }
-    );
+
+      const filterVal = getSearchFilterValue(
+        key as FilterKeys,
+        filters[key as keyof SearchFilters] || ""
+      );
+      filterVal && url.searchParams.set(key, filterVal);
+    }
+
+    const mainPage = await axios.get(url.href, {
+      headers: {
+        "User-Agent": USER_AGENT_HEADER,
+        "Accept-Encoding": ACCEPT_ENCODING_HEADER,
+        Accept: ACCEPT_HEADER,
+      },
+    });
 
     const $: CheerioAPI = load(mainPage.data);
 
