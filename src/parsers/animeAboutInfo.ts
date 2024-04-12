@@ -19,6 +19,8 @@ async function scrapeAnimeAboutInfo(
     anime: {
       info: {
         id: null,
+        anilistId: null,
+        malId: null,
         name: null,
         poster: null,
         description: null,
@@ -52,6 +54,16 @@ async function scrapeAnimeAboutInfo(
     });
 
     const $: CheerioAPI = load(mainPage.data);
+
+    try {
+      res.anime.info.anilistId = Number(
+        JSON.parse($("body")?.find("#syncData")?.text())?.anilist_id
+      );
+      res.anime.info.malId = Number(JSON.parse($("body")?.find("#syncData")?.text())?.mal_id);
+    } catch (err) {
+      res.anime.info.anilistId = null;
+      res.anime.info.malId = null;
+    }
 
     const selector: SelectorType = "#ani_detail .container .anis-content";
 
