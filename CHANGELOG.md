@@ -1,3 +1,17 @@
+# [1.30.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.29.0...v1.30.0) (2024-04-14)
+
+
+### Bug Fixes
+
+* Removed unnecessary attributes from Anime interface ([4682af6](https://github.com/ghoshRitesh12/aniwatch-api/commit/4682af675db9434b389d044d29fd551822542d88))
+
+
+### Features
+
+* added mal and anilist id to anime info endpoint ([55eaf06](https://github.com/ghoshRitesh12/aniwatch-api/commit/55eaf060816f7ba05c12b1d1dcfa5404f0abde20))
+
+
+
 # [1.29.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.28.0...v1.29.0) (2024-03-25)
 
 
@@ -33,16 +47,6 @@
 ### Features
 
 * add explicit interval time for convenience ([a4b08c4](https://github.com/ghoshRitesh12/aniwatch-api/commit/a4b08c435c0ed62c57a1a6a985e3eed25bb82c92))
-
-
-
-# [1.26.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.25.0...v1.26.0) (2024-03-03)
-
-
-### Features
-
-* add axios config for future code reusability ([4782a8d](https://github.com/ghoshRitesh12/aniwatch-api/commit/4782a8dd708ec1f68bf469907024c082d606dc79))
-* update rebranded domain name ([a6f99bf](https://github.com/ghoshRitesh12/aniwatch-api/commit/a6f99bf681d27483d6f214c48673b875d3cbf6ab))
 
 
 
