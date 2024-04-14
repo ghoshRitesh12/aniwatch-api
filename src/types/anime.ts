@@ -43,6 +43,8 @@ export interface TopAiringAnime extends MostPopularAnime {}
 export interface AnimeGeneralAboutInfo
   extends Pick<Anime, CommonAnimeProps>,
     Pick<SpotlightAnime, "description"> {
+  anilistId: number | null;
+  malId: number | null;
   stats: {
     quality: string | null;
   } & Pick<Anime, "duration" | "episodes" | "rating" | "type">;
