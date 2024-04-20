@@ -103,6 +103,10 @@ class MegaCloud {
       }
 
       const vars = this.extractVariables(text, "MEGACLOUD");
+      if (!vars.length) {
+        throw new Error("Can't find variables. Perhaps the extractor is outdated.");
+      }
+
       const { secret, encryptedSource } = this.getSecret(
         encryptedString as string,
         vars
