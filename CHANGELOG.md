@@ -1,3 +1,17 @@
+# [1.31.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.30.0...v1.31.0) (2024-04-21)
+
+
+### Bug Fixes
+
+* regex key grabber ([33bdd5a](https://github.com/ghoshRitesh12/aniwatch-api/commit/33bdd5adcd7c43925b9a6250d958060fd89a7dd1))
+
+
+### Features
+
+* added new error message ([44d6ff5](https://github.com/ghoshRitesh12/aniwatch-api/commit/44d6ff5a11f41db7776910a4e8fd635352913b06))
+
+
+
 # [1.30.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.29.0...v1.30.0) (2024-04-14)
 
 
@@ -38,15 +52,6 @@
 
 
 ## [1.27.1](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.27.0...v1.27.1) (2024-03-03)
-
-
-
-# [1.27.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.26.0...v1.27.0) (2024-03-03)
-
-
-### Features
-
-* add explicit interval time for convenience ([a4b08c4](https://github.com/ghoshRitesh12/aniwatch-api/commit/a4b08c435c0ed62c57a1a6a985e3eed25bb82c92))
 
 
 
