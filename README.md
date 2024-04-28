@@ -334,6 +334,23 @@ console.log(data);
           thumbnail: string | undefined
         },
         {...},
+      ],
+      characterVoiceActor: [
+        {
+          character: {
+            id: string,
+            poster: string,
+            name: string,
+            cast: string
+          },
+          voiceActor: {
+            id: string,
+            poster: string,
+            name: string,
+            cast: string
+          }
+        },
+        {...},
       ]
     }
     moreInfo: {

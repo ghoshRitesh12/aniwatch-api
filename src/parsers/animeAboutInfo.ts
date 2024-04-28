@@ -37,6 +37,7 @@ async function scrapeAnimeAboutInfo(
           duration: null,
         },
         promotionalVideos: [],
+        charactersVoiceActors: [],
       },
       moreInfo: {},
     },
@@ -129,6 +130,26 @@ async function scrapeAnimeAboutInfo(
           title: $(el).attr("data-title"),
           source: $(el).attr("data-src"),
           thumbnail: $(el).find("img").attr("src"),
+        });
+      }
+    );
+
+    // get characters and voice actors
+    $(".block_area.block_area-actors .block-actors-content .bac-list-wrap .bac-item").each(
+      (_, el) => {
+        res.anime.info.charactersVoiceActors.push({
+          character: {
+            id: $(el).find($(".per-info.ltr .pi-avatar")).attr("href")?.split("/")[2] || "",
+            poster: $(el).find($(".per-info.ltr .pi-avatar img")).attr("data-src") || "",
+            name: $(el).find($(".per-info.ltr .pi-detail a")).text(),
+            cast: $(el).find($(".per-info.ltr .pi-detail .pi-cast")).text(),
+          },
+          voiceActor: {
+            id: $(el).find($(".per-info.rtl .pi-avatar")).attr("href")?.split("/")[2] || "",
+            poster: $(el).find($(".per-info.rtl .pi-avatar img")).attr("data-src") || "",
+            name: $(el).find($(".per-info.rtl .pi-detail a")).text(),
+            cast: $(el).find($(".per-info.rtl .pi-detail .pi-cast")).text(),
+          },
         });
       }
     );
