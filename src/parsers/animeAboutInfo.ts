@@ -10,8 +10,6 @@ import axios, { AxiosError } from "axios";
 import createHttpError, { type HttpError } from "http-errors";
 import { load, type CheerioAPI, type SelectorType } from "cheerio";
 import { type ScrapedAnimeAboutInfo } from "../types/parsers/index.js";
-import type { AnimePromotionalVideo } from "../types/anime.js";
-import * as fs from "fs/promises";
 
 // /anime/info?id=${anime-id}
 async function scrapeAnimeAboutInfo(
@@ -58,8 +56,6 @@ async function scrapeAnimeAboutInfo(
     });
 
     const $: CheerioAPI = load(mainPage.data);
-
-    // fs.writeFile("./about.html", mainPage.data);
 
     try {
       res.anime.info.anilistId = Number(
