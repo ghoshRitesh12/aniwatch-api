@@ -25,7 +25,7 @@ import { type ScrapedAnimeEpisodesSources } from "../types/parsers/index.js";
 async function scrapeAnimeEpisodeSources(
   episodeId: string,
   server: AnimeServers = Servers.VidStreaming,
-  category: "sub" | "dub" = "sub"
+  category: "sub" | "dub" | "raw" = "sub"
 ): Promise<ScrapedAnimeEpisodesSources | HttpError> {
   if (episodeId.startsWith("http")) {
     const serverUrl = new URL(episodeId);

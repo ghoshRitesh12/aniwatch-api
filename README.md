@@ -922,7 +922,7 @@ https://api-aniwatch.onrender.com/anime/episode-srcs?id={episodeId}&server={serv
 | :--------: | :----: | :-------------------------------------------: | :-------: | :--------------: |
 |    `id`    | string |            The id of the episode.             |    Yes    |        --        |
 |  `server`  | string |            The name of the server.            |    No     | `"vidstreaming"` |
-| `category` | string | The category of the episode ('sub' or 'dub'). |    No     |     `"sub"`      |
+| `category` | string | The category of the episode ('sub', 'dub' or 'raw'). |    No     |     `"sub"`      |
 
 #### Request sample
 
