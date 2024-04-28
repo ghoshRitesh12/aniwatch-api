@@ -326,7 +326,15 @@ console.log(data);
         },
         type: string,
         duration: string
-      }
+      },
+      promotionalVideos: [
+        {
+          title: string | undefined,
+          source: string | undefined,
+          thumbnail: string | undefined
+        },
+        {...},
+      ]
     }
     moreInfo: {
       aired: string,

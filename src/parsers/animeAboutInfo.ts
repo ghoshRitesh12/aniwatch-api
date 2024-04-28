@@ -10,6 +10,8 @@ import axios, { AxiosError } from "axios";
 import createHttpError, { type HttpError } from "http-errors";
 import { load, type CheerioAPI, type SelectorType } from "cheerio";
 import { type ScrapedAnimeAboutInfo } from "../types/parsers/index.js";
+import type { AnimePromotionalVideo } from "../types/anime.js";
+import * as fs from "fs/promises";
 
 // /anime/info?id=${anime-id}
 async function scrapeAnimeAboutInfo(
@@ -34,6 +36,7 @@ async function scrapeAnimeAboutInfo(
           type: null,
           duration: null,
         },
+        promotionalVideos: [],
       },
       moreInfo: {},
     },
@@ -54,6 +57,8 @@ async function scrapeAnimeAboutInfo(
     });
 
     const $: CheerioAPI = load(mainPage.data);
+
+    // fs.writeFile("./about.html", mainPage.data);
 
     try {
       res.anime.info.anilistId = Number(
@@ -116,6 +121,17 @@ async function scrapeAnimeAboutInfo(
         ?.replace(/[\s\n]+/g, " ")
         ?.split(" ")
         ?.pop() || null;
+    
+    // get promotional videos
+    $(".block_area.block_area-promotions .block_area-promotions-list .screen-items .item").each(
+      (_, el) => {
+        res.anime.info.promotionalVideos.push({
+          title: $(el).attr("data-title"),
+          source: $(el).attr("data-src"),
+          thumbnail: $(el).find("img").attr("src"),
+        });
+      }
+    );
 
     // more information
     $(`${selector} .anisc-info-wrap .anisc-info .item:not(.w-hide)`).each(
