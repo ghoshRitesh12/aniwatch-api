@@ -903,6 +903,13 @@ console.log(data);
     },
     {...}
   ],
+  raw: [
+    {
+      serverId: 1,
+      serverName: "megacloud",
+    },
+    {...}
+  ],
 }
 ```
 

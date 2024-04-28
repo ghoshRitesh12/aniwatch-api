@@ -17,6 +17,7 @@ async function scrapeEpisodeServers(
   const res: ScrapedEpisodeServers = {
     sub: [],
     dub: [],
+    raw: [],
     episodeId,
     episodeNo: 0,
   };
@@ -54,6 +55,15 @@ async function scrapeEpisodeServers(
     $(`.ps_-block.ps_-block-sub.servers-dub .ps__-list .server-item`).each(
       (_, el) => {
         res.dub.push({
+          serverName: $(el).find("a").text().toLowerCase().trim(),
+          serverId: Number($(el)?.attr("data-server-id")?.trim()) || null,
+        });
+      }
+    );
+
+    $(`.ps_-block.ps_-block-sub.servers-raw .ps__-list .server-item`).each(
+      (_, el) => {
+        res.raw.push({
           serverName: $(el).find("a").text().toLowerCase().trim(),
           serverId: Number($(el)?.attr("data-server-id")?.trim()) || null,
         });
