@@ -75,6 +75,7 @@ export interface SubEpisode {
   serverId: number | null;
 }
 export interface DubEpisode extends SubEpisode {}
+export interface RawEpisode extends SubEpisode {}
 
 export type AnimeCategories =
   | "most-favorite"

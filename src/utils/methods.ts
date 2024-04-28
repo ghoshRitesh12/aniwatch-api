@@ -191,7 +191,7 @@ export const extractMostPopularAnimes = (
 export function retrieveServerId(
   $: CheerioAPI,
   index: number,
-  category: "sub" | "dub"
+  category: "sub" | "dub" | "raw"
 ) {
   return (
     $(`.ps_-block.ps_-block-sub.servers-${category} > .ps__-list .server-item`)

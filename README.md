@@ -903,6 +903,13 @@ console.log(data);
     },
     {...}
   ],
+  raw: [
+    {
+      serverId: 1,
+      serverName: "megacloud",
+    },
+    {...}
+  ],
 }
 ```
 
@@ -918,11 +925,11 @@ https://api-aniwatch.onrender.com/anime/episode-srcs?id={episodeId}&server={serv
 
 #### Query Parameters
 
-| Parameter  |  Type  |                  Description                  | Required? |     Default      |
-| :--------: | :----: | :-------------------------------------------: | :-------: | :--------------: |
-|    `id`    | string |            The id of the episode.             |    Yes    |        --        |
-|  `server`  | string |            The name of the server.            |    No     | `"vidstreaming"` |
-| `category` | string | The category of the episode ('sub' or 'dub'). |    No     |     `"sub"`      |
+| Parameter  |  Type  |                     Description                      | Required? |     Default      |
+| :--------: | :----: | :--------------------------------------------------: | :-------: | :--------------: |
+|    `id`    | string |                The id of the episode.                |    Yes    |        --        |
+|  `server`  | string |                The name of the server.               |    No     | `"vidstreaming"` |
+| `category` | string | The category of the episode ('sub', 'dub' or 'raw'). |    No     |     `"sub"`      |
 
 #### Request sample
 
