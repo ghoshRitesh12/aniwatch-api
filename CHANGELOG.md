@@ -1,3 +1,18 @@
+# [1.32.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.31.0...v1.32.0) (2024-04-28)
+
+
+### Bug Fixes
+
+* fixed table spacing ([0a291ad](https://github.com/ghoshRitesh12/aniwatch-api/commit/0a291ad659aa9095fa443cfd55b094b2036920da))
+
+
+### Features
+
+* added raw servers to `/servers` endpoint response ([ffebb03](https://github.com/ghoshRitesh12/aniwatch-api/commit/ffebb03bc9a0f362e44603c6f71a276567d08c30))
+* added the ability to grab episode sources from raw servers in endpoint `/episode-srcs` ([a0d039e](https://github.com/ghoshRitesh12/aniwatch-api/commit/a0d039ecc120cfeb8352c6b525ee1e766555f9ec))
+
+
+
 # [1.31.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.30.0...v1.31.0) (2024-04-21)
 
 
@@ -48,10 +63,6 @@
 * add json rate limit response; replace `max` with `limit` ([870fae7](https://github.com/ghoshRitesh12/aniwatch-api/commit/870fae700b56cc20010296387e3d9cda8330560c))
 * disabled `ratelimit` & `dont_sleep` for personal deployments ([8565619](https://github.com/ghoshRitesh12/aniwatch-api/commit/8565619f3ab2616b7fbeca7681f063730693a82e))
 * update api home page ([112e532](https://github.com/ghoshRitesh12/aniwatch-api/commit/112e532331fa3001d263457bff001c201b89d136))
-
-
-
-## [1.27.1](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.27.0...v1.27.1) (2024-03-03)
 
 
 
