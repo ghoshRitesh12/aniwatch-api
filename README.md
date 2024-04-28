@@ -326,7 +326,32 @@ console.log(data);
         },
         type: string,
         duration: string
-      }
+      },
+      promotionalVideos: [
+        {
+          title: string | undefined,
+          source: string | undefined,
+          thumbnail: string | undefined
+        },
+        {...},
+      ],
+      characterVoiceActor: [
+        {
+          character: {
+            id: string,
+            poster: string,
+            name: string,
+            cast: string
+          },
+          voiceActor: {
+            id: string,
+            poster: string,
+            name: string,
+            cast: string
+          }
+        },
+        {...},
+      ]
     }
     moreInfo: {
       aired: string,

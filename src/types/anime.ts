@@ -48,6 +48,8 @@ export interface AnimeGeneralAboutInfo
   stats: {
     quality: string | null;
   } & Pick<Anime, "duration" | "episodes" | "rating" | "type">;
+  promotionalVideos: AnimePromotionalVideo[];
+  charactersVoiceActors: AnimeCharactersAndVoiceActors[];
 }
 
 export interface RecommendedAnime extends Anime {}
@@ -57,6 +59,24 @@ export interface RelatedAnime extends MostPopularAnime {}
 export interface Season extends Pick<Anime, CommonAnimeProps> {
   isCurrent: boolean;
   title: string | null;
+}
+
+export interface AnimePromotionalVideo {
+  title: string | undefined;
+  source: string | undefined;
+  thumbnail: string | undefined;
+}
+
+export interface AnimeCharactersAndVoiceActors {
+  character: AnimeCharacter;
+  voiceActor: AnimeCharacter;
+}
+
+export interface AnimeCharacter {
+  id: string;
+  poster: string;
+  name: string;
+  cast: string;
 }
 
 export interface AnimeSearchSuggestion
