@@ -78,7 +78,7 @@ class MegaCloud {
       // console.log(JSON.stringify(srcsData, null, 2));
 
       const encryptedString = srcsData.sources;
-      if (srcsData.encrypted && Array.isArray(encryptedString)) {
+      if (!srcsData.encrypted && Array.isArray(encryptedString)) {
         extractedData.intro = srcsData.intro;
         extractedData.outro = srcsData.outro;
         extractedData.tracks = srcsData.tracks;
