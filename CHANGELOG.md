@@ -1,3 +1,7 @@
+## [1.33.2](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.33.1...v1.33.2) (2024-05-10)
+
+
+
 ## [1.33.1](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.33.0...v1.33.1) (2024-05-02)
 
 
@@ -43,20 +47,6 @@
 ### Features
 
 * added new error message ([44d6ff5](https://github.com/ghoshRitesh12/aniwatch-api/commit/44d6ff5a11f41db7776910a4e8fd635352913b06))
-
-
-
-# [1.30.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.29.0...v1.30.0) (2024-04-14)
-
-
-### Bug Fixes
-
-* Removed unnecessary attributes from Anime interface ([4682af6](https://github.com/ghoshRitesh12/aniwatch-api/commit/4682af675db9434b389d044d29fd551822542d88))
-
-
-### Features
-
-* added mal and anilist id to anime info endpoint ([55eaf06](https://github.com/ghoshRitesh12/aniwatch-api/commit/55eaf060816f7ba05c12b1d1dcfa5404f0abde20))
 
 
 
