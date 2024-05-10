@@ -1,3 +1,7 @@
+## [1.33.3](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.33.2...v1.33.3) (2024-05-10)
+
+
+
 ## [1.33.2](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.33.1...v1.33.2) (2024-05-10)
 
 
@@ -33,20 +37,6 @@
 
 * added raw servers to `/servers` endpoint response ([ffebb03](https://github.com/ghoshRitesh12/aniwatch-api/commit/ffebb03bc9a0f362e44603c6f71a276567d08c30))
 * added the ability to grab episode sources from raw servers in endpoint `/episode-srcs` ([a0d039e](https://github.com/ghoshRitesh12/aniwatch-api/commit/a0d039ecc120cfeb8352c6b525ee1e766555f9ec))
-
-
-
-# [1.31.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.30.0...v1.31.0) (2024-04-21)
-
-
-### Bug Fixes
-
-* regex key grabber ([33bdd5a](https://github.com/ghoshRitesh12/aniwatch-api/commit/33bdd5adcd7c43925b9a6250d958060fd89a7dd1))
-
-
-### Features
-
-* added new error message ([44d6ff5](https://github.com/ghoshRitesh12/aniwatch-api/commit/44d6ff5a11f41db7776910a4e8fd635352913b06))
 
 
 
