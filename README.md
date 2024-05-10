@@ -108,6 +108,7 @@
 - [Support](#support)
 - [Thanks](#thanks)
 - [License](#license)
+- [Star History](#star-history)
 
 ## <span id="installation">💻 Installation</span>
 
@@ -953,7 +954,7 @@ https://api-aniwatch.onrender.com/anime/episode-srcs?id={episodeId}&server={serv
 | Parameter  |  Type  |                     Description                      | Required? |     Default      |
 | :--------: | :----: | :--------------------------------------------------: | :-------: | :--------------: |
 |    `id`    | string |                The id of the episode.                |    Yes    |        --        |
-|  `server`  | string |                The name of the server.               |    No     | `"vidstreaming"` |
+|  `server`  | string |               The name of the server.                |    No     | `"vidstreaming"` |
 | `category` | string | The category of the episode ('sub', 'dub' or 'raw'). |    No     |     `"sub"`      |
 
 #### Request sample
@@ -1013,6 +1014,29 @@ Don't forget to leave a star 🌟. You can also follow me on Twitter [@\_riteshg
 ## <span id="license">📜 License</span>
 
 This project is licensed under the [MIT License](https://opensource.org/license/mit/) - see the [LICENSE](https://github.com/ghoshRitesh12/aniwatch-api/blob/main/LICENSE) file for more details.
+
+<br/>
+
+<picture id="star-history">
+  <source
+    media="(prefers-color-scheme: dark)"
+    srcset="
+      https://api.star-history.com/svg?repos=ghoshRitesh12/aniwatch-api&type=Date&theme=dark
+    "
+  />
+  <source
+    media="(prefers-color-scheme: light)"
+    srcset="
+      https://api.star-history.com/svg?repos=ghoshRitesh12/aniwatch-api&type=Date
+    "
+  />
+  <img
+    alt="Star History Chart"
+    src="https://api.star-history.com/svg?repos=ghoshRitesh12/aniwatch-api&type=Date"
+  />
+</picture>
+
+<br/>
 
 <p align="center">
   Made with 💖 by
