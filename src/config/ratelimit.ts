@@ -6,7 +6,7 @@ config();
 
 export const ratelimit = rateLimit({
   windowMs: Number(process.env.WINDOWMS) || 30 * 60 * 1000,
-  limit: Number(process.env.MAX) || 50,
+  limit: Number(process.env.MAX) || 6,
   legacyHeaders: true,
   standardHeaders: "draft-7",
   handler: function (_, __, next) {
