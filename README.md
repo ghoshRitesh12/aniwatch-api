@@ -13,70 +13,43 @@
 
 # <p align="center">Aniwatch API</p>
 
-  <p align="center">
-    A free restful API serving anime information from <a href="https://hianime.to" target="_blank">hianime.to</a>
-    <br/><br/>
-    <strong>
-      <a 
-        href="https://github.com/ghoshRitesh12/aniwatch-api/issues/new?assignees=ghoshRitesh12&labels=bug&template=bug-report.yml"
-      > 
-        Bug report
-      </a>
-      ·
-      <a 
-        href="https://github.com/ghoshRitesh12/aniwatch-api/issues/new?assignees=ghoshRitesh12&labels=enhancement&template=feature-request.md"
-      >
-        Feature request
-      </a>
-    </strong>
-  </p>
-  <p align="center">
+<div align="center">
+  A free restful API serving anime information from <a href="https://hianime.to" target="_blank">hianime.to</a>
+  <br/><br/>
+  <strong>
     <a 
-      href="https://github.com/ghoshRitesh12/aniwatch-api/actions/workflows/codeql-analysis.yml"
-    >
-      <img 
-        src="https://github.com/ghoshRitesh12/aniwatch-api/actions/workflows/codeql-analysis.yml/badge.svg" 
-        alt="codeql"
-      />
+      href="https://github.com/ghoshRitesh12/aniwatch-api/issues/new?assignees=ghoshRitesh12&labels=bug&template=bug-report.yml"
+    > 
+      Bug report
     </a>
+    ·
     <a 
-      href="https://github.com/ghoshRitesh12/aniwatch-api/actions/workflows/docker-build.yml"
+      href="https://github.com/ghoshRitesh12/aniwatch-api/issues/new?assignees=ghoshRitesh12&labels=enhancement&template=feature-request.md"
     >
-      <img 
-        src="https://github.com/ghoshRitesh12/aniwatch-api/actions/workflows/docker-build.yml/badge.svg" 
-        alt="docker-build"
-      />
+      Feature request
     </a>
-    <a 
-      href="https://github.com/ghoshRitesh12/aniwatch-api/actions/workflows/test.yml"
-    >
-      <img 
-        src="https://github.com/ghoshRitesh12/aniwatch-api/actions/workflows/test.yml/badge.svg" alt="test coverage"
-      >
-    </a>
-    <a 
-      href="https://github.com/ghoshRitesh12/aniwatch-api/stargazers"
-    >
-      <img 
-        src="https://img.shields.io/github/stars/ghoshRitesh12/aniwatch-api" alt="stars"
-      >
-    </a>
-    <a 
-      href="https://github.com/ghoshRitesh12/aniwatch-api/network/members"
-    >
-      <img 
-        src="https://img.shields.io/github/forks/ghoshRitesh12/aniwatch-api" alt="forks"
-      >
-    </a>
-    <a 
-      href="https://github.com/consumet/extensions/blob/master/LICENSE"
-    >
-      <img 
-        src="https://img.shields.io/github/license/ghoshRitesh12/aniwatch-api" alt="GitHub"
-      />
-    </a>
-  </p>
-</p>
+  </strong>
+</div>
+
+<br/>
+
+<div align="center">
+
+[![codeql](https://github.com/ghoshRitesh12/aniwatch-api/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/ghoshRitesh12/aniwatch-api/actions/workflows/codeql-analysis.yml)
+[![docker-build](https://github.com/ghoshRitesh12/aniwatch-api/actions/workflows/docker-build.yml/badge.svg)](https://github.com/ghoshRitesh12/aniwatch-api/actions/workflows/docker-build.yml)
+[![test_coverage](https://github.com/ghoshRitesh12/aniwatch-api/actions/workflows/test.yml/badge.svg)](https://github.com/ghoshRitesh12/aniwatch-api/actions/workflows/test.yml)
+[![GitHub License](https://img.shields.io/github/license/ghoshRitesh12/aniwatch-api?logo=github&logoColor=%23959da5&labelColor=%23292e34&color=%2331c754)](https://github.com/ghoshRitesh12/aniwatch-api/blob/main/LICENSE)
+
+</div>
+
+<div align="center">
+
+[![stars](https://img.shields.io/github/stars/ghoshRitesh12/aniwatch-api?style=social)](https://github.com/ghoshRitesh12/aniwatch-api/stargazers)
+[![forks](https://img.shields.io/github/forks/ghoshRitesh12/aniwatch-api?style=social)](https://github.com/ghoshRitesh12/aniwatch-api/network/members)
+[![issues](https://img.shields.io/github/issues/ghoshRitesh12/aniwatch-api?style=social&logo=github)](https://github.com/ghoshRitesh12/aniwatch-api/issues?q=is%3Aissue+is%3Aopen+)
+[![version](https://img.shields.io/github/v/release/ghoshRitesh12/aniwatch-api?display_name=release&style=social&logo=github)](https://github.com/ghoshRitesh12/aniwatch-api/releases/latest)
+
+</div>
 
 > [!IMPORTANT]
 >
@@ -105,8 +78,9 @@
   - [GET Anime Episode Servers](#get-anime-episode-servers)
   - [GET Anime Episode Streaming Links](#get-anime-episode-streaming-links)
 - [Development](#development)
-- [Support](#support)
+- [Contributors](#contributors)
 - [Thanks](#thanks)
+- [Support](#support)
 - [License](#license)
 - [Star History](#star-history)
 
@@ -1002,6 +976,12 @@ console.log(data);
 
 Pull requests and stars are always welcome. If you encounter any bug or want to add a new feature to this api, consider creating a new [issue](https://github.com/ghoshRitesh12/aniwatch-api/issues). If you wish to contribute to this project, read the [CONTRIBUTING.md](https://github.com/ghoshRitesh12/aniwatch-api/blob/main/CONTRIBUTING.md) file.
 
+## <span id="contributors">✨ Contributors</span>
+
+Thanks to the following people for keeping this project alive and relevant.
+
+[![](https://contrib.rocks/image?repo=ghoshRitesh12/aniwatch-api)](https://github.com/ghoshRitesh12/aniwatch-api/graphs/contributors)
+
 ## <span id="thanks">🤝 Thanks</span>
 
 - [consumet.ts](https://github.com/consumet/consumet.ts)
@@ -1019,15 +999,6 @@ This project is licensed under the [MIT License](https://opensource.org/license/
 
 <img
   id="star-history" 
-  src="https://api.star-history.com/svg?repos=ghoshRitesh12/aniwatch-api&type=Date&theme=dark"
+  src="https://starchart.cc/ghoshRitesh12/aniwatch-api.svg?variant=adaptive"
   alt=""
 />
-
-<br/>
-
-<p align="center">
-  Made with 💖 by
-  <a href="https://github.com/ghoshRitesh12">
-    Ritesh
-  <a>
-<p>
