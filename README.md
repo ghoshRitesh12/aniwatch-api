@@ -989,7 +989,7 @@ Thanks to the following people for keeping this project alive and relevant.
 
 ## <span id="support">🙌 Support</span>
 
-Don't forget to leave a star 🌟. You can also follow me on Twitter [@\_riteshghosh](https://twitter.com/_riteshghosh).
+Don't forget to leave a star 🌟. You can also follow me on X (Twitter) [@__riteshg](https://x.com/__riteshg).
 
 ## <span id="license">📜 License</span>
 
