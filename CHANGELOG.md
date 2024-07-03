@@ -1,3 +1,7 @@
+## [1.34.1](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.34.0...v1.34.1) (2024-07-03)
+
+
+
 # [1.34.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.33.4...v1.34.0) (2024-06-11)
 
 
@@ -16,15 +20,6 @@
 
 
 ## [1.33.2](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.33.1...v1.33.2) (2024-05-10)
-
-
-
-## [1.33.1](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.33.0...v1.33.1) (2024-05-02)
-
-
-### Bug Fixes
-
-* crash on unencrypted sources in megacloud extractor ([8ee9120](https://github.com/ghoshRitesh12/aniwatch-api/commit/8ee9120a1093e23a0c75b6b97ba83c62e1d58a85))
 
 
 
