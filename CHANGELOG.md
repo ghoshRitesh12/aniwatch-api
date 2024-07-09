@@ -1,3 +1,7 @@
+## [1.34.2](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.34.1...v1.34.2) (2024-07-09)
+
+
+
 ## [1.34.1](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.34.0...v1.34.1) (2024-07-03)
 
 
@@ -16,10 +20,6 @@
 
 
 ## [1.33.3](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.33.2...v1.33.3) (2024-05-10)
-
-
-
-## [1.33.2](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.33.1...v1.33.2) (2024-05-10)
 
 
 
