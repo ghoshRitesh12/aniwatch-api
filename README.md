@@ -150,6 +150,10 @@ Deploy your own instance of Aniwatch API on Render.
 
 The endpoints exposed by the api are listed below with examples that uses the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API), but you can use any http library.
 
+<details>
+
+<summary>Get Anime Home Page</summary>
+
 ### `GET` Anime Home Page
 
 #### Endpoint
@@ -257,6 +261,12 @@ console.log(data);
 ```
 
 [🔼 Back to Top](#table-of-contents)
+
+</details>
+
+<details>
+
+<summary>Get Anime About Info</summary>
 
 ### `GET` Anime About Info
 
@@ -396,6 +406,12 @@ console.log(data);
 
 [🔼 Back to Top](#table-of-contents)
 
+</details>
+
+<details>
+
+<summary>Get Anime Search Results</summary>
+
 ### `GET` Search Results
 
 #### Endpoint
@@ -493,6 +509,12 @@ console.log(data);
 
 [🔼 Back to Top](#table-of-contents)
 
+</details>
+
+<details>
+
+<summary>Get Anime Search Suggestions</summary>
+
 ### `GET` Search Suggestions
 
 #### Endpoint
@@ -535,6 +557,12 @@ console.log(data);
 ```
 
 [🔼 Back to Top](#table-of-contents)
+
+</details>
+
+<details>
+
+<summary>Get Producer Animes</summary>
 
 ### `GET` Producer Animes
 
@@ -625,6 +653,12 @@ console.log(data);
 
 [🔼 Back to Top](#table-of-contents)
 
+</details>
+
+<details>
+
+<summary>Get Genre Animes</summary>
+
 ### `GET` Genre Animes
 
 #### Endpoint
@@ -697,6 +731,12 @@ console.log(data);
 ```
 
 [🔼 Back to Top](#table-of-contents)
+
+</details>
+
+<details>
+
+<summary>Get Category Anime</summary>
 
 ### `GET` Category Anime
 
@@ -774,6 +814,12 @@ console.log(data);
 
 [🔼 Back to Top](#table-of-contents)
 
+</details>
+
+<details>
+
+<summary>Get Estimated Schedules</summary>
+
 ### `GET` Estimated Schedules
 
 #### Endpoint
@@ -815,6 +861,12 @@ console.log(data);
 ```
 
 [🔼 Back to Top](#table-of-contents)
+
+</details>
+
+<details>
+
+<summary>Get Anime Episodes</summary>
 
 ### `GET` Anime Episodes
 
@@ -858,6 +910,12 @@ console.log(data);
 ```
 
 [🔼 Back to Top](#table-of-contents)
+
+</details>
+
+<details>
+
+<summary>Get Anime Episode Servers</summary>
 
 ### `GET` Anime Episode Servers
 
@@ -915,6 +973,12 @@ console.log(data);
 
 [🔼 Back to Top](#table-of-contents)
 
+</details>
+
+<details>
+
+<summary>Get Anime Episode Streaming Links</summary>
+
 ### `GET` Anime Episode Streaming Links
 
 #### Endpoint
@@ -971,6 +1035,8 @@ console.log(data);
 ```
 
 [🔼 Back to Top](#table-of-contents)
+
+</details>
 
 ## <span id="development">👨‍💻 Development</span>
 
