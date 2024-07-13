@@ -152,9 +152,11 @@ The endpoints exposed by the api are listed below with examples that uses the [F
 
 <details>
 
-<summary>Get Anime Home Page</summary>
+<summary>
 
 ### `GET` Anime Home Page
+
+</summary>
 
 #### Endpoint
 
@@ -266,9 +268,11 @@ console.log(data);
 
 <details>
 
-<summary>Get Anime About Info</summary>
+<summary>
 
 ### `GET` Anime About Info
+
+</summary>
 
 #### Endpoint
 
@@ -410,9 +414,11 @@ console.log(data);
 
 <details>
 
-<summary>Get Anime Search Results</summary>
+<summary>
 
 ### `GET` Search Results
+
+</summary>
 
 #### Endpoint
 
@@ -513,9 +519,11 @@ console.log(data);
 
 <details>
 
-<summary>Get Anime Search Suggestions</summary>
+<summary>
 
 ### `GET` Search Suggestions
+
+</summary>
 
 #### Endpoint
 
@@ -562,9 +570,11 @@ console.log(data);
 
 <details>
 
-<summary>Get Producer Animes</summary>
+<summary>
 
 ### `GET` Producer Animes
+
+</summary>
 
 #### Endpoint
 
@@ -657,9 +667,11 @@ console.log(data);
 
 <details>
 
-<summary>Get Genre Animes</summary>
+<summary>
 
 ### `GET` Genre Animes
+
+</summary>
 
 #### Endpoint
 
@@ -736,9 +748,11 @@ console.log(data);
 
 <details>
 
-<summary>Get Category Anime</summary>
+<summary>
 
 ### `GET` Category Anime
+
+</summary>
 
 #### Endpoint
 
@@ -818,9 +832,11 @@ console.log(data);
 
 <details>
 
-<summary>Get Estimated Schedules</summary>
+<summary>
 
 ### `GET` Estimated Schedules
+
+</summary>
 
 #### Endpoint
 
@@ -854,6 +870,8 @@ console.log(data);
       time: string, // 24 hours format
       name: string,
       jname: string,
+      airingTimestamp: number,
+      secondsUntilAiring: number
     },
     {...}
   ]
