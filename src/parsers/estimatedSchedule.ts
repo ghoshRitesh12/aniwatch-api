@@ -40,6 +40,10 @@ async function scrapeEstimatedSchedule(
     }
 
     $(selector).each((_, el) => {
+      const airingTimestamp = new Date(
+        `${date}T${$(el)?.find("a .time")?.text()?.trim()}:00`
+      ).getTime();
+
       res.scheduledAnimes.push({
         id: $(el)?.find("a")?.attr("href")?.slice(1)?.trim() || null,
         time: $(el)?.find("a .time")?.text()?.trim() || null,
@@ -49,6 +53,8 @@ async function scrapeEstimatedSchedule(
             ?.find("a .film-name.dynamic-name")
             ?.attr("data-jname")
             ?.trim() || null,
+        airingTimestamp,
+        secondsUntilAiring: Math.floor((airingTimestamp - Date.now()) / 1000),
       });
     });
 
