@@ -1,3 +1,7 @@
+# [1.36.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.35.0...v1.36.0) (2024-07-13)
+
+
+
 # [1.35.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.34.3...v1.35.0) (2024-07-13)
 
 
@@ -17,15 +21,6 @@
 
 
 ## [1.34.1](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.34.0...v1.34.1) (2024-07-03)
-
-
-
-# [1.34.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.33.4...v1.34.0) (2024-06-11)
-
-
-### Features
-
-* update rate limit to 6 reqs every 30 mins ([8d82f44](https://github.com/ghoshRitesh12/aniwatch-api/commit/8d82f448963dcf54c75dc93ea572f104dffcc9fb))
 
 
 
