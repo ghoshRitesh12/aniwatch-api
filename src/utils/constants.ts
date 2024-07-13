@@ -11,10 +11,10 @@ export const ACCEPT_HEADER =
 // previously aniwatch.to || aniwatchtv.to
 const DOMAIN = process.env.DOMAIN || "hianime.to";
 
-export const SRC_BASE_URL = `https://${DOMAIN}`;
-export const SRC_AJAX_URL = `${SRC_BASE_URL}/ajax`;
-export const SRC_HOME_URL = `${SRC_BASE_URL}/home`;
-export const SRC_SEARCH_URL = `${SRC_BASE_URL}/search`;
+export const SRC_BASE_URL = `https://${DOMAIN}` as const;
+export const SRC_AJAX_URL = `${SRC_BASE_URL}/ajax` as const;
+export const SRC_HOME_URL = `${SRC_BASE_URL}/home` as const;
+export const SRC_SEARCH_URL = `${SRC_BASE_URL}/search` as const;
 
 // <SearchPageFilters>
 export const genresIdMap: Record<string, number> = {
