@@ -884,9 +884,11 @@ console.log(data);
 
 <details>
 
-<summary>Get Anime Episodes</summary>
+<summary>
 
 ### `GET` Anime Episodes
+
+</summary>
 
 #### Endpoint
 
@@ -933,9 +935,11 @@ console.log(data);
 
 <details>
 
-<summary>Get Anime Episode Servers</summary>
+<summary>
 
 ### `GET` Anime Episode Servers
+
+</summary>
 
 #### Endpoint
 
@@ -995,9 +999,11 @@ console.log(data);
 
 <details>
 
-<summary>Get Anime Episode Streaming Links</summary>
+<summary>
 
 ### `GET` Anime Episode Streaming Links
+
+</summary>
 
 #### Endpoint
 
