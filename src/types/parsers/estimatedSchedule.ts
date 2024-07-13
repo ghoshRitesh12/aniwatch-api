@@ -3,6 +3,8 @@ type EstimatedSchedule = {
   time: string | null;
   name: string | null;
   jname: string | null;
+  airingTimestamp: number;
+  secondsUntilAiring: number;
 };
 
 export type ScrapedEstimatedSchedule = {
