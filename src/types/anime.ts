@@ -121,11 +121,11 @@ export type AnimeServers =
   | "vidcloud";
 
 export enum Servers {
-  VidStreaming = "vidstreaming",
+  VidStreaming = "hd-1",
   MegaCloud = "megacloud",
   StreamSB = "streamsb",
   StreamTape = "streamtape",
-  VidCloud = "vidcloud",
+  VidCloud = "hd-2",
   AsianLoad = "asianload",
   GogoCDN = "gogocdn",
   MixDrop = "mixdrop",
