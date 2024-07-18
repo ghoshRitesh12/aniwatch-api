@@ -114,11 +114,11 @@ export type AnimeCategories =
   | "completed";
 
 export type AnimeServers =
-  | "vidstreaming"
+  | "hd-1"
+  | "hd-2"
   | "megacloud"
   | "streamsb"
-  | "streamtape"
-  | "vidcloud";
+  | "streamtape";
 
 export enum Servers {
   VidStreaming = "hd-1",
