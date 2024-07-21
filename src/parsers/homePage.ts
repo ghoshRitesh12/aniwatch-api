@@ -5,6 +5,7 @@ import {
   ACCEPT_ENCODING_HEADER,
   extractTop10Animes,
   extractAnimes,
+  extractMostPopularAnimes,
 } from "../utils/index.js";
 import axios, { AxiosError } from "axios";
 import createHttpError, { type HttpError } from "http-errors";
@@ -24,6 +25,9 @@ async function scrapeHomePage(): Promise<ScrapedHomePage | HttpError> {
       month: [],
     },
     topAiringAnimes: [],
+    mostPopularAnimes: [],
+    mostFavoriteAnimes: [],
+    latestCompletedAnimes: [],
     genres: [],
   };
 
@@ -114,11 +118,15 @@ async function scrapeHomePage(): Promise<ScrapedHomePage | HttpError> {
         rank: parseInt(
           $(el).find(".item .number")?.children()?.first()?.text()?.trim()
         ),
+        id: $(el).find(".item .film-poster")?.attr("href")?.slice(1)?.trim(),
         name: $(el)
           .find(".item .number .film-title.dynamic-name")
           ?.text()
           ?.trim(),
-        id: $(el).find(".item .film-poster")?.attr("href")?.slice(1)?.trim(),
+        jname: $(el)
+          .find(".item .number .film-title.dynamic-name")
+          ?.attr("data-jname")
+          ?.trim(),
         poster: $(el)
           .find(".item .film-poster .film-poster-img")
           ?.attr("data-src")
@@ -158,35 +166,10 @@ async function scrapeHomePage(): Promise<ScrapedHomePage | HttpError> {
       }
     });
 
-    const topAiringSelector: SelectorType =
-      "#anime-featured .row div:nth-of-type(1) .anif-block-ul ul li";
-    $(topAiringSelector).each((i, el) => {
-      const otherInfo = $(el)
-        .find(".fd-infor .fdi-item")
-        .map((i, el) => $(el).text().trim())
-        .get();
-
-      res.topAiringAnimes.push({
-        id: $(el)
-          .find(".film-detail .film-name .dynamic-name")
-          ?.attr("href")
-          ?.slice(1)
-          ?.trim(),
-        name: $(el)
-          .find(".film-detail .film-name .dynamic-name")
-          ?.attr("title")
-          ?.trim(),
-        jname: $(el)
-          .find(".film-detail .film-name .dynamic-name")
-          ?.attr("data-jname")
-          ?.trim(),
-        poster: $(el)
-          .find(".film-poster a .film-poster-img")
-          ?.attr("data-src")
-          ?.trim(),
-        otherInfo,
-      });
-    });
+    res.topAiringAnimes = extractMostPopularAnimes($, "#anime-featured .row div:nth-of-type(1) .anif-block-ul ul li");
+    res.mostPopularAnimes = extractMostPopularAnimes($, "#anime-featured .row div:nth-of-type(2) .anif-block-ul ul li");
+    res.mostFavoriteAnimes = extractMostPopularAnimes($, "#anime-featured .row div:nth-of-type(3) .anif-block-ul ul li");
+    res.latestCompletedAnimes = extractMostPopularAnimes($, "#anime-featured .row div:nth-of-type(4) .anif-block-ul ul li");
 
     return res;
   } catch (err: any) {

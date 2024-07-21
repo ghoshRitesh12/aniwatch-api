@@ -9,6 +9,9 @@ test("returns anime information present in homepage", async () => {
   expect(data.latestEpisodeAnimes).not.toEqual([]);
   expect(data.topUpcomingAnimes).not.toEqual([]);
   expect(data.topAiringAnimes).not.toEqual([]);
+  expect(data.mostPopularAnimes).not.toEqual([]);
+  expect(data.mostFavoriteAnimes).not.toEqual([]);
+  expect(data.latestCompletedAnimes).not.toEqual([]);
   expect(data.genres).not.toEqual([]);
 
   expect(data.top10Animes.today).not.toEqual([]);
