@@ -39,6 +39,10 @@ export const extractAnimes = (
           .find(".film-detail .film-name .dynamic-name")
           ?.text()
           ?.trim(),
+        jname: $(el)
+          .find(".film-detail .film-name .dynamic-name")
+          ?.attr("data-jname")
+          ?.trim() || null,
         poster:
           $(el)
             .find(".film-poster .film-poster-img")
@@ -102,6 +106,7 @@ export const extractTop10Animes = (
             .trim() || null,
         rank: Number($(el).find(".film-number span")?.text()?.trim()) || null,
         name: $(el).find(".film-detail .dynamic-name")?.text()?.trim() || null,
+        jname: $(el).find(".film-detail .dynamic-name")?.attr("data-jname")?.trim() || null,
         poster:
           $(el)
             .find(".film-poster .film-poster-img")
@@ -150,17 +155,16 @@ export const extractMostPopularAnimes = (
             ?.slice(1)
             .trim() || null,
         name: $(el).find(".film-detail .dynamic-name")?.text()?.trim() || null,
-        poster:
-          $(el)
-            .find(".film-poster .film-poster-img")
-            ?.attr("data-src")
-            ?.trim() || null,
         jname:
           $(el)
             .find(".film-detail .film-name .dynamic-name")
             .attr("data-jname")
             ?.trim() || null,
-
+        poster:
+          $(el)
+            .find(".film-poster .film-poster-img")
+            ?.attr("data-src")
+            ?.trim() || null,
         episodes: {
           sub:
             Number($(el)?.find(".fd-infor .tick .tick-sub")?.text()?.trim()) ||

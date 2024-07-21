@@ -1,6 +1,7 @@
 export interface Anime {
   id: string | null;
   name: string | null;
+  jname: string | null;
   poster: string | null;
   duration: string | null;
   type: string | null;
@@ -15,6 +16,7 @@ type CommonAnimeProps = "id" | "name" | "poster";
 
 export interface Top10Anime extends Pick<Anime, CommonAnimeProps | "episodes"> {
   rank: number | null;
+  jname: string | null;
 }
 
 export type Top10AnimeTimePeriod = "day" | "week" | "month";

@@ -118,11 +118,15 @@ async function scrapeHomePage(): Promise<ScrapedHomePage | HttpError> {
         rank: parseInt(
           $(el).find(".item .number")?.children()?.first()?.text()?.trim()
         ),
+        id: $(el).find(".item .film-poster")?.attr("href")?.slice(1)?.trim(),
         name: $(el)
           .find(".item .number .film-title.dynamic-name")
           ?.text()
           ?.trim(),
-        id: $(el).find(".item .film-poster")?.attr("href")?.slice(1)?.trim(),
+        jname: $(el)
+          .find(".item .number .film-title.dynamic-name")
+          ?.attr("data-jname")
+          ?.trim(),
         poster: $(el)
           .find(".item .film-poster .film-poster-img")
           ?.attr("data-src")
