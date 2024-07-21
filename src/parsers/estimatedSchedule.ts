@@ -55,6 +55,7 @@ async function scrapeEstimatedSchedule(
             ?.trim() || null,
         airingTimestamp,
         secondsUntilAiring: Math.floor((airingTimestamp - Date.now()) / 1000),
+        episode: Number($(el).find("a .fd-play button").text().trim().split(" ")[1])
       });
     });
 
