@@ -39,6 +39,8 @@ export interface LatestEpisodeAnime extends Anime {}
 export interface TopUpcomingAnime extends Anime {}
 
 export interface TopAiringAnime extends MostPopularAnime {}
+export interface MostFavoriteAnime extends MostPopularAnime {}
+export interface LatestCompletedAnime extends MostPopularAnime {}
 
 export interface AnimeGeneralAboutInfo
   extends Pick<Anime, CommonAnimeProps>,

@@ -25,6 +25,9 @@ async function scrapeHomePage(): Promise<ScrapedHomePage | HttpError> {
       month: [],
     },
     topAiringAnimes: [],
+    mostPopularAnimes: [],
+    mostFavoriteAnimes: [],
+    latestCompletedAnimes: [],
     genres: [],
   };
 
@@ -160,6 +163,9 @@ async function scrapeHomePage(): Promise<ScrapedHomePage | HttpError> {
     });
 
     res.topAiringAnimes = extractMostPopularAnimes($, "#anime-featured .row div:nth-of-type(1) .anif-block-ul ul li");
+    res.mostPopularAnimes = extractMostPopularAnimes($, "#anime-featured .row div:nth-of-type(2) .anif-block-ul ul li");
+    res.mostFavoriteAnimes = extractMostPopularAnimes($, "#anime-featured .row div:nth-of-type(3) .anif-block-ul ul li");
+    res.latestCompletedAnimes = extractMostPopularAnimes($, "#anime-featured .row div:nth-of-type(4) .anif-block-ul ul li");
 
     return res;
   } catch (err: any) {

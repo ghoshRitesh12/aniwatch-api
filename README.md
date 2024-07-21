@@ -182,9 +182,7 @@ console.log(data);
       id: string,
       name: string,
       poster: string,
-      duration: string,
       type: string,
-      rating: string,
       episodes: {
         sub: number,
         dub: number,
@@ -255,6 +253,45 @@ console.log(data);
       name: string,
       poster: string,
       rank: number,
+    },
+    {...},
+  ],
+  mostPopularAnimes: [
+    {
+      id: string,
+      name: string,
+      poster: string,
+      type: string,
+      episodes: {
+        sub: number,
+        dub: number,
+      }
+    },
+    {...},
+  ],
+  mostFavoriteAnimes: [
+    {
+      id: string,
+      name: string,
+      poster: string,
+      type: string,
+      episodes: {
+        sub: number,
+        dub: number,
+      }
+    },
+    {...},
+  ],
+  latestCompletedAnimes: [
+    {
+      id: string,
+      name: string,
+      poster: string,
+      type: string,
+      episodes: {
+        sub: number,
+        dub: number,
+      }
     },
     {...},
   ],
