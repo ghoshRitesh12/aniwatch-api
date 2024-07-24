@@ -1,3 +1,12 @@
+# [1.38.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.37.0...v1.38.0) (2024-07-24)
+
+
+### Features
+
+* add `jname` field to Anime interface ([c65d786](https://github.com/ghoshRitesh12/aniwatch-api/commit/c65d786673c4369b8d617a6972d01b7ad3a51954))
+
+
+
 # [1.37.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.36.3...v1.37.0) (2024-07-21)
 
 
@@ -29,10 +38,6 @@
 
 
 ## [1.36.1](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.36.0...v1.36.1) (2024-07-15)
-
-
-
-# [1.36.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.35.0...v1.36.0) (2024-07-13)
 
 
 
