@@ -39,10 +39,11 @@ export const extractAnimes = (
           .find(".film-detail .film-name .dynamic-name")
           ?.text()
           ?.trim(),
-        jname: $(el)
-          .find(".film-detail .film-name .dynamic-name")
-          ?.attr("data-jname")
-          ?.trim() || null,
+        jname:
+          $(el)
+            .find(".film-detail .film-name .dynamic-name")
+            ?.attr("data-jname")
+            ?.trim() || null,
         poster:
           $(el)
             .find(".film-poster .film-poster-img")
@@ -106,7 +107,11 @@ export const extractTop10Animes = (
             .trim() || null,
         rank: Number($(el).find(".film-number span")?.text()?.trim()) || null,
         name: $(el).find(".film-detail .dynamic-name")?.text()?.trim() || null,
-        jname: $(el).find(".film-detail .dynamic-name")?.attr("data-jname")?.trim() || null,
+        jname:
+          $(el)
+            .find(".film-detail .dynamic-name")
+            ?.attr("data-jname")
+            ?.trim() || null,
         poster:
           $(el)
             .find(".film-poster .film-poster-img")
