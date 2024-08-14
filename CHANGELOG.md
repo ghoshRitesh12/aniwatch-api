@@ -1,3 +1,7 @@
+## [1.38.2](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.38.1...v1.38.2) (2024-08-14)
+
+
+
 ## [1.38.1](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.38.0...v1.38.1) (2024-08-13)
 
 
@@ -34,10 +38,6 @@
 
 * fixed tests regarding episode sources ([bf2c69e](https://github.com/ghoshRitesh12/aniwatch-api/commit/bf2c69e7abf161f611d8b5c85248d63548211e79))
 * fixed using specific server for episode sources ([4437ef2](https://github.com/ghoshRitesh12/aniwatch-api/commit/4437ef24cc224e784701fbed2fa26e1ce90e04a5))
-
-
-
-## [1.36.2](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.36.1...v1.36.2) (2024-07-15)
 
 
 
