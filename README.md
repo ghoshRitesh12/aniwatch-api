@@ -1053,14 +1053,14 @@ https://api-aniwatch.onrender.com/anime/episode-srcs?id={episodeId}&server={serv
 | Parameter  |  Type  |                     Description                      | Required? |     Default      |
 | :--------: | :----: | :--------------------------------------------------: | :-------: | :--------------: |
 |    `id`    | string |                The id of the episode.                |    Yes    |        --        |
-|  `server`  | string |               The name of the server.                |    No     | `"vidstreaming"` |
+|  `server`  | string |               The name of the server.                |    No     |     `"hd-1"`     |
 | `category` | string | The category of the episode ('sub', 'dub' or 'raw'). |    No     |     `"sub"`      |
 
 #### Request sample
 
 ```javascript
 const resp = await fetch(
-  "https://api-aniwatch.onrender.com/anime/episode-srcs?id=steinsgate-3?ep=230&server=vidstreaming&category=dub"
+  "https://api-aniwatch.onrender.com/anime/episode-srcs?id=steinsgate-3?ep=230&server=hd-1&category=dub"
 );
 const data = await resp.json();
 console.log(data);
