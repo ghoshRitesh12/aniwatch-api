@@ -1,7 +1,7 @@
 {
   "name": "aniwatch-api",
   "version": "1.38.2",
-  "description": "Node.js API for obtaining anime information from hianime.to (formerly aniwatch.to) written in TypeScript, made with Cheerio & Axios",
+  "description": "Node.js API for obtaining anime information from hianime.to (formerly aniwatch.to)",
   "main": "src/server.ts",
   "type": "module",
   "scripts": {
@@ -25,31 +25,32 @@
     "anime",
     "weeb",
     "hianime",
+    "aniwatch",
     "scraper"
   ],
   "author": "https://github.com/ghoshRitesh12",
   "license": "MIT",
   "dependencies": {
-    "axios": "^1.6.5",
-    "cheerio": "1.0.0-rc.12",
+    "axios": "^1.7.7",
+    "cheerio": "1.0.0",
     "cors": "^2.8.5",
     "crypto-js": "^4.2.0",
-    "dotenv": "^16.3.1",
-    "express": "^4.18.2",
-    "express-rate-limit": "^7.1.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0",
     "http-errors": "^2.0.0",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
-    "@types/crypto-js": "^4.2.1",
+    "@types/crypto-js": "^4.2.2",
     "@types/express": "^4.17.21",
     "@types/http-errors": "^2.0.4",
     "@types/morgan": "^1.9.9",
-    "@types/node": "^20.11.5",
+    "@types/node": "^22.5.4",
     "husky": "^8.0.3",
-    "tsx": "^4.7.0",
-    "typescript": "^5.3.3",
-    "vitest": "^1.2.1"
+    "tsx": "^4.19.0",
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.5"
   }
 }
