@@ -6,7 +6,7 @@
   <title>Aniwatch API</title>
   <meta name="content-language" content="en">
   <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self' https://api-aniwatch.onrender.com; style-src 'unsafe-inline'; img-src 'self' https://raw.githubusercontent.com">
+    content="default-src 'self' https://api-aniwatch.onrender.com; style-src 'unsafe-inline'; img-src 'self' https://raw.githubusercontent.com https://img.shields.io https://contrib.rocks">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="title" content="Aniwatch API">
   <link rel="canonical" href="https://api-aniwatch.onrender.com">
@@ -22,19 +22,24 @@
   <meta name="twitter:site" content="@aniwatch-api">
   <meta name="twitter:title" content="Aniwatch API">
   <meta name="twitter:description"
-    content="Node Express API for obtaining anime information from aniwatch.to (formerly zoro.to) written in TypeScript, made with Cheerio & Axios">
+    content="Node Express API for obtaining anime information from hianime.to (formerly aniwatch.to)">
   <meta name="twitter:image:src"
     content="https://raw.githubusercontent.com/ghoshRitesh12/aniwatch-api/main/public/img/img1.gif">
-  <meta name="keywords" content="aniwatch api scraper anime zoro node express typescript">
+  <meta name="keywords" content="hianime api scraper anime aniwatch node express typescript">
   <meta property="og:title" content="Aniwatch API">
   <meta name="description"
-    content="Node Express API for obtaining anime information from aniwatch.to (formerly zoro.to) written in TypeScript, made with Cheerio & Axios">
+    content="Node Express API for obtaining anime information from hianime.to (formerly aniwatch.to)">
   <meta property="og:description"
-    content="Node Express API for obtaining anime information from aniwatch.to (formerly zoro.to) written in TypeScript, made with Cheerio & Axios">
+    content="Node Express API for obtaining anime information from hianime.to (formerly aniwatch.to)">
   <link rel="shortcut icon"
     href="https://raw.githubusercontent.com/ghoshRitesh12/aniwatch-api/main/public/img/img1.gif">
 
   <style>
+    * {
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+
     html {
       color-scheme: dark;
     }
@@ -77,9 +82,36 @@
       width: fit-content;
       margin: 1rem auto 1rem auto;
     }
+
+    .api-stats-container {
+      display: flex;
+      gap: .2rem .5rem;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    .api-stats-container a {
+      flex-shrink: 0;
+      user-select: none;
+    }
+
+    .contributors {
+      margin-top: 1rem;
+      text-align: center;
+    }
   </style>
 </head>
 
+<!-- 
+IMPORTANT:
+1. https://api-aniwatch.onrender.com is only meant to demo the API and has rate-limiting enabled to minimise bandwidth
+consumption. It is recommended to deploy your own instance for personal use by customizing the api as you need it to be.
+2. This API is just an unofficial api for hianime.to and is in no other way officially related to the same.
+3. The content that this api provides is not mine, nor is it hosted by me. These belong to their respective owners. This
+api just demonstrates how to build an api that scrapes websites and uses their content. 
+-->
 
 <body>
   <h2>
@@ -88,16 +120,46 @@
     api
     <span style="-webkit-text-fill-color: white">⚔️</span>
   </h2>
+
+  <div class="api-stats-container">
+    <a href="https://github.com/ghoshRitesh12/aniwatch-api/stargazers">
+      <img src="https://img.shields.io/github/stars/ghoshRitesh12/aniwatch-api?style=social" alt="Stars"
+        decoding="async">
+    </a>
+    <a href="https://github.com/ghoshRitesh12/aniwatch-api/network/members">
+      <img src="https://img.shields.io/github/forks/ghoshRitesh12/aniwatch-api?style=social" alt="Forks"
+        decoding="async">
+    </a>
+    <a href="https://github.com/ghoshRitesh12/aniwatch-api/issues?q=is%3Aissue+is%3Aopen+">
+      <img src="https://img.shields.io/github/issues/ghoshRitesh12/aniwatch-api?style=social&logo=github" alt="Issues"
+        decoding="async">
+    </a>
+    <a href="https://github.com/ghoshRitesh12/aniwatch-api/releases/latest">
+      <img
+        src="https://img.shields.io/github/v/release/ghoshRitesh12/aniwatch-api?display_name=release&style=social&logo=github"
+        alt="Version" decoding="async">
+    </a>
+  </div>
+
   <div style="font-size: 1.2rem; text-align: center;">
     <div class="img-wrapper">
       <img draggable="false" src="https://raw.githubusercontent.com/ghoshRitesh12/aniwatch-api/main/public/img/img1.gif"
-        alt="kawai anime girl" decoding="async" fetchpriority="high" />
+        alt="kawai anime girl" decoding="async" fetchpriority="high" style="user-select: none;" />
     </div>
-    <a href="https://github.com/ghoshritesh12/aniwatch-api#documentation" rel="noopener noreferer">
+
+    <a href="https://github.com/ghoshRitesh12/aniwatch-api#documentation" rel="noopener noreferer">
       Visit docs for more information
     </a>
   </div>
-</body>
 
+  <div class="contributors">
+    <p>Thanks to the following people for keeping this project alive and relevant.</p>
+
+    <a href="https://github.com/ghoshRitesh12/aniwatch-api/graphs/contributors"
+      style="display: block; margin-bottom: 1rem; user-select: none;">
+      <img src="https://contrib.rocks/image?repo=ghoshRitesh12/aniwatch-api" alt="Contributors" decoding="async">
+    </a>
+  </div>
+</body>
 
 </html>
