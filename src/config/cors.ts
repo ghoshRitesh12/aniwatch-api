@@ -1,10 +1,25 @@
-import cors from "cors";
+import cors from 'cors';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+const allowedOrigins = process.env.CORS_ALLOWED_ORIGINS
+  ? process.env.CORS_ALLOWED_ORIGINS.split(",")
+  : ["http://localhost:4000"];
 
 const corsConfig = cors({
-  origin: "*",
-  methods: "GET",
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  methods: ["GET"],
   credentials: true,
   optionsSuccessStatus: 200,
+  maxAge: 600,
 });
 
 export default corsConfig;
+
