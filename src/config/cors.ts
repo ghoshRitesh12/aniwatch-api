@@ -1,11 +1,11 @@
-import cors from 'cors';
-import dotenv from 'dotenv';
+import cors from "cors";
+import { config } from "dotenv";
 
-dotenv.config();
+config();
 
 const allowedOrigins = process.env.CORS_ALLOWED_ORIGINS
   ? process.env.CORS_ALLOWED_ORIGINS.split(",")
-  : ["http://localhost:4000"];
+  : ["http://localhost:4000", "*"];
 
 const corsConfig = cors({
   origin: function (origin, callback) {
@@ -16,10 +16,9 @@ const corsConfig = cors({
     }
   },
   methods: ["GET"],
+  maxAge: 600,
   credentials: true,
   optionsSuccessStatus: 200,
-  maxAge: 600,
 });
 
 export default corsConfig;
-
