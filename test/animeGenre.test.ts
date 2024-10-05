@@ -1,8 +1,14 @@
 import { expect, test } from "vitest";
-import { scrapeGenreAnime } from "../src/parsers/index.js";
+import { HiAnime } from "aniwatch";
 
-test("returns animes belonging to a genre", async () => {
-  const data = await scrapeGenreAnime("shounen", 2);
+const genreName = "shounen";
+const page = 2;
+
+// npx vitest run animeGenre.test.ts
+test(`GET /api/v2/hianime/genre/${genreName}?page=${page}`, async () => {
+  const hianime = new HiAnime.Scraper();
+
+  const data = await hianime.getGenreAnime(genreName, page);
 
   expect(data.animes).not.toEqual([]);
   expect(data.genres).not.toEqual([]);

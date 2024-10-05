@@ -1,15 +1,17 @@
 import { expect, test } from "vitest";
-import { scrapeEstimatedSchedule } from "../src/parsers/index.js";
+import { HiAnime } from "aniwatch";
 
-function padZero(num: number) {
-  return num < 10 ? `0${num}` : num.toString();
-}
+const padZero = (num: number) => (num < 10 ? `0${num}` : num.toString());
 
-test("returns estimated schedule anime release", async () => {
-  const d = new Date();
-  const data = await scrapeEstimatedSchedule(
-    `${d.getFullYear()}-${padZero(d.getMonth() + 1)}-${padZero(d.getDate())}`
-  );
+const d = new Date();
+const date = `${d.getFullYear()}-${padZero(d.getMonth() + 1)}-${padZero(
+  d.getDate()
+)}`;
+
+// npx vitest run estimatedSchedule.test.ts
+test(`GET /api/v2/hianime/schedule?date=${date}`, async () => {
+  const hianime = new HiAnime.Scraper();
+  const data = await hianime.getEstimatedSchedule(date);
 
   expect(data.scheduledAnimes).not.toEqual([]);
 });

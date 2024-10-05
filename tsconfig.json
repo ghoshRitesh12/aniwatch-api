@@ -2,7 +2,7 @@
   "compilerOptions": {
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "target": "ES2022",
+    "target": "ES2023",
     "verbatimModuleSyntax": true,
     "allowJs": true,
     "resolveJsonModule": true,
@@ -13,6 +13,8 @@
     //
     "moduleResolution": "NodeNext",
     "module": "NodeNext",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "outDir": "./dist",
     "rootDir": "./",
     "sourceMap": true,
@@ -21,18 +23,8 @@
     "removeComments": true,
     "forceConsistentCasingInFileNames": true,
     "strictFunctionTypes": true,
-    "lib": [
-      "ES2022"
-    ]
+    "lib": ["ES2023"]
   },
-  "include": [
-    "./src",
-    "./api"
-  ],
-  "ts-node": {
-    "esm": true
-  },
-  "exclude": [
-    "node_modules",
-  ],
+  "include": ["./src", "./api"],
+  "exclude": ["node_modules"]
 }
