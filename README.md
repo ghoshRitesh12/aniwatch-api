@@ -146,7 +146,7 @@ More info can be found in [`.env.example`](https://github.com/ghoshRitesh12/aniw
 > For personal deployments:
 >
 > - If you wanna have rate limitting in your application, then set the `ANIWATCH_API_HOSTNAME` env to your deployed instance's hostname, otherwise don't set or have this env at all. If you set this env to an incorrect value, you may face other issues.
-> - Remove the if block from the [`server.ts`](https://github.com/ghoshRitesh12/aniwatch-api/blob/main/src/server.ts) file, spanning from lines [43](https://github.com/ghoshRitesh12/aniwatch-api/blob/main/src/server.ts#L58) to [58](https://github.com/ghoshRitesh12/aniwatch-api/blob/main/src/server.ts#L58).
+> - Remove the if block from the [`server.ts`](https://github.com/ghoshRitesh12/aniwatch-api/blob/main/src/server.ts) file, spanning from lines [60](https://github.com/ghoshRitesh12/aniwatch-api/blob/main/src/server.ts#L60) to [84](https://github.com/ghoshRitesh12/aniwatch-api/blob/main/src/server.ts#L84).
 
 ### Vercel
 
