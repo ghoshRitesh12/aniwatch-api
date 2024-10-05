@@ -1,8 +1,16 @@
 import { expect, test } from "vitest";
-import { scrapeAnimeSearch } from "../src/parsers/index.js";
+import { HiAnime } from "aniwatch";
 
-test("returns animes related to search query", async () => {
-  const data = await scrapeAnimeSearch("monster", 2);
+const query = "monster";
+const page = 1;
+const filter: HiAnime.SearchFilters = {
+  genres: "seinen,psychological",
+};
+
+// npx vitest run animeSearch.test.ts
+test(`GET /api/v2/hianime/search?q=${query}&page=${page}&genres=${filter.genres}`, async () => {
+  const hianime = new HiAnime.Scraper();
+  const data = await hianime.search(query, page, filter);
 
   expect(data.animes).not.toEqual([]);
   expect(data.mostPopularAnimes).not.toEqual([]);

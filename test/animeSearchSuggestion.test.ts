@@ -1,8 +1,12 @@
 import { expect, test } from "vitest";
-import { scrapeAnimeSearchSuggestion } from "../src/parsers/index.js";
+import { HiAnime } from "aniwatch";
 
-test("returns animes search suggestions related to search query", async () => {
-  const data = await scrapeAnimeSearchSuggestion("one piece");
+const query = "one piece";
+
+// npx vitest run animeSearchSuggestion.test.ts
+test(`GET /api/v2/hianime/search/suggestion?q=${query}`, async () => {
+  const hianime = new HiAnime.Scraper();
+  const data = await hianime.searchSuggestions(query);
 
   expect(data.suggestions).not.toEqual([]);
 });
