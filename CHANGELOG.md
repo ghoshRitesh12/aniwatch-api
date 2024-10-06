@@ -1,3 +1,7 @@
+## [2.0.2](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.0.1...v2.0.2) (2024-10-06)
+
+
+
 ## [2.0.1](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.0.0...v2.0.1) (2024-10-06)
 
 
@@ -58,10 +62,6 @@
 ### Features
 
 * update allowed origins to include wildcard if env not present ([21a8718](https://github.com/ghoshRitesh12/aniwatch-api/commit/21a8718f87d7409d61970139e39c2bb0c6cfe91c))
-
-
-
-## [1.38.4](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.38.3...v1.38.4) (2024-10-04)
 
 
 
