@@ -1079,7 +1079,7 @@ console.log(data);
 #### Endpoint
 
 ```sh
-/api/v2/hianime/episode/sources?animeEpisodeId={id}?server={server}&category={dub || sub || raw}
+/api/v2/hianime/episode/sources?animeEpisodeId={animeId}?ep={episodeId}?server={server}&category={dub || sub || raw}
 ```
 
 #### Query Parameters
