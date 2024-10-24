@@ -11,7 +11,9 @@
     "vercel-build": "echo \"Hello\"",
     "prepare": "husky install",
     "test": "vitest run --config vitest.config.ts",
-    "healthcheck": "curl -f http://localhost:4000/health"
+    "healthcheck": "curl -f http://localhost:4000/health",
+    "lint": "prettier --cache --write .",
+    "lint:ci": "prettier --cache --check ."
   },
   "repository": {
     "type": "git",
@@ -41,6 +43,7 @@
     "node": "^18.20.4",
     "@types/node": "^22.7.4",
     "husky": "^8.0.3",
+    "prettier": "^3.3.3",
     "tsx": "^4.19.1",
     "typescript": "^5.6.2",
     "vitest": "^2.1.2"
