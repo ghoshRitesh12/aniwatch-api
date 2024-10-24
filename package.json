@@ -38,6 +38,7 @@
     "hono-rate-limiter": "^0.4.0"
   },
   "devDependencies": {
+    "node": "^18.20.4",
     "@types/node": "^22.7.4",
     "husky": "^8.0.3",
     "tsx": "^4.19.1",
