@@ -1,5 +1,5 @@
 # build stage for building .ts files
-FROM node:20-alpine as build
+FROM node:22-alpine as build
 
 RUN mkdir /home/app
 
@@ -14,10 +14,10 @@ COPY . .
 RUN npm run build
 
 # prod stage for including only necessary files
-FROM node:20-alpine as prod
+FROM node:22-alpine as prod
 
 LABEL org.opencontainers.image.source=https://github.com/ghoshRitesh12/aniwatch-api
-LABEL org.opencontainers.image.description="Node.js API for obtaining anime information from hianime.to (formerly aniwatch.to) written in TypeScript, made with Cheerio & Axios"
+LABEL org.opencontainers.image.description="Node.js API for obtaining anime information from hianime.to (formerly aniwatch.to)"
 LABEL org.opencontainers.image.licenses=MIT
 
 # create a non-privileged user
