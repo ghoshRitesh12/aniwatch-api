@@ -1,3 +1,14 @@
+# [2.1.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.0.2...v2.1.0) (2024-10-29)
+
+
+### Features
+
+* add `.editorconfig` ([90c0e86](https://github.com/ghoshRitesh12/aniwatch-api/commit/90c0e869abaae168bc07fe93782b65651f45dfc8))
+* **prettier:** add `.prettierignore` ([23fcd4a](https://github.com/ghoshRitesh12/aniwatch-api/commit/23fcd4a19f7da2817782d557b6d5e6f664b3b584))
+* **prettier:** add `prettier.config.mjs` ([9ae824b](https://github.com/ghoshRitesh12/aniwatch-api/commit/9ae824b42c2665869e0a7bc964339ee6cc414d1a))
+
+
+
 ## [2.0.2](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.0.1...v2.0.2) (2024-10-06)
 
 
@@ -53,15 +64,6 @@
 
 * **future:** add hianime_v2 image ([1bba988](https://github.com/ghoshRitesh12/aniwatch-api/commit/1bba988e0d241121b51f9d9a9822da1237bd8aa8))
 * **future:** add hianime_v2 social img ([332feca](https://github.com/ghoshRitesh12/aniwatch-api/commit/332feca25f9f287d5cdf82a5bb8cf8ebe2210d67))
-
-
-
-# [1.39.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.38.4...v1.39.0) (2024-10-04)
-
-
-### Features
-
-* update allowed origins to include wildcard if env not present ([21a8718](https://github.com/ghoshRitesh12/aniwatch-api/commit/21a8718f87d7409d61970139e39c2bb0c6cfe91c))
 
 
 
