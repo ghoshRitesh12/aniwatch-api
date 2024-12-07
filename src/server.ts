@@ -6,12 +6,14 @@ import { ratelimit } from "./config/ratelimit.js";
 
 import { hianimeRouter } from "./routes/hianime.js";
 
-import { serveStatic } from "@hono/node-server/serve-static";
-import { serve } from "@hono/node-server";
 import { Hono } from "hono";
 import { logger } from "hono/logger";
+import { serve } from "@hono/node-server";
+import { serveStatic } from "@hono/node-server/serve-static";
 
 import { HiAnimeError } from "aniwatch";
+import { AniwatchAPICache } from "./config/cache.js";
+import type { AniwatchAPIVariables } from "./config/variables.js";
 
 config();
 
@@ -19,7 +21,7 @@ const BASE_PATH = "/api/v2" as const;
 const PORT: number = Number(process.env.ANIWATCH_API_PORT) || 4000;
 const ANIWATCH_API_HOSTNAME = process.env?.ANIWATCH_API_HOSTNAME;
 
-const app = new Hono();
+const app = new Hono<{ Variables: AniwatchAPIVariables }>();
 
 app.use(logger());
 app.use(corsConfig);
@@ -34,6 +36,20 @@ if (ISNT_PERSONAL_DEPLOYMENT) {
 
 app.use("/", serveStatic({ root: "public" }));
 app.get("/health", (c) => c.text("OK", { status: 200 }));
+
+app.use(async (c, next) => {
+  const { pathname, search } = new URL(c.req.url);
+
+  c.set("CACHE_CONFIG", {
+    key: `${pathname.slice(BASE_PATH.length) + search}`,
+    duration: Number(
+      c.req.header(AniwatchAPICache.CACHE_EXPIRY_HEADER_NAME) ||
+        AniwatchAPICache.DEFAULT_CACHE_EXPIRY_SECONDS
+    ),
+  });
+
+  await next();
+});
 
 app.basePath(BASE_PATH).route("/hianime", hianimeRouter);
 app
@@ -57,7 +73,7 @@ app.onError((err, c) => {
 });
 
 // NOTE: this env is "required" for vercel deployments
-if (!Boolean(process?.env?.ANIWATCH_API_VERCEL_DEPLOYMENT)) {
+if (!Boolean(process.env?.ANIWATCH_API_VERCEL_DEPLOYMENT)) {
   serve({
     port: PORT,
     fetch: app.fetch,
