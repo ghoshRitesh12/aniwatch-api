@@ -14,9 +14,11 @@
 # <p align="center">Aniwatch API</p>
 
 <div align="center">
-  A free restful API serving anime information from <a href="https://hianime.to" target="_blank">hianime.to</a>
-  <br/><br/>
-  <strong>
+  A free RESTful API serving anime information from <a href="https://hianime.to" target="_blank">hianime.to</a>
+
+  <br/>
+
+  <div>
     <a 
       href="https://github.com/ghoshRitesh12/aniwatch-api/issues/new?assignees=ghoshRitesh12&labels=bug&template=bug-report.yml"
     > 
@@ -28,7 +30,7 @@
     >
       Feature request
     </a>
-  </strong>
+  </div>
 </div>
 
 <br/>
@@ -56,17 +58,19 @@
 
 > [!IMPORTANT]
 >
-> 1. [https://api-aniwatch.onrender.com](https://api-aniwatch.onrender.com/) is only meant to demo the API and has rate-limiting enabled to minimise bandwidth consumption. It is recommended to deploy your own instance for personal use by customizing the api as you need it to be.
-> 2. This API is just an unofficial api for [hianime.to](https://hianime.to) and is in no other way officially related to the same.
-> 3. The content that this api provides is not mine, nor is it hosted by me. These belong to their respective owners. This api just demonstrates how to build an api that scrapes websites and uses their content.
+> 1. [https://api-aniwatch.onrender.com](https://api-aniwatch.onrender.com/) is only meant to demo the API and has rate-limiting enabled to minimize bandwidth consumption. It is recommended to deploy your own instance for personal use by customizing the API as you need it to be.
+> 2. This API is just an unofficial API for [hianime.to](https://hianime.to) and is in no other way officially related to the same.
+> 3. The content that this API provides is not mine, nor is it hosted by me. These belong to their respective owners. This API just demonstrates how to build an API that scrapes websites and uses their content.
 
 ## Table of Contents
 
 - [Installation](#installation)
   - [Local](#local)
   - [Docker](#docker)
-- [Envs](#envs)
-- [Host your instance](#-host-your-instance)
+- [Configuration](#️configuration)
+  - [Custom HTTP Headers](#custom-http-headers)
+  - [Environment Variables](#environment-variables)
+- [Host your instance](#host-your-instance)
   - [Vercel](#vercel)
   - [Render](#render)
 - [Documentation](#documentation)
@@ -115,29 +119,36 @@
 
 ### Docker
 
-Docker image is available at [GitHub Container Registry](https://github.com/ghoshRitesh12/aniwatch-api/pkgs/container/aniwatch).
+The Docker image is available at [The GitHub Container Registry](https://github.com/ghoshRitesh12/aniwatch-api/pkgs/container/aniwatch).
 
 Run the following commands to pull and run the docker image.
 
 ```bash
-docker pull ghcr.io/ghoshritesh12/aniwatch
-docker run -p 4000:4000 ghcr.io/ghoshritesh12/aniwatch
+docker run -d --name aniwatch-api -p 4000:4000 ghcr.io/ghoshritesh12/aniwatch
 ```
 
-The above command will start the server on port 4000. You can access the server at [http://localhost:4000](http://localhost:4000) and you can also change the port by changing the `-p` option to `-p <port>:4000`.
+The above command will start the server on port 4000. You can access the server at [http://localhost:4000](http://localhost:4000), and you can also change the port by changing the `-p` option to `-p <port>:4000`.
 
-You can also add the `-d` flag to run the container in detached mode.
+The `-d` flag runs the container in detached mode, and the `--name` flag is used to name the container that's about to run.
 
-## <span id="envs">⚙️ Envs</span>
+## <span id="configuration">⚙️ Configuration</span>
 
-More info can be found in [`.env.example`](https://github.com/ghoshRitesh12/aniwatch-api/blob/main/.env.example) file
+### Custom HTTP Headers
+Currently this API supports parsing of only one custom header, and more may be implemented in the future to accommodate varying needs.
 
-- `ANIWATCH_API_PORT`: port number of the aniwatch api
-- `ANIWATCH_API_WINDOW_MS`: duration to track requests for rate limitting (in milliseconds)
-- `ANIWATCH_API_MAX_REQS`: maximum number of requests in the `ANIWATCH_API_WINDOW_MS` timeperiod
-- `ANIWATCH_API_CORS_ALLOWED_ORIGINS`: allowed origins, separated by commas and no spaces in between
-- `ANIWATCH_VERCEL_DEPLOYMENT`: required for distinguishing vercel deployment from other ones, set it to true of any other non-zero value
-- `ANIWATCH_API_HOSTNAME`: set this to your api instance's hostname to enable rate limitting, don't have this value if you don't wish to rate limit
+- `X-ANIWATCH-CACHE-EXPIRY`: this custom header is used to specify the cache expiration duration in **seconds** (defaults to 60 if the header is missing). The `ANIWATCH_API_REDIS_CONN_URL` env is required for this custom header to function as intended; otherwise, there's no point in setting this custom header.
+
+### Environment Variables
+
+More info can be found in [`.env.example`](https://github.com/ghoshRitesh12/aniwatch-api/blob/main/.env.example) file, where envs's having a value that is contained within `<` `>` angled brackets are just examples and should be replaced with relevant ones.
+
+- `ANIWATCH_API_PORT`: port number of the aniwatch API.
+- `ANIWATCH_API_WINDOW_MS`: duration to track requests for rate limiting (in milliseconds).
+- `ANIWATCH_API_MAX_REQS`: maximum number of requests in the `ANIWATCH_API_WINDOW_MS` time period.
+- `ANIWATCH_API_CORS_ALLOWED_ORIGINS`: allowed origins, separated by commas and no spaces in between.
+- `ANIWATCH_API_VERCEL_DEPLOYMENT`: required for distinguishing Vercel deployment from other ones; set it to true or any other non-zero value.
+- `ANIWATCH_API_HOSTNAME`: set this to your api instance's hostname to enable rate limiting, don't have this value if you don't wish to rate limit.
+- `ANIWATCH_API_REDIS_CONN_URL`: this env is optional by default and can be set to utilize Redis caching functionality. It has to be a valid connection URL; otherwise, the Redis client can throw unexpected errors.
 
 ## <span id="host-your-instance">⛅ Host your instance</span>
 
@@ -145,7 +156,8 @@ More info can be found in [`.env.example`](https://github.com/ghoshRitesh12/aniw
 >
 > For personal deployments:
 >
-> - If you wanna have rate limitting in your application, then set the `ANIWATCH_API_HOSTNAME` env to your deployed instance's hostname, otherwise don't set or have this env at all. If you set this env to an incorrect value, you may face other issues.
+> - If you want to have rate limiting in your application, then set the `ANIWATCH_API_HOSTNAME` env to your deployed instance's hostname; otherwise, don't set or have this env at all. If you set this env to an incorrect value, you may face other issues.
+> - It's optional by default, but if you want to have endpoint response caching functionality, then set the `ANIWATCH_API_REDIS_CONN_URL` env to a valid Redis connection URL. If the connection URL is invalid, the Redis client can throw unexpected errors.
 > - Remove the if block from the [`server.ts`](https://github.com/ghoshRitesh12/aniwatch-api/blob/main/src/server.ts) file, spanning from lines [71](https://github.com/ghoshRitesh12/aniwatch-api/blob/main/src/server.ts#L71) to [83](https://github.com/ghoshRitesh12/aniwatch-api/blob/main/src/server.ts#L83).
 
 ### Vercel
@@ -156,7 +168,7 @@ Deploy your own instance of Aniwatch API on Vercel.
 
 > [!NOTE]
 >
-> When deploying to vercel, set an env named `ANIWATCH_VERCEL_DEPLOYMENT` to `true` or any non-zero value, but this env must be present.
+> When deploying to vercel, set an env named `ANIWATCH_API_VERCEL_DEPLOYMENT` to `true` or any non-zero value, but this env must be present.
 
 ### Render
 
