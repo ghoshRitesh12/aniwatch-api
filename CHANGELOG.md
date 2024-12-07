@@ -1,3 +1,7 @@
+## [2.2.1](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.2.0...v2.2.1) (2024-12-07)
+
+
+
 # [2.2.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.1.0...v2.2.0) (2024-12-07)
 
 
@@ -27,46 +31,6 @@
 
 
 ## [2.0.1](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.0.0...v2.0.1) (2024-10-06)
-
-
-
-# [2.0.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.40.0...v2.0.0) (2024-10-05)
-
-
-* Aniwatch API Version 2 (#66) ([46f688a](https://github.com/ghoshRitesh12/aniwatch-api/commit/46f688ac12a99b8fb145b0745dd4cc6babff1e1e)), closes [#66](https://github.com/ghoshRitesh12/aniwatch-api/issues/66)
-
-
-### BREAKING CHANGES
-
-* * chore: remove files that are not necessary for api v2
-
-* test: update existing tests to use  pkg
-
-* feat: organized aniwatch api envs and add more info about them
-
-* feat: update tsconfig to include strict noUnsed params
-
-* feat(api homepage): revamp api home page
-
-* feat: update wani kuni image
-
-* feat: add dot img
-
-* feat: use hono cors
-
-* feat: use hono rate limiter
-
-* build: remove unnecessary deps, add ones needed and update description
-
-* feat: add hianime routes and their handlers
-
-* feat: update vercel deployment file
-
-* docs: update logo and scraper docs, add envs section
-
-* feat: update main server file
-
-* feat: update peronal deployments caution section
 
 
 
