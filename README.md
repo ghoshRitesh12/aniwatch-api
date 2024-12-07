@@ -140,7 +140,7 @@ Currently this API supports parsing of only one custom header, and more may be i
 
 ### Environment Variables
 
-More info can be found in [`.env.example`](https://github.com/ghoshRitesh12/aniwatch-api/blob/main/.env.example) file, where envs's having a value that is contained within `<` `>` angled brackets are just examples and should be replaced with relevant ones.
+More info can be found in the [`.env.example`](https://github.com/ghoshRitesh12/aniwatch-api/blob/main/.env.example) file, where envs' having a value that is contained within `<` `>` angled brackets are just examples and should be replaced with relevant ones.
 
 - `ANIWATCH_API_PORT`: port number of the aniwatch API.
 - `ANIWATCH_API_WINDOW_MS`: duration to track requests for rate limiting (in milliseconds).
