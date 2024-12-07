@@ -1,3 +1,16 @@
+# [2.2.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.1.0...v2.2.0) (2024-12-07)
+
+
+### Features
+
+* **cache:** add `AniwatchAPICache` class to implement API caching layer ([b7d036d](https://github.com/ghoshRitesh12/aniwatch-api/commit/b7d036dbe29fcfa39c6573a0f02888093eb43d78))
+* **cache:** add middleware to insert `CACHE_CONFIG` variable in request context ([da83048](https://github.com/ghoshRitesh12/aniwatch-api/commit/da83048f908c1505cc1157a8344ab1a75208130d))
+* **cache:** integrated Redis caching layer for endpoint responses ([5cd99fc](https://github.com/ghoshRitesh12/aniwatch-api/commit/5cd99fcc642e54c1f26306a722d5ebeb8fff75a3))
+* **envs:** standardized env examples and add new redis connection url env ([9d379ec](https://github.com/ghoshRitesh12/aniwatch-api/commit/9d379ec4fe99782dc8e5340f2895cf11399bb1f9))
+* **server:** add aniwatch variables types for type-safe req context variable access ([db02218](https://github.com/ghoshRitesh12/aniwatch-api/commit/db022185efd04d4382883de543d3f3399cd28a6b))
+
+
+
 # [2.1.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.0.2...v2.1.0) (2024-10-29)
 
 
@@ -54,16 +67,6 @@
 * feat: update main server file
 
 * feat: update peronal deployments caution section
-
-
-
-# [1.40.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v1.39.0...v1.40.0) (2024-10-04)
-
-
-### Features
-
-* **future:** add hianime_v2 image ([1bba988](https://github.com/ghoshRitesh12/aniwatch-api/commit/1bba988e0d241121b51f9d9a9822da1237bd8aa8))
-* **future:** add hianime_v2 social img ([332feca](https://github.com/ghoshRitesh12/aniwatch-api/commit/332feca25f9f287d5cdf82a5bb8cf8ebe2210d67))
 
 
 
