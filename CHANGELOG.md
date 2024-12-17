@@ -1,3 +1,12 @@
+# [2.4.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.3.1...v2.4.0) (2024-12-17)
+
+
+### Features
+
+* **puppeteer:** add chromium deps and envs for seamless operation of puppeteer ([4275a65](https://github.com/ghoshRitesh12/aniwatch-api/commit/4275a65b9dc959e91a8eb388df5546b797c639a4))
+
+
+
 ## [2.3.1](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.3.0...v2.3.1) (2024-12-17)
 
 
@@ -31,17 +40,6 @@
 * **cache:** integrated Redis caching layer for endpoint responses ([5cd99fc](https://github.com/ghoshRitesh12/aniwatch-api/commit/5cd99fcc642e54c1f26306a722d5ebeb8fff75a3))
 * **envs:** standardized env examples and add new redis connection url env ([9d379ec](https://github.com/ghoshRitesh12/aniwatch-api/commit/9d379ec4fe99782dc8e5340f2895cf11399bb1f9))
 * **server:** add aniwatch variables types for type-safe req context variable access ([db02218](https://github.com/ghoshRitesh12/aniwatch-api/commit/db022185efd04d4382883de543d3f3399cd28a6b))
-
-
-
-# [2.1.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.0.2...v2.1.0) (2024-10-29)
-
-
-### Features
-
-* add `.editorconfig` ([90c0e86](https://github.com/ghoshRitesh12/aniwatch-api/commit/90c0e869abaae168bc07fe93782b65651f45dfc8))
-* **prettier:** add `.prettierignore` ([23fcd4a](https://github.com/ghoshRitesh12/aniwatch-api/commit/23fcd4a19f7da2817782d557b6d5e6f664b3b584))
-* **prettier:** add `prettier.config.mjs` ([9ae824b](https://github.com/ghoshRitesh12/aniwatch-api/commit/9ae824b42c2665869e0a7bc964339ee6cc414d1a))
 
 
 
