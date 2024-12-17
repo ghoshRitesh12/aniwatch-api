@@ -34,7 +34,7 @@
   "license": "MIT",
   "dependencies": {
     "@hono/node-server": "^1.13.1",
-    "aniwatch": "^2.12.0",
+    "aniwatch": "^2.12.1",
     "dotenv": "^16.4.5",
     "hono": "^4.6.3",
     "hono-rate-limiter": "^0.4.0",
@@ -47,8 +47,5 @@
     "tsx": "^4.19.1",
     "typescript": "^5.6.2",
     "vitest": "^2.1.2"
-  },
-  "pkg": {
-    "assets": "node_modules/puppeteer-extra-plugin-stealth/**/*.*"
   }
 }
