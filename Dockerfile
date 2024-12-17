@@ -20,6 +20,14 @@ LABEL org.opencontainers.image.source=https://github.com/ghoshRitesh12/aniwatch-
 LABEL org.opencontainers.image.description="Node.js API for obtaining anime information from hianime.to (formerly aniwatch.to)"
 LABEL org.opencontainers.image.licenses=MIT
 
+# set env or puppeteer
+ENV PUPPETEER_SKIP_DOWNLOAD=true
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+ENV PUPPETEER_EXECUTABLE_PATH="/usr/bin/chromium-browser"
+
+# install deps and chromium
+RUN apk add chromium
+
 # create a non-privileged user
 RUN addgroup -S aniwatch && adduser -S zoro -G aniwatch
 
