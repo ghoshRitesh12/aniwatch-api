@@ -1,3 +1,13 @@
+# [2.3.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.2.1...v2.3.0) (2024-12-17)
+
+
+### Features
+
+* add global constants ([54fe538](https://github.com/ghoshRitesh12/aniwatch-api/commit/54fe5389e13c3ae62a27c414af03cc6d5a260837))
+* **megacloud:** update aniwatch pkg, fixing `episode/sources` endpoint ([b70e654](https://github.com/ghoshRitesh12/aniwatch-api/commit/b70e65402eafec2e7d67f8335880bcb1dccccac5))
+
+
+
 ## [2.2.1](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.2.0...v2.2.1) (2024-12-07)
 
 
@@ -27,10 +37,6 @@
 
 
 ## [2.0.2](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.0.1...v2.0.2) (2024-10-06)
-
-
-
-## [2.0.1](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.0.0...v2.0.1) (2024-10-06)
 
 
 
