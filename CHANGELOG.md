@@ -1,3 +1,12 @@
+# [2.5.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.4.4...v2.5.0) (2024-12-18)
+
+
+### Features
+
+* **megacloud:** integrate https://github.com/drblgn/rabbit_wasm 's solution ([2478279](https://github.com/ghoshRitesh12/aniwatch-api/commit/2478279db71633b2d84f86c67f3b8ce9e5cfe32e))
+
+
+
 ## [2.4.4](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.4.3...v2.4.4) (2024-12-17)
 
 
@@ -31,15 +40,6 @@
 ### Bug Fixes
 
 * **vercel:** try1 to fix 'cannot find module puppeteer-extra-plugin-stealth' ([95d818e](https://github.com/ghoshRitesh12/aniwatch-api/commit/95d818e3713ced95e81323bc609459c6b106154a))
-
-
-
-# [2.4.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.3.1...v2.4.0) (2024-12-17)
-
-
-### Features
-
-* **puppeteer:** add chromium deps and envs for seamless operation of puppeteer ([4275a65](https://github.com/ghoshRitesh12/aniwatch-api/commit/4275a65b9dc959e91a8eb388df5546b797c639a4))
 
 
 
