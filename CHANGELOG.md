@@ -1,3 +1,12 @@
+# [2.7.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.6.0...v2.7.0) (2024-12-19)
+
+
+### Features
+
+* update dockerfile, remove chromium and related envs ([11462f3](https://github.com/ghoshRitesh12/aniwatch-api/commit/11462f309a6e73d041a8eafe12c0f6cdc3f5b9ac))
+
+
+
 # [2.6.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.5.0...v2.6.0) (2024-12-19)
 
 
@@ -31,15 +40,6 @@
 ### Bug Fixes
 
 * **vercel:** try3 to fix 'cannot find module puppeteer-extra-plugin-stealth' ([3f81d6a](https://github.com/ghoshRitesh12/aniwatch-api/commit/3f81d6a3bb2d2744235fff19721c75f542e89a7f)), closes [/github.com/vercel/pkg/issues/910#issuecomment-1032839383](https://github.com//github.com/vercel/pkg/issues/910/issues/issuecomment-1032839383)
-
-
-
-## [2.4.2](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.4.1...v2.4.2) (2024-12-17)
-
-
-### Bug Fixes
-
-* **vercel:** try2 to fix 'cannot find module puppeteer-extra-plugin-stealth' ([f5ec625](https://github.com/ghoshRitesh12/aniwatch-api/commit/f5ec625c6ec2255ea61117ade842df424cd7aa85)), closes [/github.com/vercel/pkg/issues/910#issuecomment-1032839383](https://github.com//github.com/vercel/pkg/issues/910/issues/issuecomment-1032839383)
 
 
 
