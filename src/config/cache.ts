@@ -30,8 +30,8 @@ export class AniwatchAPICache {
    * @param expirySeconds set to 60 by default
    */
   async getOrSet<T>(
-    key: string | Buffer,
     setCB: () => Promise<T>,
+    key: string | Buffer,
     expirySeconds: number = AniwatchAPICache.DEFAULT_CACHE_EXPIRY_SECONDS
   ) {
     const cachedData = this.isOptional
