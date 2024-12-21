@@ -22,6 +22,25 @@ hianimeRouter.get("/home", async (c) => {
   return c.json({ success: true, data }, { status: 200 });
 });
 
+// /api/v2/hianime/azlist/{sortOption}?page={page}
+hianimeRouter.get("/azlist/:sortOption", async (c) => {
+  const cacheConfig = c.get("CACHE_CONFIG");
+
+  const sortOption = decodeURIComponent(
+    c.req.param("sortOption").trim().toLowerCase()
+  ) as HiAnime.AZListSortOptions;
+  const page: number =
+    Number(decodeURIComponent(c.req.query("page") || "")) || 1;
+
+  const data = await cache.getOrSet<HiAnime.ScrapedAnimeAZList>(
+    cacheConfig.key,
+    async () => hianime.getAZList(sortOption, page),
+    cacheConfig.duration
+  );
+
+  return c.json({ success: true, data }, { status: 200 });
+});
+
 // /api/v2/hianime/category/{name}?page={page}
 hianimeRouter.get("/category/:name", async (c) => {
   const cacheConfig = c.get("CACHE_CONFIG");
