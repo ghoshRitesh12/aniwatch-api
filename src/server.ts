@@ -13,6 +13,7 @@ import { serveStatic } from "@hono/node-server/serve-static";
 
 import { HiAnimeError } from "aniwatch";
 import { AniwatchAPICache } from "./config/cache.js";
+import pkgJson from "../package.json" with { type: "json" };
 import type { AniwatchAPIVariables } from "./config/variables.js";
 
 config();
@@ -36,6 +37,11 @@ if (ISNT_PERSONAL_DEPLOYMENT) {
 
 app.use("/", serveStatic({ root: "public" }));
 app.get("/health", (c) => c.text("OK", { status: 200 }));
+app.get("/v", async (c) =>
+  c.text(
+    `v${"version" in pkgJson && pkgJson?.version ? pkgJson.version : "-1"}`
+  )
+);
 
 app.use(async (c, next) => {
   const { pathname, search } = new URL(c.req.url);
