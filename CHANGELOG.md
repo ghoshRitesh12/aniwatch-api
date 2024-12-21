@@ -1,3 +1,13 @@
+# [2.8.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.7.2...v2.8.0) (2024-12-21)
+
+
+### Features
+
+* add `/v` endpoint for identifying api repo vesion ([062e662](https://github.com/ghoshRitesh12/aniwatch-api/commit/062e662fbcde1947694b39740b9896f75325959c))
+* **az-list:** add `/azlist/:sortOption` endpoint for scraping hianime's az-list animes ([861a897](https://github.com/ghoshRitesh12/aniwatch-api/commit/861a8979991dc2aaaa621e0e2bb9e016ad4dfe6c))
+
+
+
 ## [2.7.2](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.7.1...v2.7.2) (2024-12-19)
 
 
@@ -26,15 +36,6 @@
 ### Features
 
 * **megacloud:** update aniwatch pkg ([cd41a54](https://github.com/ghoshRitesh12/aniwatch-api/commit/cd41a54a7ee968c2df8ad46de653c7617d13649f))
-
-
-
-# [2.5.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.4.4...v2.5.0) (2024-12-18)
-
-
-### Features
-
-* **megacloud:** integrate https://github.com/drblgn/rabbit_wasm 's solution ([2478279](https://github.com/ghoshRitesh12/aniwatch-api/commit/2478279db71633b2d84f86c67f3b8ce9e5cfe32e))
 
 
 
