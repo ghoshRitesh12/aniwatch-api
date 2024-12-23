@@ -1,3 +1,12 @@
+# [2.9.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.8.0...v2.9.0) (2024-12-23)
+
+
+### Features
+
+* **cache:** add Cache-Control middleware and update .env.example ([f1f5db8](https://github.com/ghoshRitesh12/aniwatch-api/commit/f1f5db84f98818af2c047ea375832e5ded5f021a))
+
+
+
 # [2.8.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.7.2...v2.8.0) (2024-12-21)
 
 
@@ -27,15 +36,6 @@
 ### Features
 
 * update dockerfile, remove chromium and related envs ([11462f3](https://github.com/ghoshRitesh12/aniwatch-api/commit/11462f309a6e73d041a8eafe12c0f6cdc3f5b9ac))
-
-
-
-# [2.6.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.5.0...v2.6.0) (2024-12-19)
-
-
-### Features
-
-* **megacloud:** update aniwatch pkg ([cd41a54](https://github.com/ghoshRitesh12/aniwatch-api/commit/cd41a54a7ee968c2df8ad46de653c7617d13649f))
 
 
 
