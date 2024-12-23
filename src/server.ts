@@ -5,7 +5,7 @@ import corsConfig from "./config/cors.js";
 import { ratelimit } from "./config/ratelimit.js";
 
 import { hianimeRouter } from "./routes/hianime.js";
-import cacheControlMiddleware from "./config/cache_control_middleware.js";
+import cacheControlMiddleware from "./config/cacheControlMiddleware.js";
 
 import { Hono } from "hono";
 import { logger } from "hono/logger";
