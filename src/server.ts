@@ -5,6 +5,7 @@ import corsConfig from "./config/cors.js";
 import { ratelimit } from "./config/ratelimit.js";
 
 import { hianimeRouter } from "./routes/hianime.js";
+import cacheControlMiddleware from "./config/cacheControlMiddleware.js";
 
 import { Hono } from "hono";
 import { logger } from "hono/logger";
@@ -26,6 +27,7 @@ const app = new Hono<{ Variables: AniwatchAPIVariables }>();
 
 app.use(logger());
 app.use(corsConfig);
+app.use(cacheControlMiddleware);
 
 // CAUTION: For personal deployments, "refrain" from having an env
 // named "ANIWATCH_API_HOSTNAME". You may face rate limitting
