@@ -4,17 +4,19 @@ import { config } from "dotenv";
 import corsConfig from "./config/cors.js";
 import { ratelimit } from "./config/ratelimit.js";
 
+import {
+  cacheConfigSetter,
+  cacheControlMiddleware,
+} from "./middleware/cache.js";
 import { hianimeRouter } from "./routes/hianime.js";
-import cacheControlMiddleware from "./config/cacheControlMiddleware.js";
 
 import { Hono } from "hono";
 import { logger } from "hono/logger";
 import { serve } from "@hono/node-server";
 import { serveStatic } from "@hono/node-server/serve-static";
 
-import { HiAnimeError } from "aniwatch";
-import { AniwatchAPICache } from "./config/cache.js";
 import pkgJson from "../package.json" with { type: "json" };
+import { errorHandler, notFoundHandler } from "./config/errorHandler.js";
 import type { AniwatchAPIVariables } from "./config/variables.js";
 
 config();
@@ -38,47 +40,22 @@ if (ISNT_PERSONAL_DEPLOYMENT) {
 }
 
 app.use("/", serveStatic({ root: "public" }));
-app.get("/health", (c) => c.text("OK", { status: 200 }));
+app.get("/health", (c) => c.text("daijoubu", { status: 200 }));
 app.get("/v", async (c) =>
   c.text(
     `v${"version" in pkgJson && pkgJson?.version ? pkgJson.version : "-1"}`
   )
 );
 
-app.use(async (c, next) => {
-  const { pathname, search } = new URL(c.req.url);
-
-  c.set("CACHE_CONFIG", {
-    key: `${pathname.slice(BASE_PATH.length) + search}`,
-    duration: Number(
-      c.req.header(AniwatchAPICache.CACHE_EXPIRY_HEADER_NAME) ||
-        AniwatchAPICache.DEFAULT_CACHE_EXPIRY_SECONDS
-    ),
-  });
-
-  await next();
-});
+app.use(cacheConfigSetter(BASE_PATH.length));
 
 app.basePath(BASE_PATH).route("/hianime", hianimeRouter);
 app
   .basePath(BASE_PATH)
   .get("/anicrush", (c) => c.text("Anicrush could be implemented in future."));
 
-app.notFound((c) =>
-  c.json({ status: 404, message: "Resource Not Found" }, 404)
-);
-
-app.onError((err, c) => {
-  console.error(err);
-  const res = { status: 500, message: "Internal Server Error" };
-
-  if (err instanceof HiAnimeError) {
-    res.status = err.status;
-    res.message = err.message;
-  }
-
-  return c.json(res, { status: res.status });
-});
+app.notFound(notFoundHandler);
+app.onError(errorHandler);
 
 // NOTE: this env is "required" for vercel deployments
 if (!Boolean(process.env?.ANIWATCH_API_VERCEL_DEPLOYMENT)) {
