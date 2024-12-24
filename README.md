@@ -53,9 +53,6 @@
 
 </div>
 
-> [!NOTE]
-> The API has shifted to version 2, thereby naturally introducing breaking changes. If you'd want to use the previous version of this API, then refer to [the last stable version](https://github.com/ghoshRitesh12/aniwatch-api/tree/v1.40.0).
-
 > [!IMPORTANT]
 >
 > 1. [https://api-aniwatch.onrender.com](https://api-aniwatch.onrender.com/) is only meant to demo the API and has rate-limiting enabled to minimize bandwidth consumption. It is recommended to deploy your own instance for personal use by customizing the API as you need it to be.
@@ -75,6 +72,7 @@
   - [Render](#render)
 - [Documentation](#documentation)
   - [GET Anime Home Page](#get-anime-home-page)
+  - [GET Anime A-Z List](#get-anime-home-page)
   - [GET Anime About Info](#get-anime-about-info)
   - [GET Search Results](#get-search-results)
   - [GET Search Suggestions](#get-search-suggestions)
@@ -134,13 +132,14 @@ The `-d` flag runs the container in detached mode, and the `--name` flag is used
 ## <span id="configuration">⚙️ Configuration</span>
 
 ### Custom HTTP Headers
+
 Currently this API supports parsing of only one custom header, and more may be implemented in the future to accommodate varying needs.
 
 - `X-ANIWATCH-CACHE-EXPIRY`: this custom header is used to specify the cache expiration duration in **seconds** (defaults to 60 if the header is missing). The `ANIWATCH_API_REDIS_CONN_URL` env is required for this custom header to function as intended; otherwise, there's no point in setting this custom header.
 
 ### Environment Variables
 
-More info can be found in the [`.env.example`](https://github.com/ghoshRitesh12/aniwatch-api/blob/main/.env.example) file, where envs' having a value that is contained within `<` `>` angled brackets are just examples and should be replaced with relevant ones.
+More info can be found in the [`.env.example`](https://github.com/ghoshRitesh12/aniwatch-api/blob/main/.env.example) file, where envs' having a value that is contained within `<` `>` angled brackets, commented out or not, are just examples and should be replaced with relevant ones.
 
 - `ANIWATCH_API_PORT`: port number of the aniwatch API.
 - `ANIWATCH_API_WINDOW_MS`: duration to track requests for rate limiting (in milliseconds).
@@ -149,6 +148,8 @@ More info can be found in the [`.env.example`](https://github.com/ghoshRitesh12/
 - `ANIWATCH_API_VERCEL_DEPLOYMENT`: required for distinguishing Vercel deployment from other ones; set it to true or any other non-zero value.
 - `ANIWATCH_API_HOSTNAME`: set this to your api instance's hostname to enable rate limiting, don't have this value if you don't wish to rate limit.
 - `ANIWATCH_API_REDIS_CONN_URL`: this env is optional by default and can be set to utilize Redis caching functionality. It has to be a valid connection URL; otherwise, the Redis client can throw unexpected errors.
+- `ANIWATCH_API_S_MAXAGE`: specifies the maximum amount of time (in seconds) a resource is considered fresh when served by a CDN cache.
+- `ANIWATCH_API_STALE_WHILE_REVALIDATE`: specifies the amount of time (in seconds) a resource is served stale while a new one is fetched.
 
 ## <span id="host-your-instance">⛅ Host your instance</span>
 
@@ -158,7 +159,7 @@ More info can be found in the [`.env.example`](https://github.com/ghoshRitesh12/
 >
 > - If you want to have rate limiting in your application, then set the `ANIWATCH_API_HOSTNAME` env to your deployed instance's hostname; otherwise, don't set or have this env at all. If you set this env to an incorrect value, you may face other issues.
 > - It's optional by default, but if you want to have endpoint response caching functionality, then set the `ANIWATCH_API_REDIS_CONN_URL` env to a valid Redis connection URL. If the connection URL is invalid, the Redis client can throw unexpected errors.
-> - Remove the if block from the [`server.ts`](https://github.com/ghoshRitesh12/aniwatch-api/blob/main/src/server.ts) file, spanning from lines [71](https://github.com/ghoshRitesh12/aniwatch-api/blob/main/src/server.ts#L71) to [83](https://github.com/ghoshRitesh12/aniwatch-api/blob/main/src/server.ts#L83).
+> - Remove the if block from the [`server.ts`](https://github.com/ghoshRitesh12/aniwatch-api/blob/main/src/server.ts) file, spanning from lines [61](https://github.com/ghoshRitesh12/aniwatch-api/blob/main/src/server.ts#L61) to [85](https://github.com/ghoshRitesh12/aniwatch-api/blob/main/src/server.ts#L85).
 
 ### Vercel
 
@@ -194,7 +195,7 @@ The endpoints exposed by the api are listed below with examples that uses the [F
 /api/v2/hianime/home
 ```
 
-#### Request sample
+#### Request Sample
 
 ```javascript
 const resp = await fetch("/api/v2/hianime/home");
@@ -340,6 +341,74 @@ console.log(data);
 
 <summary>
 
+### `GET` Anime A-Z List
+
+</summary>
+
+#### Endpoint
+
+```sh
+/api/v2/hianime/azlist/{sortOption}?page={page}
+```
+
+#### Path Parameters
+
+|  Parameter   |  Type  |                                             Description                                             | Required? | Default |
+| :----------: | :----: | :-------------------------------------------------------------------------------------------------: | :-------: | :-----: |
+| `sortOption` | string | The az-list sort option. Possible values include: "all", "other", "0-9" and all english alphabets . |    Yes    |   --    |
+
+#### Query Parameters
+
+| Parameter |  Type  |          Description           | Required? | Default |
+| :-------: | :----: | :----------------------------: | :-------: | :-----: |
+|  `page`   | number | The page number of the result. |    No     |   `1`   |
+
+#### Request Sample
+
+```javascript
+const resp = await fetch("/api/v2/hianime/azlist/0-9?page=1");
+const data = await resp.json();
+console.log(data);
+```
+
+#### Response Schema
+
+```javascript
+{
+  success: true,
+  data: {
+    sortOption: "0-9",
+    animes: [
+      {
+        id: string,
+        name: string,
+        jname: string,
+        poster: string,
+        duration: string,
+        type: string,
+        rating: string,
+        episodes: {
+          sub: number ,
+          dub: number
+        }
+      },
+      {...}
+    ],
+    totalPages: 1,
+    currentPage: 1,
+    hasNextPage: false
+  }
+}
+```
+
+[🔼 Back to Top](#table-of-contents)
+
+</details>
+
+<details>
+
+<summary>
+
 ### `GET` Anime About Info
 
 </summary>
@@ -356,7 +425,7 @@ console.log(data);
 | :-------: | :----: | :----------------------------------: | :-------: | :-----: |
 | `animeId` | string | The unique anime id (in kebab case). |    Yes    |   --    |
 
-#### Request sample
+#### Request Sample
 
 ```javascript
 const resp = await fetch("/api/v2/hianime/anime/attack-on-titan-112");
@@ -522,7 +591,7 @@ console.log(data);
 > For both `start_date` and `end_date`, year must be mentioned. If you wanna omit date or month specify `0` instead.
 > Eg: omitting date -> 2014-10-0, omitting month -> 2014-0-12, omitting both -> 2014-0-0
 
-#### Request sample
+#### Request Sample
 
 ```javascript
 // basic example
@@ -609,7 +678,7 @@ console.log(data);
 | :-------: | :----: | :--------------------------: | :-------: | :-----: |
 |    `q`    | string | The search suggestion query. |    Yes    |   --    |
 
-#### Request sample
+#### Request Sample
 
 ```javascript
 const resp = await fetch("/api/v2/hianime/search/suggestion?q=monster");
@@ -667,7 +736,7 @@ console.log(data);
 | :-------: | :----: | :----------------------------: | :-------: | :-----: |
 |  `page`   | number | The page number of the result. |    No     |   `1`   |
 
-#### Request sample
+#### Request Sample
 
 ```javascript
 const resp = await fetch("/api/v2/hianime/producer/toei-animation?page=2");
@@ -765,7 +834,7 @@ console.log(data);
 | :-------: | :----: | :----------------------------: | :-------: | :-----: |
 |  `page`   | number | The page number of the result. |    No     |   `1`   |
 
-#### Request sample
+#### Request Sample
 
 ```javascript
 const resp = await fetch("/api/v2/hianime/genre/shounen?page=2");
@@ -847,7 +916,7 @@ console.log(data);
 | :-------: | :----: | :----------------------------: | :-------: | :-----: |
 |  `page`   | number | The page number of the result. |    No     |   `1`   |
 
-#### Request sample
+#### Request Sample
 
 ```javascript
 // categories -> "most-favorite", "most-popular", "subbed-anime", "dubbed-anime", "recently-updated", "recently-added", "top-upcoming", "top-airing", "movie", "special", "ova", "ona", "tv", "completed"
@@ -924,11 +993,11 @@ console.log(data);
 
 #### Query Parameters
 
-|      Parameter      |  Type  |                             Description                              | Required? | Default |
-| :-----------------: | :----: | :------------------------------------------------------------------: | :-------: | :-----: |
-| `date (yyyy-mm-dd)` | string | The date of the desired schedule. (months & days must have 2 digits) |    Yes    |   --    |
+| Parameter |  Type  |                               Description                               | Required? | Default |
+| :-------: | :----: | :---------------------------------------------------------------------: | :-------: | :-----: |
+|  `date`   | string | The date of the desired schedule in the following format: (yyyy-mm-dd). |    Yes    |   --    |
 
-#### Request sample
+#### Request Sample
 
 ```javascript
 const resp = await fetch("/api/v2/hianime/schedule?date=2024-06-09");
@@ -981,7 +1050,7 @@ console.log(data);
 | :-------: | :----: | :------------------: | :-------: | :-----: |
 | `animeId` | string | The unique anime id. |    Yes    |   --    |
 
-#### Request sample
+#### Request Sample
 
 ```javascript
 const resp = await fetch("/api/v2/hianime/anime/steinsgate-3/episodes");
@@ -1033,7 +1102,7 @@ console.log(data);
 | :--------------: | :----: | :--------------------------: | :-------: | :-----: |
 | `animeEpisodeId` | string | The unique anime episode id. |    Yes    |   --    |
 
-#### Request sample
+#### Request Sample
 
 ```javascript
 const resp = await fetch(
@@ -1102,7 +1171,7 @@ console.log(data);
 |     `server`     | string |               The name of the server.                |    No     | `"hd-1"` |
 |    `category`    | string | The category of the episode ('sub', 'dub' or 'raw'). |    No     | `"sub"`  |
 
-#### Request sample
+#### Request Sample
 
 ```javascript
 const resp = await fetch(
@@ -1172,6 +1241,8 @@ Don't forget to leave a star 🌟. You can also follow me on X (Twitter) [@rites
 This project is licensed under the [MIT License](https://opensource.org/license/mit/) - see the [LICENSE](https://github.com/ghoshRitesh12/aniwatch-api/blob/main/LICENSE) file for more details.
 
 <br/>
+
+## <span id="star-history">🌟 Star History</span>
 
 <img
   id="star-history" 
