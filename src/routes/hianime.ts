@@ -41,6 +41,20 @@ hianimeRouter.get("/azlist/:sortOption", async (c) => {
   return c.json({ success: true, data }, { status: 200 });
 });
 
+// /api/v2/hianime/qtip/{animeId}
+hianimeRouter.get("/qtip/:animeId", async (c) => {
+  const cacheConfig = c.get("CACHE_CONFIG");
+  const animeId = decodeURIComponent(c.req.param("animeId").trim());
+
+  const data = await cache.getOrSet<HiAnime.ScrapedAnimeQtipInfo>(
+    async () => hianime.getQtipInfo(animeId),
+    cacheConfig.key,
+    cacheConfig.duration
+  );
+
+  return c.json({ success: true, data }, { status: 200 });
+});
+
 // /api/v2/hianime/category/{name}?page={page}
 hianimeRouter.get("/category/:name", async (c) => {
   const cacheConfig = c.get("CACHE_CONFIG");
