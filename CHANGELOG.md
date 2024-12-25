@@ -1,3 +1,12 @@
+# [2.11.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.10.0...v2.11.0) (2024-12-25)
+
+
+### Features
+
+* **`/qtip`:** add new `/qtip` endpoint ([f0acd89](https://github.com/ghoshRitesh12/aniwatch-api/commit/f0acd89d87e5e62c12e20a95225ca9261fefe411))
+
+
+
 # [2.10.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.9.0...v2.10.0) (2024-12-24)
 
 
@@ -29,15 +38,6 @@
 
 
 ## [2.7.2](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.7.1...v2.7.2) (2024-12-19)
-
-
-
-## [2.7.1](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.7.0...v2.7.1) (2024-12-19)
-
-
-### Bug Fixes
-
-* **megacloud): `WebAssembly.instantiate(:** Argument 0 must be a buffer source` error ([374c87c](https://github.com/ghoshRitesh12/aniwatch-api/commit/374c87cf8a8fc47791a5da1215272cae6cee233a))
 
 
 
