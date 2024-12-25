@@ -72,7 +72,8 @@
   - [Render](#render)
 - [Documentation](#documentation)
   - [GET Anime Home Page](#get-anime-home-page)
-  - [GET Anime A-Z List](#get-anime-home-page)
+  - [GET Anime A-Z List](#get-anime-a-z-list)
+  - [GET Anime Qtip Info](#get-anime-qtip-info)
   - [GET Anime About Info](#get-anime-about-info)
   - [GET Search Results](#get-search-results)
   - [GET Search Suggestions](#get-search-suggestions)
@@ -397,6 +398,65 @@ console.log(data);
     totalPages: 1,
     currentPage: 1,
     hasNextPage: false
+  }
+}
+```
+
+[🔼 Back to Top](#table-of-contents)
+
+</details>
+
+<details>
+
+<summary>
+
+### `GET` Anime Qtip Info
+
+</summary>
+
+#### Endpoint
+
+```sh
+/api/v2/hianime/qtip/{animeId}
+```
+
+#### Query Parameters
+
+| Parameter |  Type  |             Description              | Required? | Default |
+| :-------: | :----: | :----------------------------------: | :-------: | :-----: |
+| `animeId` | string | The unique anime id (in kebab case). |    Yes    |   --    |
+
+#### Request Sample
+
+```javascript
+const resp = await fetch("/api/v2/hianime/qtip/one-piece-100");
+const data = await resp.json();
+console.log(data);
+```
+
+#### Response Schema
+
+```javascript
+{
+  success: true,
+  data: {
+    anime: {
+      id: "one-piece-100",
+      name: "One Piece",
+      malscore: string,
+      quality: string,
+      episodes: {
+        sub: number,
+        dub: number
+      },
+      type: string,
+      description: string,
+      jname: string,
+      synonyms: string,
+      aired: string,
+      status: string,
+      genres: ["Action", "Adventure", "Comedy", "Drama", "Fantasy", "Shounen", "Drama", "Fantasy", "Shounen", "Fantasy", "Shounen", "Shounen", "Super Power"]
+    }
   }
 }
 ```
