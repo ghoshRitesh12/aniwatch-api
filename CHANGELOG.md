@@ -1,3 +1,12 @@
+## [2.11.1](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.11.0...v2.11.1) (2025-01-01)
+
+
+### Bug Fixes
+
+* **ts build error:** fixed ts build error due to conflicting types ([cb5a467](https://github.com/ghoshRitesh12/aniwatch-api/commit/cb5a4672a8c3b0729bbb4522a3af252f7b336b97))
+
+
+
 # [2.11.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.10.0...v2.11.0) (2024-12-25)
 
 
@@ -34,10 +43,6 @@
 
 * add `/v` endpoint for identifying api repo vesion ([062e662](https://github.com/ghoshRitesh12/aniwatch-api/commit/062e662fbcde1947694b39740b9896f75325959c))
 * **az-list:** add `/azlist/:sortOption` endpoint for scraping hianime's az-list animes ([861a897](https://github.com/ghoshRitesh12/aniwatch-api/commit/861a8979991dc2aaaa621e0e2bb9e016ad4dfe6c))
-
-
-
-## [2.7.2](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.7.1...v2.7.2) (2024-12-19)
 
 
 
