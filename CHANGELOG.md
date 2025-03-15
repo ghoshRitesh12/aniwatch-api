@@ -1,3 +1,7 @@
+## [2.11.2](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.11.1...v2.11.2) (2025-03-15)
+
+
+
 ## [2.11.1](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.11.0...v2.11.1) (2025-01-01)
 
 
@@ -33,16 +37,6 @@
 ### Features
 
 * **cache:** add Cache-Control middleware and update .env.example ([f1f5db8](https://github.com/ghoshRitesh12/aniwatch-api/commit/f1f5db84f98818af2c047ea375832e5ded5f021a))
-
-
-
-# [2.8.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.7.2...v2.8.0) (2024-12-21)
-
-
-### Features
-
-* add `/v` endpoint for identifying api repo vesion ([062e662](https://github.com/ghoshRitesh12/aniwatch-api/commit/062e662fbcde1947694b39740b9896f75325959c))
-* **az-list:** add `/azlist/:sortOption` endpoint for scraping hianime's az-list animes ([861a897](https://github.com/ghoshRitesh12/aniwatch-api/commit/861a8979991dc2aaaa621e0e2bb9e016ad4dfe6c))
 
 
 
