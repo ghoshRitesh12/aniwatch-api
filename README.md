@@ -1153,7 +1153,7 @@ console.log(data);
 #### Endpoint
 
 ```sh
-/api/v2/hianime/episode/servers?animeEpisodeId={id}
+/api/v2/hianime/episode/servers?animeEpisodeId={animeEpisodeId}
 ```
 
 #### Query Parameters
