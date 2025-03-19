@@ -20,6 +20,9 @@ LABEL org.opencontainers.image.source=https://github.com/ghoshRitesh12/aniwatch-
 LABEL org.opencontainers.image.description="Node.js API for obtaining anime information from hianime.to"
 LABEL org.opencontainers.image.licenses=MIT
 
+# install curl for healthcheck
+RUN apk add --no-cache curl
+
 # create a non-privileged user
 RUN addgroup -S aniwatch && adduser -S zoro -G aniwatch
 
