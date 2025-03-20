@@ -2,6 +2,8 @@ import { Hono } from "hono";
 import { HiAnime } from "aniwatch";
 import { cache } from "../config/cache.js";
 import type { AniwatchAPIVariables } from "../config/variables.js";
+import axios from 'axios';
+import * as cheerio from 'cheerio';
 
 const hianime = new HiAnime.Scraper();
 const hianimeRouter = new Hono<{ Variables: AniwatchAPIVariables }>();
@@ -105,17 +107,18 @@ hianimeRouter.get("/producer/:name", async (c) => {
   return c.json({ success: true, data }, { status: 200 });
 });
 
-// /api/v2/hianime/schedule?date={date}
+// /api/v2/hianime/schedule?date={date}&tzOffset={tzOffset}
 hianimeRouter.get("/schedule", async (c) => {
   const cacheConfig = c.get("CACHE_CONFIG");
   const date = decodeURIComponent(c.req.query("date") || "");
-
+  const tzOffset = parseInt(c.req.query("tzOffset") || "-330");
+  
   const data = await cache.getOrSet<HiAnime.ScrapedEstimatedSchedule>(
-    async () => hianime.getEstimatedSchedule(date),
-    cacheConfig.key,
+    async () => hianime.getEstimatedSchedule(date, tzOffset),
+    `${cacheConfig.key}_${tzOffset}`,
     cacheConfig.duration
   );
-
+  
   return c.json({ success: true, data }, { status: 200 });
 });
 
@@ -215,6 +218,32 @@ hianimeRouter.get("/anime/:animeId/episodes", async (c) => {
     cacheConfig.duration
   );
 
+  return c.json({ success: true, data }, { status: 200 });
+});
+
+hianimeRouter.get("/anime/schedule-ep/:animeId", async (c) => {
+  const cacheConfig = c.get("CACHE_CONFIG");
+  const animeId = decodeURIComponent(c.req.param("animeId").trim());
+  
+  const data = await cache.getOrSet(
+    async () => {
+      try {
+        const { data } = await axios.get(`https://hianime.to/watch/${animeId}`);
+        const $ = cheerio.load(data);
+        const nextEpisodeSchedule = $(
+          ".schedule-alert > .alert.small > span:last"
+        ).attr("data-value");
+        
+        return { nextEpisodeSchedule };
+      } catch (error) {
+        console.error(error);
+        throw error;
+      }
+    },
+    cacheConfig.key,
+    cacheConfig.duration
+  );
+  
   return c.json({ success: true, data }, { status: 200 });
 });
 
