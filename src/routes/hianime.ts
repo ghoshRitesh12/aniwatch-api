@@ -107,17 +107,18 @@ hianimeRouter.get("/producer/:name", async (c) => {
   return c.json({ success: true, data }, { status: 200 });
 });
 
-// /api/v2/hianime/schedule?date={date}
+// /api/v2/hianime/schedule?date={date}&tzOffset={tzOffset}
 hianimeRouter.get("/schedule", async (c) => {
   const cacheConfig = c.get("CACHE_CONFIG");
   const date = decodeURIComponent(c.req.query("date") || "");
-
+  const tzOffset = parseInt(c.req.query("tzOffset") || "-330");
+  
   const data = await cache.getOrSet<HiAnime.ScrapedEstimatedSchedule>(
-    async () => hianime.getEstimatedSchedule(date),
-    cacheConfig.key,
+    async () => hianime.getEstimatedSchedule(date, tzOffset),
+    `${cacheConfig.key}_${tzOffset}`,
     cacheConfig.duration
   );
-
+  
   return c.json({ success: true, data }, { status: 200 });
 });
 
