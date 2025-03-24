@@ -5,7 +5,7 @@ config();
 
 const allowedOrigins = process.env.ANIWATCH_API_CORS_ALLOWED_ORIGINS
   ? process.env.ANIWATCH_API_CORS_ALLOWED_ORIGINS.split(",")
-  : ["http://127.0.0.1:5500", "https://letswatch.one", "https://yusuftuncay.github.io/LetsWatch", "*"];
+  : ["http://127.0.0.1:5500", "https://letswatch.one", "https://github.letswatch.one", "*"];
 
 const corsConfig = cors({
   allowMethods: ["GET"],
