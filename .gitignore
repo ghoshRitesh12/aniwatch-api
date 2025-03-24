@@ -1,6 +1,6 @@
 .vscode
 node_modules
-.env
+# .env
 dist
 package-lock.json
 .idea
