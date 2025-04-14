@@ -5,8 +5,8 @@ import corsConfig from "./config/cors.js";
 import { ratelimit } from "./config/ratelimit.js";
 
 import {
-  cacheConfigSetter,
-  cacheControlMiddleware,
+    cacheConfigSetter,
+    cacheControlMiddleware,
 } from "./middleware/cache.js";
 import { hianimeRouter } from "./routes/hianime.js";
 
@@ -36,52 +36,57 @@ app.use(cacheControlMiddleware);
 // or other issues if you do.
 const ISNT_PERSONAL_DEPLOYMENT = Boolean(ANIWATCH_API_HOSTNAME);
 if (ISNT_PERSONAL_DEPLOYMENT) {
-  app.use(ratelimit);
+    app.use(ratelimit);
 }
 
 app.use("/", serveStatic({ root: "public" }));
 app.get("/health", (c) => c.text("daijoubu", { status: 200 }));
 app.get("/v", async (c) =>
-  c.text(
-    `v${"version" in pkgJson && pkgJson?.version ? pkgJson.version : "-1"}`
-  )
+    c.text(
+        `v${"version" in pkgJson && pkgJson?.version ? pkgJson.version : "-1"}`
+    )
 );
 
 app.use(cacheConfigSetter(BASE_PATH.length));
 
 app.basePath(BASE_PATH).route("/hianime", hianimeRouter);
-app
-  .basePath(BASE_PATH)
-  .get("/anicrush", (c) => c.text("Anicrush could be implemented in future."));
+app.basePath(BASE_PATH).get("/anicrush", (c) =>
+    c.text("Anicrush could be implemented in future.")
+);
 
 app.notFound(notFoundHandler);
 app.onError(errorHandler);
 
 // NOTE: this env is "required" for vercel deployments
 if (!Boolean(process.env?.ANIWATCH_API_VERCEL_DEPLOYMENT)) {
-  serve({
-    port: PORT,
-    fetch: app.fetch,
-  }).addListener("listening", () =>
-    console.info(
-      "\x1b[1;36m" + `aniwatch-api at http://localhost:${PORT}` + "\x1b[0m"
-    )
-  );
+    serve({
+        port: PORT,
+        fetch: app.fetch,
+    }).addListener("listening", () =>
+        console.info(
+            "\x1b[1;36m" +
+                `aniwatch-api at http://localhost:${PORT}` +
+                "\x1b[0m"
+        )
+    );
 
-  // NOTE: remove the `if` block below for personal deployments
-  if (ISNT_PERSONAL_DEPLOYMENT) {
-    const interval = 9 * 60 * 1000; // 9mins
+    // NOTE: remove the `if` block below for personal deployments
+    if (ISNT_PERSONAL_DEPLOYMENT) {
+        const interval = 9 * 60 * 1000; // 9mins
 
-    // don't sleep
-    setInterval(() => {
-      console.log("aniwatch-api HEALTH_CHECK at", new Date().toISOString());
-      https
-        .get(`https://${ANIWATCH_API_HOSTNAME}/health`)
-        .on("error", (err) => {
-          console.error(err.message);
-        });
-    }, interval);
-  }
+        // don't sleep
+        setInterval(() => {
+            console.log(
+                "aniwatch-api HEALTH_CHECK at",
+                new Date().toISOString()
+            );
+            https
+                .get(`https://${ANIWATCH_API_HOSTNAME}/health`)
+                .on("error", (err) => {
+                    console.error(err.message);
+                });
+        }, interval);
+    }
 }
 
 export default app;
