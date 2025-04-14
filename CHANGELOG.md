@@ -1,3 +1,7 @@
+## [2.11.3](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.11.2...v2.11.3) (2025-03-20)
+
+
+
 ## [2.11.2](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.11.1...v2.11.2) (2025-03-15)
 
 
@@ -28,15 +32,6 @@
 * **cache:** add cacheConfigSetter & cacheControlMiddleware by [#90](https://github.com/ghoshRitesh12/aniwatch-api/issues/90) ([5f1f216](https://github.com/ghoshRitesh12/aniwatch-api/commit/5f1f2167dfe2b99f53743e59c8354a6f8e886566))
 * **errorHandling:** add error handlers config file ([da19fb7](https://github.com/ghoshRitesh12/aniwatch-api/commit/da19fb7e869c7a9f4007b8bf1439c08e5fe684f7))
 * use refactored error handlers and cache middlewares ([da6699b](https://github.com/ghoshRitesh12/aniwatch-api/commit/da6699ba224451e0d1a1d2cac569d314ea9c29b3))
-
-
-
-# [2.9.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.8.0...v2.9.0) (2024-12-23)
-
-
-### Features
-
-* **cache:** add Cache-Control middleware and update .env.example ([f1f5db8](https://github.com/ghoshRitesh12/aniwatch-api/commit/f1f5db84f98818af2c047ea375832e5ded5f021a))
 
 
 

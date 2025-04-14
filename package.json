@@ -1,6 +1,6 @@
 {
   "name": "aniwatch-api",
-  "version": "2.11.2",
+  "version": "2.11.3",
   "description": "Node.js API for obtaining anime information from hianime.to",
   "main": "src/server.ts",
   "type": "module",
