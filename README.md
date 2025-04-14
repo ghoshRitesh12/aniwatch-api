@@ -1,20 +1,20 @@
 <p align="center">
-  <a href="https://github.com/ghoshRitesh12/aniwatch-api">
-    <img 
-      src="https://raw.githubusercontent.com/ghoshRitesh12/aniwatch-api/refs/heads/main/public/img/hianime_v2.png" 
-      alt="aniwatch_logo" 
-      width="175" 
-      height="175"
-      decoding="async"
-      fetchpriority="high"
-    />
-  </a>
+    <a href="https://github.com/ghoshRitesh12/aniwatch-api">
+        <img 
+            src="https://raw.githubusercontent.com/ghoshRitesh12/aniwatch-api/refs/heads/main/public/img/hianime_v2.png" 
+            alt="aniwatch_logo" 
+            width="175" 
+            height="175"
+            decoding="async"
+            fetchpriority="high"
+        />
+    </a>
 </p>
 
 # <p align="center">Aniwatch API</p>
 
 <div align="center">
-  A free RESTful API serving anime information from <a href="https://hianime.to" target="_blank">hianime.to</a>
+    A free RESTful API serving anime information from <a href="https://hianime.to" target="_blank">hianime.to</a>
 
   <br/>
 
@@ -62,28 +62,29 @@
 ## Table of Contents
 
 - [Installation](#installation)
-  - [Local](#local)
-  - [Docker](#docker)
+    - [Local](#local)
+    - [Docker](#docker)
 - [Configuration](#️configuration)
-  - [Custom HTTP Headers](#custom-http-headers)
-  - [Environment Variables](#environment-variables)
+    - [Custom HTTP Headers](#custom-http-headers)
+    - [Environment Variables](#environment-variables)
 - [Host your instance](#host-your-instance)
-  - [Vercel](#vercel)
-  - [Render](#render)
+    - [Vercel](#vercel)
+    - [Render](#render)
 - [Documentation](#documentation)
-  - [GET Anime Home Page](#get-anime-home-page)
-  - [GET Anime A-Z List](#get-anime-a-z-list)
-  - [GET Anime Qtip Info](#get-anime-qtip-info)
-  - [GET Anime About Info](#get-anime-about-info)
-  - [GET Search Results](#get-search-results)
-  - [GET Search Suggestions](#get-search-suggestions)
-  - [GET Producer Animes](#get-producer-animes)
-  - [GET Genre Animes](#get-genre-animes)
-  - [GET Category Animes](#get-category-animes)
-  - [GET Estimated Schedules](#get-estimated-schedules)
-  - [GET Anime Episodes](#get-anime-episodes)
-  - [GET Anime Episode Servers](#get-anime-episode-servers)
-  - [GET Anime Episode Streaming Links](#get-anime-episode-streaming-links)
+    - [GET Anime Home Page](#get-anime-home-page)
+    - [GET Anime A-Z List](#get-anime-a-z-list)
+    - [GET Anime Qtip Info](#get-anime-qtip-info)
+    - [GET Anime About Info](#get-anime-about-info)
+    - [GET Search Results](#get-search-results)
+    - [GET Search Suggestions](#get-search-suggestions)
+    - [GET Producer Animes](#get-producer-animes)
+    - [GET Genre Animes](#get-genre-animes)
+    - [GET Category Animes](#get-category-animes)
+    - [GET Estimated Schedules](#get-estimated-schedules)
+    - [GET Anime Episodes](#get-anime-episodes)
+    - [GET Anime Next Episode Schedule](#get-anime-next-episode-schedule)
+    - [GET Anime Episode Servers](#get-anime-episode-servers)
+    - [GET Anime Episode Streaming Links](#get-anime-episode-streaming-links)
 - [Development](#development)
 - [Contributors](#contributors)
 - [Thanks](#thanks)
@@ -97,24 +98,24 @@
 
 1. Clone the repository and move into the directory.
 
-   ```bash
-   git clone https://github.com/ghoshRitesh12/aniwatch-api.git
-   cd aniwatch-api
-   ```
+    ```bash
+    git clone https://github.com/ghoshRitesh12/aniwatch-api.git
+    cd aniwatch-api
+    ```
 
 2. Install all the dependencies.
 
-   ```bash
-   npm i #or yarn install or pnpm i
-   ```
+    ```bash
+    npm i #or yarn install or pnpm i
+    ```
 
 3. Start the server!
 
-   ```bash
-   npm start #or yarn start or pnpm start
-   ```
+    ```bash
+    npm start #or yarn start or pnpm start
+    ```
 
-   Now the server should be running on [http://localhost:4000](http://localhost:4000)
+    Now the server should be running on [http://localhost:4000](http://localhost:4000)
 
 ### Docker
 
@@ -661,7 +662,7 @@ console.log(data);
 
 // advanced example
 const resp = await fetch(
-  "/api/v2/hianime/search?q=girls&genres=action,adventure&type=movie&sort=score&season=spring&language=dub&status=finished-airing&rated=pg-13&start_date=2014-0-0&score=good"
+    "/api/v2/hianime/search?q=girls&genres=action,adventure&type=movie&sort=score&season=spring&language=dub&status=finished-airing&rated=pg-13&start_date=2014-0-0&score=good"
 );
 const data = await resp.json();
 console.log(data);
@@ -1146,6 +1147,53 @@ console.log(data);
 
 <summary>
 
+### `GET` Anime Next Episode Schedule
+
+</summary>
+
+#### Endpoint
+
+```sh
+/api/v2/hianime/anime/{animeId}/next-episode-schedule
+```
+
+#### Path Parameters
+
+| Parameter |  Type  |     Description      | Required? | Default |
+| :-------: | :----: | :------------------: | :-------: | :-----: |
+| `animeId` | string | The unique anime id. |    Yes    |   --    |
+
+#### Request Sample
+
+```javascript
+const resp = await fetch(
+    "/api/v2/hianime/anime/steinsgate-3/next-episode-schedule"
+);
+const data = await resp.json();
+console.log(data);
+```
+
+#### Response Schema
+
+```javascript
+{
+  success: true,
+  data: {
+    airingISOTimestamp: string | null,
+    airingTimestamp: number | null,
+    secondsUntilAiring: number | null
+  }
+}
+```
+
+[🔼 Back to Top](#table-of-contents)
+
+</details>
+
+<details>
+
+<summary>
+
 ### `GET` Anime Episode Servers
 
 </summary>
@@ -1166,7 +1214,7 @@ console.log(data);
 
 ```javascript
 const resp = await fetch(
-  "/api/v2/hianime/episode/servers?animeEpisodeId=steinsgate-0-92?ep=2055"
+    "/api/v2/hianime/episode/servers?animeEpisodeId=steinsgate-0-92?ep=2055"
 );
 const data = await resp.json();
 console.log(data);
@@ -1235,7 +1283,7 @@ console.log(data);
 
 ```javascript
 const resp = await fetch(
-  "/api/v2/hianime/episode/sources?animeEpisodeId=steinsgate-3?ep=230&server=hd-1&category=dub"
+    "/api/v2/hianime/episode/sources?animeEpisodeId=steinsgate-3?ep=230&server=hd-1&category=dub"
 );
 const data = await resp.json();
 console.log(data);
