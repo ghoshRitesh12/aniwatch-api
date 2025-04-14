@@ -1,51 +1,51 @@
 {
-    "name": "aniwatch-api",
-    "version": "2.11.3",
-    "description": "Node.js API for obtaining anime information from hianime.to",
-    "main": "src/server.ts",
-    "type": "module",
-    "scripts": {
-        "start": "tsx src/server.ts",
-        "dev": "tsx watch src/server.ts",
-        "build": "tsc -p tsconfig.json",
-        "vercel-build": "echo \"Hello\"",
-        "prepare": "husky install",
-        "test": "vitest run --config vitest.config.ts",
-        "healthcheck": "curl -f http://localhost:4000/health",
-        "lint": "prettier --cache --write .",
-        "lint:ci": "prettier --cache --check ."
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/ghoshRitesh12/aniwatch-api.git"
-    },
-    "bugs": {
-        "url": "https://github.com/ghoshRitesh12/aniwatch-api/issues"
-    },
-    "homepage": "https://github.com/ghoshRitesh12/aniwatch-api#readme",
-    "keywords": [
-        "anime",
-        "weeb",
-        "hianime",
-        "aniwatch",
-        "scraper"
-    ],
-    "author": "https://github.com/ghoshRitesh12",
-    "license": "MIT",
-    "dependencies": {
-        "@hono/node-server": "^1.13.7",
-        "aniwatch": "^2.18.3",
-        "dotenv": "^16.4.7",
-        "hono": "^4.6.15",
-        "hono-rate-limiter": "^0.4.2",
-        "ioredis": "^5.4.2"
-    },
-    "devDependencies": {
-        "@types/node": "^22.10.3",
-        "husky": "^9.1.7",
-        "prettier": "^3.4.2",
-        "tsx": "^4.19.2",
-        "typescript": "^5.7.2",
-        "vitest": "^2.1.8"
-    }
+  "name": "aniwatch-api",
+  "version": "2.12.0",
+  "description": "Node.js API for obtaining anime information from hianime.to",
+  "main": "src/server.ts",
+  "type": "module",
+  "scripts": {
+    "start": "tsx src/server.ts",
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc -p tsconfig.json",
+    "vercel-build": "echo \"Hello\"",
+    "prepare": "husky install",
+    "test": "vitest run --config vitest.config.ts",
+    "healthcheck": "curl -f http://localhost:4000/health",
+    "lint": "prettier --cache --write .",
+    "lint:ci": "prettier --cache --check ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ghoshRitesh12/aniwatch-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ghoshRitesh12/aniwatch-api/issues"
+  },
+  "homepage": "https://github.com/ghoshRitesh12/aniwatch-api#readme",
+  "keywords": [
+    "anime",
+    "weeb",
+    "hianime",
+    "aniwatch",
+    "scraper"
+  ],
+  "author": "https://github.com/ghoshRitesh12",
+  "license": "MIT",
+  "dependencies": {
+    "@hono/node-server": "^1.13.7",
+    "aniwatch": "^2.18.3",
+    "dotenv": "^16.4.7",
+    "hono": "^4.6.15",
+    "hono-rate-limiter": "^0.4.2",
+    "ioredis": "^5.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.3",
+    "husky": "^9.1.7",
+    "prettier": "^3.4.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
 }
