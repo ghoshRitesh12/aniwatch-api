@@ -29,8 +29,10 @@ hianimeRouter.get("/azlist/:sortOption", async (c) => {
     const sortOption = decodeURIComponent(
         c.req.param("sortOption").trim().toLowerCase()
     ) as HiAnime.AZListSortOptions;
-    const page: number =
+    let page: number =
         Number(decodeURIComponent(c.req.query("page") || "")) || 1;
+    // Ensure page is at least 1
+    page = Math.max(1, page);
 
     const data = await cache.getOrSet<HiAnime.ScrapedAnimeAZList>(
         async () => hianime.getAZList(sortOption, page),
@@ -61,8 +63,10 @@ hianimeRouter.get("/category/:name", async (c) => {
     const categoryName = decodeURIComponent(
         c.req.param("name").trim()
     ) as HiAnime.AnimeCategories;
-    const page: number =
+    let page: number =
         Number(decodeURIComponent(c.req.query("page") || "")) || 1;
+    // Ensure page is at least 1
+    page = Math.max(1, page);
 
     const data = await cache.getOrSet<HiAnime.ScrapedAnimeCategory>(
         async () => hianime.getCategoryAnime(categoryName, page),
@@ -77,8 +81,10 @@ hianimeRouter.get("/category/:name", async (c) => {
 hianimeRouter.get("/genre/:name", async (c) => {
     const cacheConfig = c.get("CACHE_CONFIG");
     const genreName = decodeURIComponent(c.req.param("name").trim());
-    const page: number =
+    let page: number =
         Number(decodeURIComponent(c.req.query("page") || "")) || 1;
+    // Ensure page is at least 1
+    page = Math.max(1, page);
 
     const data = await cache.getOrSet<HiAnime.ScrapedGenreAnime>(
         async () => hianime.getGenreAnime(genreName, page),
