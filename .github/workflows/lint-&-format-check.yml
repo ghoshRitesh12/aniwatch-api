@@ -23,4 +23,7 @@ jobs:
         run: npm i
 
       - name: Check lint
-        run: npm run lint:ci
+        run: npm run lint
+
+      - name: Check prettier
+        run: npm run format:check

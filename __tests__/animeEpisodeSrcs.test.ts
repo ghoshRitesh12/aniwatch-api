@@ -7,12 +7,12 @@ const category = "sub";
 
 // npx vitest run animeEpisodeSrcs.test.ts
 test(`GET /api/v2/hianime/episode/sources?animeEpisodeId=${animeEpisodeId}&server=${server}&category=${category}`, async () => {
-  const hianime = new HiAnime.Scraper();
-  const data = await hianime.getEpisodeSources(
-    animeEpisodeId,
-    server,
-    category
-  );
+    const hianime = new HiAnime.Scraper();
+    const data = await hianime.getEpisodeSources(
+        animeEpisodeId,
+        server,
+        category
+    );
 
-  expect(data.sources).not.toEqual([]);
+    expect(data.sources).not.toEqual([]);
 });
