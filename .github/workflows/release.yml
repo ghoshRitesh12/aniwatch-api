@@ -15,7 +15,7 @@ jobs:
 
       - name: Debug format-package-json.sh script
         run: |
-            cat ./scripts/format-package-json.sh && ls -al ./scripts
+            cat ./scripts/format-package-json.sh && ls -al ./scripts/format-package-json.sh
 
       - name: Conventional changelog action
         id: changelog
