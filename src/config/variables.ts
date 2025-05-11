@@ -1,8 +1,8 @@
 type CacheVariables = {
-  CACHE_CONFIG: {
-    key: string;
-    duration: number;
-  };
+    CACHE_CONFIG: {
+        key: string;
+        duration: number;
+    };
 };
 
-export type AniwatchAPIVariables = {} & CacheVariables;
+export type AniwatchAPIVariables = CacheVariables & {};

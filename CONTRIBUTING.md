@@ -8,8 +8,8 @@ Thank you for your interest in contributing to aniwatch-api. We appreciate whate
 - [Ground Rules & Expectations](#ground-rules--expectations)
 - [How To Contribute](#how-to-contribute)
 - [Prerequisites](#prerequisites)
-  - [Clone the repository](#clone-the-repository)
-  - [Project Structure](#project-structure)
+    - [Clone the repository](#clone-the-repository)
+    - [Project Structure](#project-structure)
 - [Commit Messages](#commit-messages)
 
 ## Types of contributions we are looking for
@@ -42,10 +42,10 @@ To contribute to this project, you must know the following:
 - [NodeJS](https://nodejs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - Web Scraping
-  - [Cheerio](https://cheerio.js.org/)
-  - [Axios](https://axios-http.com/docs/intro)
-  - [CSS Selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)
-  - [Browser Dev Tools](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Tools_and_setup/What_are_browser_developer_tools)
+    - [Cheerio](https://cheerio.js.org/)
+    - [Axios](https://axios-http.com/docs/intro)
+    - [CSS Selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)
+    - [Browser Dev Tools](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Tools_and_setup/What_are_browser_developer_tools)
 
 ### Clone the repository
 
@@ -58,9 +58,9 @@ git clone https://github.com/<your_username>/aniwatch-api
 
 3. Creating a new branch <br/>
    Replace \<new-branch-name> with any of the following naming conventions: <br/>
-   - `feature/<branch-name>` - for adding new features
-   - `bug/<branch-name>` - for fixing known bugs
-   - `misc/<branch-name>` - for anything other than bug or features
+    - `feature/<branch-name>` - for adding new features
+    - `bug/<branch-name>` - for fixing known bugs
+    - `misc/<branch-name>` - for anything other than bug or features
 
 ```bash
 git checkout -b <new-branch-name>
@@ -70,14 +70,14 @@ git checkout -b <new-branch-name>
 
 - `src` directory contains all the source code required for this project
 
-  - `controllers` directory contains all the controller logic
-  - `types` directory contains all types & interfaces used for this project
-  - `parsers` directory contains all the parsing aka scraping logic
-  - `routes` directory contains all the routers
-  - `utils` directory contains handy utility methods and properties
-  - `config` directory contains api configuration related files
-  - `extractors` directory contains anime streaming url extractor files
-    <br/><br/>
+    - `controllers` directory contains all the controller logic
+    - `types` directory contains all types & interfaces used for this project
+    - `parsers` directory contains all the parsing aka scraping logic
+    - `routes` directory contains all the routers
+    - `utils` directory contains handy utility methods and properties
+    - `config` directory contains api configuration related files
+    - `extractors` directory contains anime streaming url extractor files
+      <br/><br/>
 
 - `test` directory contains all the tests that needs to be evaluated
 
