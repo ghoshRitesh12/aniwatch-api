@@ -37,4 +37,4 @@ jobs:
           body: ${{ steps.changelog.outputs.clean_changelog }}
 
       - name: Fix identation in package.json
-        run: npx prettier --config ./prettier.config.mjs --write package.json
+        run: npx prettier --config ../../prettier.config.mjs --write package.json
