@@ -1,3 +1,12 @@
+## [2.14.1](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.14.0...v2.14.1) (2025-05-11)
+
+
+### Bug Fixes
+
+* ensure tmp.json is created before formatting package.json ([eb33f10](https://github.com/ghoshRitesh12/aniwatch-api/commit/eb33f10478e2fc27c3821e589793b80de3a1617b))
+
+
+
 # [2.14.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.13.12...v2.14.0) (2025-05-11)
 
 
@@ -17,10 +26,6 @@
 
 
 ## [2.13.10](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.13.9...v2.13.10) (2025-05-11)
-
-
-
-## [2.13.9](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.13.8...v2.13.9) (2025-05-11)
 
 
 
