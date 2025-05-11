@@ -11,11 +11,11 @@ jobs:
       - name: Checkouts repo
         uses: actions/checkout@v4
 
-      - run: chmod +x ./scripts/format-package-json.sh && ls -al
+      - run: chmod +x ./scripts/format-package-json && ls -al
 
-      - name: Debug format-package-json.sh script
+      - name: Debug format-package-json script
         run: |
-            cat ./scripts/format-package-json.sh && ls -al ./scripts/format-package-json.sh
+            cat ./scripts/format-package-json && ls -al ./scripts/format-package-json
 
       - name: Conventional changelog action
         id: changelog
@@ -24,7 +24,7 @@ jobs:
           skip-on-empty: false
           git-user-name: "github-actions[bot]"
           git-user-email: "github-actions[bot]@users.noreply.github.com"
-          pre-commit: ./scripts/format-package-json.sh
+          pre-commit: ./scripts/format-package-json
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Create release
