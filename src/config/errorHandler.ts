@@ -1,7 +1,7 @@
 import { HiAnimeError } from "aniwatch";
 import type { ErrorHandler, NotFoundHandler } from "hono";
 import type { ContentfulStatusCode } from "hono/utils/http-status";
-import { logger } from "./logger.js";
+import { log } from "./logger.js";
 
 const errResp: { status: ContentfulStatusCode; message: string } = {
     status: 500,
@@ -9,7 +9,7 @@ const errResp: { status: ContentfulStatusCode; message: string } = {
 };
 
 export const errorHandler: ErrorHandler = (err, c) => {
-    logger.error(JSON.stringify(err));
+    log.error(JSON.stringify(err));
 
     if (err instanceof HiAnimeError) {
         errResp.status = err.status as ContentfulStatusCode;
@@ -23,6 +23,6 @@ export const notFoundHandler: NotFoundHandler = (c) => {
     errResp.status = 404;
     errResp.message = "Not Found";
 
-    logger.error(JSON.stringify(errResp));
+    log.error(JSON.stringify(errResp));
     return c.json(errResp, errResp.status);
 };

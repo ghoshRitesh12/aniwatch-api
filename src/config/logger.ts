@@ -23,4 +23,4 @@ const loggerOptions: LoggerOptions = {
     timestamp: pino.stdTimeFunctions.isoTime,
 };
 
-export const logger = pino(loggerOptions);
+export const log = pino(loggerOptions);

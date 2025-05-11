@@ -5,7 +5,7 @@ import { serve } from "@hono/node-server";
 import { serveStatic } from "@hono/node-server/serve-static";
 
 import { env } from "./config/env.js";
-import { logger } from "./config/logger.js";
+import { log } from "./config/logger.js";
 import { corsConfig } from "./config/cors.js";
 import { ratelimit } from "./config/ratelimit.js";
 import { errorHandler, notFoundHandler } from "./config/errorHandler.js";
@@ -61,7 +61,7 @@ if (!env.ANIWATCH_API_VERCEL_DEPLOYMENT) {
         port: env.ANIWATCH_API_PORT,
         fetch: app.fetch,
     }).addListener("listening", () => {
-        logger.info(
+        log.info(
             `aniwatch-api RUNNING at http://localhost:${env.ANIWATCH_API_PORT}`
         );
     });
@@ -72,12 +72,12 @@ if (!env.ANIWATCH_API_VERCEL_DEPLOYMENT) {
 
         // don't sleep
         setInterval(() => {
-            logger.info(
+            log.info(
                 `aniwatch-api HEALTH_CHECK at ${new Date().toISOString()}`
             );
             https
                 .get(`https://${env.ANIWATCH_API_HOSTNAME}/health`)
-                .on("error", (err) => logger.error(err.message.trim()));
+                .on("error", (err) => log.error(err.message.trim()));
         }, interval);
     }
 }
