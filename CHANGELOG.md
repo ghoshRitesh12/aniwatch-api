@@ -1,3 +1,7 @@
+## [2.13.4](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.13.3...v2.13.4) (2025-05-11)
+
+
+
 ## [2.13.3](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.13.2...v2.13.3) (2025-05-11)
 
 
@@ -24,15 +28,6 @@
 * integrate use of ebvalidated envs ([e098e7c](https://github.com/ghoshRitesh12/aniwatch-api/commit/e098e7cfcbbe2381a2ef5ca538e0a255cca0d8d7))
 * integrate use of ebvalidated envs ([5e02877](https://github.com/ghoshRitesh12/aniwatch-api/commit/5e028771f0a008b65521385fd8fdbd694eba9f2a))
 * update to the latest aniwatch pkg ([a72f469](https://github.com/ghoshRitesh12/aniwatch-api/commit/a72f469f40a75acb80c69eb2c77f3050b53c61ad))
-
-
-
-# [2.12.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.11.3...v2.12.0) (2025-04-14)
-
-
-### Features
-
-* **getNextEpisodeSchedule:** add `/anime/:animeId/next-episode-schedule` endpoint ([f5cd341](https://github.com/ghoshRitesh12/aniwatch-api/commit/f5cd3415d8134da1ab1e3b3f8f9be6b5212aa353))
 
 
 
