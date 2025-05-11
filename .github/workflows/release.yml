@@ -38,5 +38,6 @@ jobs:
 
       - name: Fix identation in package.json
         run: |
-            tmp=$(mktemp)
-            jq --indent 4 . package.json > "$tmp" && mv "$tmp" package.json
+            echo "Fixing identation in package.json"
+            jq '.' package.json > tmp.json && mv tmp.json package.json
+            echo "Done"
