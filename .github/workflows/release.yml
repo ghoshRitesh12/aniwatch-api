@@ -37,7 +37,4 @@ jobs:
           body: ${{ steps.changelog.outputs.clean_changelog }}
 
       - name: Fix identation in package.json
-        run: |
-            echo "Fixing identation in package.json"
-            jq '.' package.json > tmp.json && mv tmp.json package.json
-            echo "Done"
+        run: npx prettier --semi --tab-width 4 --no-use-tabs --print-width 80 --no-single-quote --arrow-parens always --trailing-comma es5 --single-attribute-per-line
