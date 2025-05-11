@@ -33,7 +33,7 @@ export const env = cleanEnv(process.env, {
         desc: "Required for distinguishing Vercel deployment from other ones; set it to true",
     }),
 
-    ANIWATCH_API_HOSTNAME: url({
+    ANIWATCH_API_HOSTNAME: str({
         default: undefined,
         example: "https://your-production-domain.com",
         desc: "Set this to your api instance's hostname to enable rate limiting, don't have this value if you don't wish to rate limit.",
