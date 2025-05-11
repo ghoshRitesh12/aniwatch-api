@@ -10,20 +10,14 @@ jobs:
     steps:
       - name: Checkouts repo
         uses: actions/checkout@v4
-
-      - name: Setup NodeJS
-        uses: actions/setup-node@v4
-        with:
-          node-version: "22.x"
-
-      - name: Install deps
-        run: npm i
-
       - name: Conventional changelog action
         id: changelog
         uses: TriPSs/conventional-changelog-action@v5
         with:
           skip-on-empty: false
+          git-user-name: "github-actions[bot]"
+          git-user-email: "github-actions[bot]@users.noreply.github.com"
+          pre-commit: ./scripts/format-package-json.sh
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Create release
@@ -35,6 +29,3 @@ jobs:
           tag: ${{ steps.changelog.outputs.tag }}
           name: ${{ steps.changelog.outputs.tag }}
           body: ${{ steps.changelog.outputs.clean_changelog }}
-
-      - name: Fix identation in package.json
-        run: jq --indent 4 . package.json > tmp.json && mv tmp.json package.json
