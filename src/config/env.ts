@@ -35,7 +35,7 @@ export const env = cleanEnv(process.env, {
 
     ANIWATCH_API_HOSTNAME: str({
         default: undefined,
-        example: "https://your-production-domain.com",
+        example: "your-production-domain.com",
         desc: "Set this to your api instance's hostname to enable rate limiting, don't have this value if you don't wish to rate limit.",
         docs: "https://github.com/ghoshRitesh12/aniwatch-api/blob/main/.env.example#L18",
     }),
