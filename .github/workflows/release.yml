@@ -37,4 +37,6 @@ jobs:
           body: ${{ steps.changelog.outputs.clean_changelog }}
 
       - name: Fix identation in package.json
-        run: npx prettier --config ../../prettier.config.mjs --write package.json
+        run: |
+            tmp=$(mktemp)
+            jq --indent 4 . package.json > "$tmp" && mv "$tmp" package.json
