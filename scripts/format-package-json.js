@@ -1,7 +1,7 @@
-const { exec } = require('child_process');
+import { exec } from "child_process";
 
 export function preCommit({ tag, version }) {
-    exec('jq --indent 4 . package.json > tmp.json && mv tmp.json package.json', (error, stdout, stderr) => {
+    exec("jq --indent 4 . package.json > tmp.json && mv tmp.json package.json", (error, stdout, stderr) => {
         if (error) {
             console.error(`exec error: ${error}`);
             return;
