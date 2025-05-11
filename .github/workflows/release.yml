@@ -11,12 +11,6 @@ jobs:
       - name: Checkouts repo
         uses: actions/checkout@v4
 
-      - run: chmod +x ./scripts/format-package-json.js && ls -al
-
-      - name: Debug format-package-json.js script
-        run: |
-          cat ./scripts/format-package-json.js && ls -al ./scripts/format-package-json.js
-
       - name: Conventional changelog action
         id: changelog
         uses: TriPSs/conventional-changelog-action@v5
