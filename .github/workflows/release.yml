@@ -10,6 +10,13 @@ jobs:
     steps:
       - name: Checkouts repo
         uses: actions/checkout@v4
+
+      - run: chmod +x ./scripts/format-package-json.sh
+
+      - name: Debug format-package-json.sh script
+        run: |
+            cat ./scripts/format-package-json.sh && ls -al ./scripts
+
       - name: Conventional changelog action
         id: changelog
         uses: TriPSs/conventional-changelog-action@v5
