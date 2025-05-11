@@ -37,7 +37,7 @@
     "license": "MIT",
     "dependencies": {
         "@hono/node-server": "^1.14.1",
-        "aniwatch": "^2.21.2",
+        "aniwatch": "^2.22.0",
         "dotenv": "^16.5.0",
         "envalid": "^8.0.0",
         "hono": "^4.7.9",
