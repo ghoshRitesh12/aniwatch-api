@@ -11,6 +11,14 @@ jobs:
       - name: Checkouts repo
         uses: actions/checkout@v4
 
+      - name: Setup NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22.x"
+
+      - name: Install deps
+        run: npm i
+
       - name: Conventional changelog action
         id: changelog
         uses: TriPSs/conventional-changelog-action@v5
@@ -29,4 +37,4 @@ jobs:
           body: ${{ steps.changelog.outputs.clean_changelog }}
 
       - name: Fix identation in package.json
-        run: npx prettier --write package.json 
+        run: prettier --write package.json

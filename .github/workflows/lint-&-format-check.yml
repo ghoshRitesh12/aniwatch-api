@@ -1,4 +1,4 @@
-name: "Prettier Check"
+name: "Lint and format check"
 
 on:
   push:
