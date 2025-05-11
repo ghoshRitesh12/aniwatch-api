@@ -24,3 +24,6 @@ jobs:
 
       - name: Check lint
         run: npm run lint:ci
+
+      - name: Check prettier
+        run: npm run format:check
