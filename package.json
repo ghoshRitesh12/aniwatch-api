@@ -1,51 +1,57 @@
 {
-  "name": "aniwatch-api",
-  "version": "2.12.0",
-  "description": "Node.js API for obtaining anime information from hianime.to",
-  "main": "src/server.ts",
-  "type": "module",
-  "scripts": {
-    "start": "tsx src/server.ts",
-    "dev": "tsx watch src/server.ts",
-    "build": "tsc -p tsconfig.json",
-    "vercel-build": "echo \"Hello\"",
-    "prepare": "husky install",
-    "test": "vitest run --config vitest.config.ts",
-    "healthcheck": "curl -f http://localhost:4000/health",
-    "lint": "prettier --cache --write .",
-    "lint:ci": "prettier --cache --check ."
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ghoshRitesh12/aniwatch-api.git"
-  },
-  "bugs": {
-    "url": "https://github.com/ghoshRitesh12/aniwatch-api/issues"
-  },
-  "homepage": "https://github.com/ghoshRitesh12/aniwatch-api#readme",
-  "keywords": [
-    "anime",
-    "weeb",
-    "hianime",
-    "aniwatch",
-    "scraper"
-  ],
-  "author": "https://github.com/ghoshRitesh12",
-  "license": "MIT",
-  "dependencies": {
-    "@hono/node-server": "^1.13.7",
-    "aniwatch": "^2.18.3",
-    "dotenv": "^16.4.7",
-    "hono": "^4.6.15",
-    "hono-rate-limiter": "^0.4.2",
-    "ioredis": "^5.4.2"
-  },
-  "devDependencies": {
-    "@types/node": "^22.10.3",
-    "husky": "^9.1.7",
-    "prettier": "^3.4.2",
-    "tsx": "^4.19.2",
-    "typescript": "^5.7.2",
-    "vitest": "^2.1.8"
-  }
+    "name": "aniwatch-api",
+    "version": "2.12.0",
+    "description": "Node.js API for obtaining anime information from hianimez.to",
+    "main": "src/server.ts",
+    "type": "module",
+    "scripts": {
+        "start": "tsx src/server.ts",
+        "dev": "tsx watch src/server.ts",
+        "build": "tsc -p tsconfig.json",
+        "vercel-build": "echo \"Hello\"",
+        "prepare": "node .husky/install.mjs",
+        "test": "vitest run --config vitest.config.ts",
+        "healthcheck": "curl -f http://localhost:4000/health",
+        "lint": "tsc",
+        "format": "prettier --cache --write .",
+        "format:check": "prettier --cache --check ."
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ghoshRitesh12/aniwatch-api.git"
+    },
+    "bugs": {
+        "url": "https://github.com/ghoshRitesh12/aniwatch-api/issues"
+    },
+    "homepage": "https://github.com/ghoshRitesh12/aniwatch-api#readme",
+    "keywords": [
+        "anime",
+        "weeb",
+        "scraper",
+        "zoro.to",
+        "aniwatch.to",
+        "hianime.to",
+        "hianimez.to"
+    ],
+    "author": "https://github.com/ghoshRitesh12",
+    "license": "MIT",
+    "dependencies": {
+        "@hono/node-server": "^1.14.1",
+        "aniwatch": "^2.21.2",
+        "dotenv": "^16.5.0",
+        "envalid": "^8.0.0",
+        "hono": "^4.7.9",
+        "hono-rate-limiter": "^0.4.2",
+        "ioredis": "^5.6.1",
+        "pino": "^9.6.0",
+        "tsx": "^4.19.4"
+    },
+    "devDependencies": {
+        "@types/node": "^22.15.17",
+        "husky": "^9.1.7",
+        "pino-pretty": "^13.0.0",
+        "prettier": "^3.5.3",
+        "typescript": "^5.8.3",
+        "vitest": "^3.1.3"
+    }
 }
