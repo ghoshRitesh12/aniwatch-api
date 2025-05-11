@@ -1,3 +1,12 @@
+## [2.14.4](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.14.3...v2.14.4) (2025-05-11)
+
+
+### Bug Fixes
+
+* update `ANIWATCH_API_HOSTNAME` env ([1081c7b](https://github.com/ghoshRitesh12/aniwatch-api/commit/1081c7b7bb7305ab5440301ecba8728fe88af90b))
+
+
+
 ## [2.14.3](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.14.2...v2.14.3) (2025-05-11)
 
 
@@ -22,10 +31,6 @@
 
 * add format-package-json script for JSON formatting ([9bea3e5](https://github.com/ghoshRitesh12/aniwatch-api/commit/9bea3e51ca2fbab6515272735564ca34f19d2b59))
 * implement preCommit script for formatting package.json ([7a87c7f](https://github.com/ghoshRitesh12/aniwatch-api/commit/7a87c7fa325b03df0e4e4924bad9eb17e3db3d12))
-
-
-
-## [2.13.12](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.13.11...v2.13.12) (2025-05-11)
 
 
 
