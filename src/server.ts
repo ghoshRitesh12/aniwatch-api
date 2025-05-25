@@ -10,7 +10,7 @@ import { ratelimit } from "./config/ratelimit.js";
 import { execGracefulShutdown } from "./utils.js";
 import { DeploymentEnv, env, SERVERLESS_ENVIRONMENTS } from "./config/env.js";
 import { errorHandler, notFoundHandler } from "./config/errorHandler.js";
-import type { ServerContext } from "./config/variables.js";
+import type { ServerContext } from "./config/context.js";
 
 import { hianimeRouter } from "./routes/hianime.js";
 import { logging } from "./middleware/logging.js";
