@@ -2,7 +2,7 @@ import { env } from "../config/env.js";
 import { AniwatchAPICache, cache } from "../config/cache.js";
 import type { BlankInput } from "hono/types";
 import type { Context, MiddlewareHandler } from "hono";
-import type { ServerContext } from "../config/variables.js";
+import type { ServerContext } from "../config/context.js";
 
 // Define middleware to add Cache-Control header
 export const cacheControl: MiddlewareHandler = async (c, next) => {
