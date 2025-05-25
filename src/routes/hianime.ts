@@ -1,7 +1,7 @@
 import { Hono } from "hono";
 import { HiAnime } from "aniwatch";
 import { cache } from "../config/cache.js";
-import type { ServerContext } from "../config/variables.js";
+import type { ServerContext } from "../config/context.js";
 
 const hianime = new HiAnime.Scraper();
 const hianimeRouter = new Hono<ServerContext>();
