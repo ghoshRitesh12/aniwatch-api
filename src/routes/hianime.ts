@@ -1,10 +1,10 @@
 import { Hono } from "hono";
 import { HiAnime } from "aniwatch";
 import { cache } from "../config/cache.js";
-import type { AniwatchAPIVariables } from "../config/variables.js";
+import type { ServerContext } from "../config/variables.js";
 
 const hianime = new HiAnime.Scraper();
-const hianimeRouter = new Hono<{ Variables: AniwatchAPIVariables }>();
+const hianimeRouter = new Hono<ServerContext>();
 
 // /api/v2/hianime
 hianimeRouter.get("/", (c) => c.redirect("/", 301));
@@ -19,7 +19,7 @@ hianimeRouter.get("/home", async (c) => {
         cacheConfig.duration
     );
 
-    return c.json({ success: true, data }, { status: 200 });
+    return c.json({ status: 200, data }, { status: 200 });
 });
 
 // /api/v2/hianime/azlist/{sortOption}?page={page}
@@ -38,7 +38,7 @@ hianimeRouter.get("/azlist/:sortOption", async (c) => {
         cacheConfig.duration
     );
 
-    return c.json({ success: true, data }, { status: 200 });
+    return c.json({ status: 200, data }, { status: 200 });
 });
 
 // /api/v2/hianime/qtip/{animeId}
@@ -52,7 +52,7 @@ hianimeRouter.get("/qtip/:animeId", async (c) => {
         cacheConfig.duration
     );
 
-    return c.json({ success: true, data }, { status: 200 });
+    return c.json({ status: 200, data }, { status: 200 });
 });
 
 // /api/v2/hianime/category/{name}?page={page}
@@ -70,7 +70,7 @@ hianimeRouter.get("/category/:name", async (c) => {
         cacheConfig.duration
     );
 
-    return c.json({ success: true, data }, { status: 200 });
+    return c.json({ status: 200, data }, { status: 200 });
 });
 
 // /api/v2/hianime/genre/{name}?page={page}
@@ -86,7 +86,7 @@ hianimeRouter.get("/genre/:name", async (c) => {
         cacheConfig.duration
     );
 
-    return c.json({ success: true, data }, { status: 200 });
+    return c.json({ status: 200, data }, { status: 200 });
 });
 
 // /api/v2/hianime/producer/{name}?page={page}
@@ -102,7 +102,7 @@ hianimeRouter.get("/producer/:name", async (c) => {
         cacheConfig.duration
     );
 
-    return c.json({ success: true, data }, { status: 200 });
+    return c.json({ status: 200, data }, { status: 200 });
 });
 
 // /api/v2/hianime/schedule?date={date}&tzOffset={tzOffset}
@@ -121,7 +121,7 @@ hianimeRouter.get("/schedule", async (c) => {
         cacheConfig.duration
     );
 
-    return c.json({ success: true, data }, { status: 200 });
+    return c.json({ status: 200, data }, { status: 200 });
 });
 
 // /api/v2/hianime/search?q={query}&page={page}&filters={...filters}
@@ -138,7 +138,7 @@ hianimeRouter.get("/search", async (c) => {
         cacheConfig.duration
     );
 
-    return c.json({ success: true, data }, { status: 200 });
+    return c.json({ status: 200, data }, { status: 200 });
 });
 
 // /api/v2/hianime/search/suggestion?q={query}
@@ -152,7 +152,7 @@ hianimeRouter.get("/search/suggestion", async (c) => {
         cacheConfig.duration
     );
 
-    return c.json({ success: true, data }, { status: 200 });
+    return c.json({ status: 200, data }, { status: 200 });
 });
 
 // /api/v2/hianime/anime/{animeId}
@@ -166,7 +166,7 @@ hianimeRouter.get("/anime/:animeId", async (c) => {
         cacheConfig.duration
     );
 
-    return c.json({ success: true, data }, { status: 200 });
+    return c.json({ status: 200, data }, { status: 200 });
 });
 
 // /api/v2/hianime/episode/servers?animeEpisodeId={id}
@@ -182,7 +182,7 @@ hianimeRouter.get("/episode/servers", async (c) => {
         cacheConfig.duration
     );
 
-    return c.json({ success: true, data }, { status: 200 });
+    return c.json({ status: 200, data }, { status: 200 });
 });
 
 // episodeId=steinsgate-3?ep=230
@@ -206,7 +206,7 @@ hianimeRouter.get("/episode/sources", async (c) => {
         cacheConfig.duration
     );
 
-    return c.json({ success: true, data }, { status: 200 });
+    return c.json({ status: 200, data }, { status: 200 });
 });
 
 // /api/v2/hianime/anime/{anime-id}/episodes
@@ -220,7 +220,7 @@ hianimeRouter.get("/anime/:animeId/episodes", async (c) => {
         cacheConfig.duration
     );
 
-    return c.json({ success: true, data }, { status: 200 });
+    return c.json({ status: 200, data }, { status: 200 });
 });
 
 // /api/v2/hianime/anime/{anime-id}/next-episode-schedule
@@ -234,7 +234,7 @@ hianimeRouter.get("/anime/:animeId/next-episode-schedule", async (c) => {
         cacheConfig.duration
     );
 
-    return c.json({ success: true, data }, { status: 200 });
+    return c.json({ status: 200, data }, { status: 200 });
 });
 
 export { hianimeRouter };
