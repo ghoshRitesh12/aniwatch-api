@@ -5,15 +5,17 @@ export class AniwatchAPICache {
     private static instance: AniwatchAPICache | null = null;
 
     private client: Redis | null;
-    public isOptional: boolean = true;
+    public enabled: boolean = false;
 
-    static DEFAULT_CACHE_EXPIRY_SECONDS = 60 as const;
-    static CACHE_EXPIRY_HEADER_NAME = "X-ANIWATCH-CACHE-EXPIRY" as const;
+    static enabled = false;
+    // 5 mins, 5 * 60
+    static DEFAULT_CACHE_EXPIRY_SECONDS = 300 as const;
+    static CACHE_EXPIRY_HEADER_NAME = "Aniwatch-Cache-Expiry" as const;
 
     constructor() {
         const redisConnURL = env.ANIWATCH_API_REDIS_CONN_URL;
-        this.isOptional = !Boolean(redisConnURL);
-        this.client = this.isOptional ? null : new Redis(String(redisConnURL));
+        this.enabled = AniwatchAPICache.enabled = Boolean(redisConnURL);
+        this.client = this.enabled ? new Redis(String(redisConnURL)) : null;
     }
 
     static getInstance() {
@@ -23,27 +25,17 @@ export class AniwatchAPICache {
         return AniwatchAPICache.instance;
     }
 
-    // set(key: string | Buffer, value: string | Buffer | number) {
-    //     if (this.isOptional) return;
-    //     return this.client?.set(key, value);
-    // }
-
-    // get(key: string | Buffer) {
-    //     if (this.isOptional) return;
-    //     return this.client?.get(key);
-    // }
-
     /**
-     * @param expirySeconds set to 60 by default
+     * @param expirySeconds set to 300 (5 mins) by default
      */
     async getOrSet<T>(
         dataGetter: () => Promise<T>,
-        key: string | Buffer,
+        key: string,
         expirySeconds: number = AniwatchAPICache.DEFAULT_CACHE_EXPIRY_SECONDS
     ) {
-        const cachedData = this.isOptional
-            ? null
-            : (await this.client?.get?.(key)) || null;
+        const cachedData = this.enabled
+            ? (await this.client?.get?.(key)) || null
+            : null;
         let data = JSON.parse(String(cachedData)) as T;
 
         if (!data) {
@@ -56,6 +48,23 @@ export class AniwatchAPICache {
             );
         }
         return data;
+    }
+
+    closeConnection() {
+        this.client
+            ?.quit()
+            ?.then(() => {
+                this.client = null;
+                AniwatchAPICache.instance = null;
+                console.info(
+                    "aniwatch-api redis connection closed and cache instance reset"
+                );
+            })
+            .catch((err) => {
+                console.error(
+                    `aniwatch-api error while closing redis connection: ${err}`
+                );
+            });
     }
 }
 
