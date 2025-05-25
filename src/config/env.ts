@@ -1,8 +1,23 @@
 import { config } from "dotenv";
-import { cleanEnv, num, str, bool, url, port } from "envalid";
+import { cleanEnv, num, str, url, port } from "envalid";
 
 config();
 
+export enum DeploymentEnv {
+    NODEJS = "nodejs",
+    DOCKER = "docker",
+    VERCEL = "vercel",
+    CLOUDFLARE_WORKERS = "cloudflare-workers",
+    RENDER = "render",
+}
+export const API_DEPLOYMENT_ENVIRONMENTS = Object.values(DeploymentEnv);
+export const SERVERLESS_ENVIRONMENTS = [
+    DeploymentEnv.VERCEL,
+    DeploymentEnv.CLOUDFLARE_WORKERS,
+    DeploymentEnv.RENDER,
+];
+
+//
 export const env = cleanEnv(process.env, {
     ANIWATCH_API_PORT: port({
         default: 4000,
@@ -28,9 +43,11 @@ export const env = cleanEnv(process.env, {
         desc: "Allowed origins, separated by commas and no spaces in between (CSV).",
     }),
 
-    ANIWATCH_API_VERCEL_DEPLOYMENT: bool({
-        default: false,
-        desc: "Required for distinguishing Vercel deployment from other ones; set it to true",
+    ANIWATCH_API_DEPLOYMENT_ENV: str({
+        choices: API_DEPLOYMENT_ENVIRONMENTS,
+        default: DeploymentEnv.NODEJS,
+        example: DeploymentEnv.VERCEL,
+        desc: "The deployment environment of the Aniwatch API. It must be set incase of serverless deployments, can lead to issues if not set.",
     }),
 
     ANIWATCH_API_HOSTNAME: str({
@@ -71,8 +88,4 @@ function isDevEnv(): boolean {
         process.env.NODE_ENV === "development" ||
         process.env.NODE_ENV === "test"
     );
-}
-
-export function isEnvUndefined(envVar?: string): boolean {
-    return typeof envVar === "undefined" || envVar === "undefined";
 }
