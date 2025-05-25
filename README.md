@@ -180,7 +180,7 @@ Deploy your own instance of Aniwatch API on Render.
 
 > [!NOTE]
 >
-> When deploying to vercel, you must set the env named `ANIWATCH_API_DEPLOYMENT_ENV` to `render` for proper functioning of the API.
+> When deploying to render, you must set the env named `ANIWATCH_API_DEPLOYMENT_ENV` to `render` for proper functioning of the API.
 
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/ghoshRitesh12/aniwatch-api)
 
