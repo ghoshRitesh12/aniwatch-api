@@ -47,7 +47,8 @@ export const env = cleanEnv(process.env, {
         choices: API_DEPLOYMENT_ENVIRONMENTS,
         default: DeploymentEnv.NODEJS,
         example: DeploymentEnv.VERCEL,
-        desc: "The deployment environment of the Aniwatch API. It must be set incase of serverless deployments, can lead to issues if not set.",
+        desc: "The deployment environment of the Aniwatch API. It must be set incase of serverless deployments, otherwise you may run into weird issues.",
+        docs: "https://github.com/ghoshRitesh12/aniwatch-api/blob/main/.env.example#L21",
     }),
 
     ANIWATCH_API_HOSTNAME: str({
@@ -61,7 +62,7 @@ export const env = cleanEnv(process.env, {
         default: undefined,
         example:
             "rediss://default:your-secure-password@your-redis-instance-name.provider.com:6379",
-        desc: "This env is optional by default and can be set to utilize Redis caching functionality. It has to be a valid connection URL.",
+        desc: "This env is optional by default and can be set to utilize Redis caching functionality. It has to be a valid connection URL; otherwise, the Redis client can throw unexpected errors",
     }),
 
     ANIWATCH_API_S_MAXAGE: num({
