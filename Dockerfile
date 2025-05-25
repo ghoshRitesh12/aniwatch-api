@@ -17,7 +17,7 @@ RUN npm run build
 FROM node:22-alpine as prod
 
 LABEL org.opencontainers.image.source=https://github.com/ghoshRitesh12/aniwatch-api
-LABEL org.opencontainers.image.description="Node.js API for obtaining anime information from hianime.to"
+LABEL org.opencontainers.image.description="NodeJS API for obtaining anime data from hianime.to"
 LABEL org.opencontainers.image.licenses=MIT
 
 # install curl for healthcheck
