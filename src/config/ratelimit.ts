@@ -15,7 +15,6 @@ switch (env.ANIWATCH_API_DEPLOYMENT_ENV) {
         break;
     default:
         getConnInfo = nodejsGetConnInfo;
-        break;
 }
 
 export const ratelimit = rateLimiter({
