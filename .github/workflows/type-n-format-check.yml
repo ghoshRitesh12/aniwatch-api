@@ -1,4 +1,4 @@
-name: "Lint and format check"
+name: "Type and format check"
 
 on:
   push:
@@ -22,8 +22,9 @@ jobs:
       - name: Install deps
         run: npm i
 
-      - name: Check lint
-        run: npm run lint
+      - name: Check types
+        # This step checks for TypeScript type errors
+        run: npm run typecheck
 
       - name: Check prettier
         run: npm run format:check
