@@ -41,9 +41,9 @@ if (isPersonalDeployment) {
     app.use(ratelimit);
 }
 
-if (env.ANIWATCH_API_DEPLOYMENT_ENV === DeploymentEnv.NODEJS) {
-    app.use("/", serveStatic({ root: "public" }));
-}
+// if (env.ANIWATCH_API_DEPLOYMENT_ENV === DeploymentEnv.NODEJS) {
+app.use("/", serveStatic({ root: "public" }));
+// }
 
 app.get("/health", (c) => c.text("daijoubu", { status: 200 }));
 app.get("/v", async (c) =>
