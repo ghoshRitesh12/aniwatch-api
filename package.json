@@ -1,6 +1,6 @@
 {
     "name": "aniwatch-api",
-    "version": "2.15.0",
+    "version": "2.16.0",
     "description": "NodeJS API for obtaining anime data from hianimez.to",
     "main": "dist/src/server.js",
     "type": "module",
