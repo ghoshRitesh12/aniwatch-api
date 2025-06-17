@@ -1344,6 +1344,8 @@ Thanks to the following people for keeping this project alive and relevant.
 
 - [consumet.ts](https://github.com/consumet/consumet.ts)
 - [api.consumet.org](https://github.com/consumet/api.consumet.org)
+- [@itzzzme](https://github.com/itzzzme)
+- [@Ciarands](https://github.com/Ciarands)
 
 ## <span id="support">🙌 Support</span>
 
