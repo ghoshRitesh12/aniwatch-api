@@ -38,18 +38,18 @@
     "license": "MIT",
     "dependencies": {
         "@hono/node-server": "^1.14.2",
-        "aniwatch": "^2.23.3",
+        "aniwatch": "^2.24.0",
         "dotenv": "^16.5.0",
         "envalid": "^8.0.0",
         "hono": "^4.7.10",
         "hono-rate-limiter": "^0.4.2",
         "ioredis": "^5.6.1",
-        "pino": "^9.7.0"
+        "pino": "^9.7.0",
+        "pino-pretty": "^13.0.0"
     },
     "devDependencies": {
         "@types/node": "^22.15.21",
         "husky": "^9.1.7",
-        "pino-pretty": "^13.0.0",
         "prettier": "^3.5.3",
         "tsx": "^4.19.4",
         "typescript": "^5.8.3",
