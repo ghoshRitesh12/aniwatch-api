@@ -1,3 +1,12 @@
+# [2.18.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.17.0...v2.18.0) (2025-07-27)
+
+
+### Features
+
+* update aniwatch package ([5eb1fc2](https://github.com/ghoshRitesh12/aniwatch-api/commit/5eb1fc26c7632a3e7b53e71fd7df89288943b83d))
+
+
+
 # [2.17.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.16.0...v2.17.0) (2025-06-17)
 
 
@@ -33,15 +42,6 @@
 ### Bug Fixes
 
 * update `ANIWATCH_API_HOSTNAME`§ env example ([d2812d1](https://github.com/ghoshRitesh12/aniwatch-api/commit/d2812d13bf5d285ce294d39a48d01020437f30ab))
-
-
-
-## [2.14.4](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.14.3...v2.14.4) (2025-05-11)
-
-
-### Bug Fixes
-
-* update `ANIWATCH_API_HOSTNAME` env ([1081c7b](https://github.com/ghoshRitesh12/aniwatch-api/commit/1081c7b7bb7305ab5440301ecba8728fe88af90b))
 
 
 
