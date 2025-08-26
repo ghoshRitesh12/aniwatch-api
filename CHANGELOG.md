@@ -1,3 +1,7 @@
+## [2.18.1](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.18.0...v2.18.1) (2025-08-26)
+
+
+
 # [2.18.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.17.0...v2.18.0) (2025-07-27)
 
 
@@ -33,15 +37,6 @@
 * add graceful shutdown and better deployment environment logic ([b19078e](https://github.com/ghoshRitesh12/aniwatch-api/commit/b19078e29cbd86d46d4ef1c5e5c6e914d1c8cc2f))
 * update imp scripts, description & packages ([cdd05c7](https://github.com/ghoshRitesh12/aniwatch-api/commit/cdd05c719ba361cc28acf6c4a7d535c64a70e604))
 * update response to include status instead of success for consistency ([74c9ffc](https://github.com/ghoshRitesh12/aniwatch-api/commit/74c9ffcb8f62dcdae6983da490436c39b6b8e558))
-
-
-
-## [2.14.5](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.14.4...v2.14.5) (2025-05-11)
-
-
-### Bug Fixes
-
-* update `ANIWATCH_API_HOSTNAME`§ env example ([d2812d1](https://github.com/ghoshRitesh12/aniwatch-api/commit/d2812d13bf5d285ce294d39a48d01020437f30ab))
 
 
 
