@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Player</title>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            background-color: #000;
+        }
+        #video {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <video id="video" controls></video>
+    <script>
+        const video = document.getElementById('video');
+        const urlParams = new URLSearchParams(window.location.search);
+        const anilistId = urlParams.get('anilistId');
+        const episode = parseInt(urlParams.get('episode'), 10);
+        const category = urlParams.get('category') || 'sub';
+
+        if (anilistId && episode) {
+            fetch(`/api/v2/hianime/anilist/${anilistId}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        const targetEpisode = data.episodes.find(e => e.number === episode);
+                        if (targetEpisode) {
+                            const episodeId = targetEpisode.episodeId;
+                            fetch(`/api/v2/hianime/anilist/stream?episodeId=${episodeId}&category=${category}`)
+                                .then(response => response.json())
+                                .then(streamData => {
+                                    if (streamData.data && streamData.data.sources && streamData.data.sources.length > 0) {
+                                        const m3u8Url = streamData.data.sources[0].url;
+                                        if (Hls.isSupported()) {
+                                            const hls = new Hls();
+                                            hls.loadSource(m3u8Url);
+                                            hls.attachMedia(video);
+                                            hls.on(Hls.Events.MANIFEST_PARSED, function () {
+                                                video.play();
+                                            });
+                                        } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                                            video.src = m3u8Url;
+                                            video.addEventListener('loadedmetadata', function () {
+                                                video.play();
+                                            });
+                                        }
+                                    } else {
+                                        console.error('No stream sources found');
+                                    }
+                                })
+                                .catch(error => console.error('Error fetching stream data:', error));
+                        } else {
+                            console.error('Episode not found');
+                        }
+                    } else {
+                        console.error('Failed to get anime data:', data.message);
+                    }
+                })
+                .catch(error => console.error('Error fetching anime data:', error));
+        }
+    </script>
+</body>
+</html>

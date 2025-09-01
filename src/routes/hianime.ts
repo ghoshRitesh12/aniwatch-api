@@ -237,4 +237,87 @@ hianimeRouter.get("/anime/:animeId/next-episode-schedule", async (c) => {
     return c.json({ status: 200, data }, { status: 200 });
 });
 
+hianimeRouter.get("/anilist/:anilistId", async (c) => {
+    const anilistId = c.req.param("anilistId");
+
+    const query = `
+      query ($id: Int) {
+        Media (id: $id, type: ANIME) {
+          title {
+            romaji
+            english
+          }
+        }
+      }
+    `;
+
+    const variables = {
+        id: anilistId
+    };
+
+    const response = await fetch("https://graphql.anilist.co", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+            query: query,
+            variables: variables
+        })
+    });
+
+    const anilistData = await response.json();
+    const animeTitle = anilistData.data.Media.title.english || anilistData.data.Media.title.romaji;
+
+    const searchResults = await hianime.search(animeTitle);
+
+    let hianimeId = null;
+    let episodes = [];
+
+    for (const anime of searchResults.animes) {
+        try {
+            const animeEpisodes = await hianime.getEpisodes(anime.id);
+            if (animeEpisodes.episodes.length > 0) {
+                const episodeSources = await hianime.getEpisodeSources(animeEpisodes.episodes[0].episodeId);
+                if (episodeSources.anilistID == anilistId) {
+                    hianimeId = anime.id;
+                    episodes = animeEpisodes.episodes;
+                    break;
+                }
+            }
+        } catch (error) {
+            console.error(`Error processing anime ${anime.id}:`, error);
+        }
+    }
+
+    if (hianimeId) {
+        return c.json({ success: true, hianimeId, episodes });
+    } else {
+        return c.json({ success: false, message: "Anime not found on hianime.to" }, 404);
+    }
+});
+
+hianimeRouter.get("/anilist/stream", async (c) => {
+    const cacheConfig = c.get("CACHE_CONFIG");
+    const animeEpisodeId = decodeURIComponent(
+        c.req.query("episodeId") || ""
+    );
+    const server = decodeURIComponent(
+        c.req.query("server") || HiAnime.Servers.VidStreaming
+    ) as HiAnime.AnimeServers;
+    const category = decodeURIComponent(c.req.query("category") || "sub") as
+        | "sub"
+        | "dub"
+        | "raw";
+
+    const data = await cache.getOrSet<HiAnime.ScrapedAnimeEpisodesSources>(
+        async () => hianime.getEpisodeSources(animeEpisodeId, server, category),
+        cacheConfig.key,
+        cacheConfig.duration
+    );
+
+    return c.json({ status: 200, data }, { status: 200 });
+});
+
 export { hianimeRouter };
