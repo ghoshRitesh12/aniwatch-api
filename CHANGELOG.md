@@ -1,3 +1,12 @@
+# [2.19.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.18.2...v2.19.0) (2026-03-14)
+
+
+### Features
+
+* update aniwatch pkg ([b6f5758](https://github.com/ghoshRitesh12/aniwatch-api/commit/b6f5758329b8fa12de3b7886f59d71707596cd0c))
+
+
+
 ## [2.18.2](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.18.1...v2.18.2) (2025-09-27)
 
 
@@ -21,15 +30,6 @@
 
 
 # [2.17.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.16.0...v2.17.0) (2025-06-17)
-
-
-
-# [2.16.0](https://github.com/ghoshRitesh12/aniwatch-api/compare/v2.15.0...v2.16.0) (2025-06-17)
-
-
-### Features
-
-* update aniwatch pkg ([89644e2](https://github.com/ghoshRitesh12/aniwatch-api/commit/89644e2d2e4bc652c7062636113ffdcb2bb1df32))
 
 
 
